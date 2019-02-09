@@ -1,8 +1,4 @@
 <style>
-    .mt-1 {
-        margin-top: 1rem;
-    }
-
     .full,
     .w-full {
         width: 100%
@@ -481,23 +477,6 @@
         background-color: #fff
     }
 
-    #about_dropdown li:active,
-    #about_dropdown li:hover,
-    #service_dropdown li.active,
-    #service_dropdown li:hover,
-    nav ul a:hover {
-        background-color: initial !important
-    }
-
-
-    #about_dropdown li a,
-    #service_dropdown li a {
-        color: #444;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis
-    }
-
     .brand-logo,
     nav ul li a {
         color: #444 !important
@@ -522,11 +501,52 @@
 
     .brand-img {
         padding-left: 16px;
-        padding-right: 16px;
+        padding-right: 8px;
         height: 50px;
         margin-top: 6px;
         margin-bottom: -12px
     }
+
+    .small-drop {
+            height: 0;
+            opacity: 0;
+            transition: 0.2s all ease;
+        }
+
+        .nav-wrapper .drop {
+            position: relative;
+        }
+
+        .nav-wrapper .drop ul {
+            background-color: #ffffff;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
+                0 2px 8px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-wrapper .drop ul li {
+            display: block;
+            width: 100%;
+        }
+
+        .nav-wrapper .drop ul li a {
+            width: 100%;
+            display: inline-block;
+            white-space: pre;
+            box-sizing: border-box;
+        }
+
+        .nav-wrapper .drop:hover ul {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
 
     #page_loader {
         width: 100vw;
@@ -621,7 +641,7 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
-        max-height: 300px
+        max-height: 240px
     }
 
     section.card-panel {
