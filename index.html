@@ -10,12 +10,28 @@
     <!-- <link rel="stylesheet" href="css/ihover.css" />
     <link rel="stylesheet" href="css/home.css" /> -->
     <style>
-        .home-banner {
-            height: 400px;
+        @font-face {
+            font-family: "CenturySchoolbookBold";
+            font-style: normal;
+            font-weight: 900;
+            font-display: auto;
+            src: url(fonts/CenturySchoolbookBold.ttf);
         }
 
-        .carousel {
+        .fancy-font {
+            font-family: 'CenturySchoolbookBold';
+        }
+
+        .home-banner {
+            max-height: 400px;
+        }
+
+        #about .carousel {
             height: 300px;
+        }
+
+        #testimonial .carousel .carousel-item {
+            height: auto
         }
 
         .carousel .carousel-item {
@@ -26,18 +42,39 @@
             width: 100%;
         }
 
+        .carousel-item:not(.active) iframe {
+            touch-action: pan-x !important;
+            pointer-events: none
+        }
+
+        .card-panel {
+            text-align: justify;
+        }
+
+        .colored-cards .row .col .card-panel {
+            color: #ffffff;
+        }
+
+        .short-border.white {
+            border-color: white;
+        }
+
+        #testimonial .carousel-item {
+            opacity: 1 !important;
+        }
+
         @media (min-width: 601px) {
-            .carousel .carousel-item iframe {
+            #about .carousel .carousel-item iframe {
                 height: 100%;
             }
         }
 
         @media (max-width: 600px) {
-            .carousel .carousel-item {
+            #about .carousel .carousel-item {
                 width: 200px;
             }
 
-            .carousel {
+            #about .carousel {
                 height: 200px;
             }
         }
@@ -46,24 +83,38 @@
 
 <body>
     <?php include "layouts/nav.inc.html"; ?>
-    <div class="scrollable grey lighten-3">
-        <header>
-            <img class="home-banner lazy" src="images/banner2.jpg" alt="WAMP Home Banner" />
+    <div class="grey lighten-3">
+        <header class="home-banner pos-rel"
+            style="height: 400px;background-image: url('images/Digital-Marketing.jpg');background-position: 75% 25%; background-size: cover">
+            <div class="pos-abs" style="bottom: 10%; left: 5%">
+                <h1 class="fw-700 fancy-font">
+                    Digital Marketing-<br />
+                    the skills you NEED!
+                </h1>
+                <br />
+                <button class="btn btn-large red darken-4 waves-effect white-text waves-light">To know more, give us a
+                    call!</button>
+            </div>
         </header>
-        <section class="p-4" id="about">
-            <div class="row py-2">
-                <div class="col s12 m12 l6">
+        <br clear="all" />
+        <div class="clearfix"></div>
+        <section class="px-4 pt-4" id="about">
+            <div class="row pt-2">
+                <div class="col s12 l6">
                     <div class="carousel">
                         <div class="carousel-item">
-                            <iframe src="https://www.youtube.com/embed/WL44vPIqkds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            <iframe src="https://www.youtube.com/embed/WL44vPIqkds" id="ytVideo-1" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         <div class="carousel-item">
-                            <iframe src="https://www.youtube.com/embed/WL44vPIqkds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            <iframe src="https://www.youtube.com/embed/WL44vPIqkds" id="ytVideo-2" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         <div class="carousel-item">
-                            <iframe src="https://www.youtube.com/embed/WL44vPIqkds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            <iframe src="https://www.youtube.com/embed/WL44vPIqkds" id="ytVideo-3" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                     </div>
@@ -75,253 +126,238 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col m12 l6">
+                <div class="col s12 l6">
                     <h2 class="mt-2">
                         Why <span class="fw-700">WAMP</span> Institute?
                     </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Asperiores provident ipsa dicta quisquam aut itaque dolorem
-                        sapiente fuga hic, porro velit quia eum aliquam! Eum doloribus
-                        nisi totam nihil! Illum.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Asperiores provident ipsa dicta quisquam aut itaque dolorem
-                        sapiente fuga hic, porro velit quia eum aliquam! Eum doloribus
-                        nisi totam nihil! Illum.
+                    <p class="text-justify">
+                        WAMP Digital Marketing Institute is a venture of WAMP InfoTech Pvt. Ltd., however, we promise to
+                        provide you quality training in Digital Marketing for corporate, professionals, entrepreneurs
+                        and students. We provide live-classroom training helping the executives and entrepreneurs to
+                        achieve targets with lower investments in the best possible ways. We ensure to cover best
+                        practices using case studies and offer a practical guide to the core techniques of Digital
+                        Marketing.
+
                     </p>
 
-                    <a href="overview" class="waves-effect waves-light btn bg-primary">Know more</a>
+                    <a href="about" class="waves-effect waves-light btn bg-primary">Know more</a>
                     <br />
                     <br />
                 </div>
             </div>
         </section>
-        <section style="background-image: url('images/background.jpg'); background-size: cover; background-attachment: fixed;background-position: center">
+        <section class="p-4 amber">
+            <div class="row">
+                <div class="col m6">
+                    <h1 class="center fw-700 px-4">Best Digital Marketing Courses in Delhi!</h1>
+                </div>
+                <div class="col m6">
+                    <h5 class="center p-4">
+                        You are just a step away! Get in touch ASAP!<br />Call us or share your e-mail address.
+                    </h5>
+
+                    <div class="center">
+                        <a href="contact" class="btn bg-primary w-full center my-1" style="max-width: 300px;">Start Free
+                            Demo</a>
+                        <br />
+                        <a href="contact" class="btn white text-primary w-full center my-1"
+                            style="max-width: 300px;">Download
+                            Curriculum</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            style="background-image: url('images/background.jpg'); background-size: cover; background-attachment: fixed;background-position: center">
             <div class="p-4" style="background-color: rgba(0,0,0,0.5);">
                 <h3 class="center-align white-text text-z-depth-2">
                     Do you want a career growth?
                 </h3>
                 <p class="white-text center-align px-4 text-z-depth-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-                    excepturi debitis! Laborum facilis, illum est placeat fugiat nulla
-                    molestias doloribus, obcaecati eveniet ducimus quas hic impedit,
-                    quos sunt soluta nostrum?
+                    Be a part of WAMP Digital Marketing Institute and get ready to experience a whole new way of
+                    learning. We promise to provide more than just the ‘certifications’ and prepare you for the real
+                    world with live projects and skills.
                 </p>
                 <br />
                 <br />
-                <div class="row mx-2">
-                    <div class="col s12 m6 p-m-3 m-0">
+                <div class="row mx-2 flex">
+                    <div class="col s12 m6 p-m-3 m-0 flex">
                         <div class="card-panel">
-                            <h4 class="grey-text text-darken-2">Title</h4>
+                            <h4>Know slightly more</h4>
                             <div class="border-top-1 grey-border border-lighten-2"></div>
-                            <ul>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                            </ul>
+                            <p>
+                                The courses are designed for people who want to learn the important elements of creating
+                                an effective digital marketing campaign. Ensuring to cover the best practices and use
+                                case studies throughout the course duration. You’ll have solid hands-on knowledge with
+                                the online tools and practical guides that you can use the techniques of digital
+                                marketing in your job or start-up.
+
+                                <p>
                         </div>
                     </div>
-                    <div class="col s12 m6 p-m-3 m-0">
+                    <div class="col s12 m6 p-m-3 m-0 flex">
                         <div class="card-panel">
-                            <h4 class="grey-text text-darken-2">Title</h4>
+                            <h4>You need to learn</h4>
                             <div class="border-top-1 grey-border border-lighten-2"></div>
-                            <ul>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                            </ul>
+                            <p>
+                                A practical course that focuses on the management of digital marketing channels for your
+                                business or clients. A digital marketing specialist is the need of the hour either you
+                                are on the client side or agency side. However, adding skills to enhance your knowledge
+                                is always a good option.
+
+                            </p>
                         </div>
                     </div>
-                    <div class="col s12 m6 p-m-3 m-0">
+                    <div class="col s12 m6 p-m-3 m-0 flex">
                         <div class="card-panel">
-                            <h4 class="grey-text text-darken-2">Title</h4>
+                            <h4>The outcome of your hard work
+                            </h4>
                             <div class="border-top-1 grey-border border-lighten-2"></div>
-                            <ul>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                            </ul>
+                            <p>
+
+                                Once you learn Digital Marketing you’ll be able to create a programme for measuring
+                                digital marketing effectiveness. You’ll learn about SEO, Google Advertising, Social
+                                Media Marketing, email marketing, online advertising that includes ad networks, etc.
+                                However, the course also helps you to earn as a freelancer through affiliate programs.
+
+                            </p>
                         </div>
                     </div>
-                    <div class="col s12 m6 p-m-3 m-0">
+                    <div class="col s12 m6 p-m-3 m-0 flex">
                         <div class="card-panel">
-                            <h4 class="grey-text text-darken-2">Title</h4>
+                            <h4>WAMP experience</h4>
                             <div class="border-top-1 grey-border border-lighten-2"></div>
-                            <ul>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                                <li class="clearfix">
-                                    <i class="material-icons left text-primary">arrow_forward</i>
-                                    Alvin and the Chipmonks
-                                </li>
-                            </ul>
+                            <p>
+
+                                We have skilled trainers, passionate about digital marketing giving up to date trends.
+                                Ensuring to deliver quality, we assess our trainers frequently making sure they deliver
+                                quality. We make sure to prioritize practical training so that the students are ready
+                                for the office culture. We focus on micro-classroom training with 8 or fewer people per
+                                session and covering a wide range of modules.
+
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="p-4">
-            <h3 class="center-align">Packages</h3>
+            <h3 class="center-align">Digital Marketing Courses
+            </h3>
             <p class="mx-4 center-align">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem cumque
-                voluptatibus inventore fugit exercitationem odit impedit laboriosam
-                officia quas obcaecati distinctio nemo ea porro, labore possimus
-                dolorem recusandae rerum sit?
+                The courses concentrate on sharing the latest trends in the most effective manner with technological
+                innovations in the Digital Marketing field. We intend to provide you in-depth knowledge of digital and
+                social media marketing and analytics.
+
             </p>
-            <div class="row mx-2">
-                <div class="col s12 l4 p-m-3">
-                    <div class="card-panel">
+            <div class="flex row mx-2">
+                <div class="col s12 l4 p-m-3 flex">
+                    <div class="card-panel pos-rel orange darken-3 white-text">
                         <h4 class="center-align">Executive</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            vero perspiciatis quas quidem laudantium dolore similique
-                            provident ea inventore molestias dolores impedit, cupiditate
-                            sequi. Rem magnam eos esse ad ab?
+                        <hr class="short-border white" />
+                        <h5 class="center-align">
+                            Unlock the secrets of the Digital Marketing world!
+                        </h5>
+                        <p class="py-4">
+                            A course specially designed to present a base for marketers and job-seekers, who would like
+                            to specialize in Digital Marketing. With 8 certifications in just two and a half months; you
+                            will learn a wide range of modules like SEO, SMM, Google Ads, and several others.
+
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            vero perspiciatis quas quidem laudantium dolore similique
-                            provident ea inventore molestias dolores impedit, cupiditate
-                            sequi. Rem magnam eos esse ad ab?
-                        </p>
-                        <button class="btn right bg-primary">Buy Now</button>
+                        <a href="contact" class="btn pos-abs white orange-text text-darken-3"
+                            style="bottom: 24px;right: 24px;">Enquire</a>
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="col s12 l4 p-m-3">
-                    <div class="card-panel">
+                <div class="col s12 l4 p-m-3 flex">
+                    <div class="card-panel pos-rel bg-primary white-text">
                         <h4 class="center-align">Advance</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            vero perspiciatis quas quidem laudantium dolore similique
-                            provident ea inventore molestias dolores impedit, cupiditate
-                            sequi. Rem magnam eos esse ad ab?
+                        <hr class="short-border white" />
+                        <h5 class="center-align">
+                            Be the champ of the Digital Marketing world!
+                        </h5>
+                        <p class="py-4">
+                            Advanced Digital Marketing Course is one of the most reputed courses by WAMP Institute. A
+                            four months course, where you’ll learn 40 Modules; perfect for students who want to add
+                            skills and knowledge for better job opportunities. The course is bifurcated on the basis of
+                            practical knowledge and theoretical knowledge, as it is 90% practical and 10% theory.
+
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            vero perspiciatis quas quidem laudantium dolore similique
-                            provident ea inventore molestias dolores impedit, cupiditate
-                            sequi. Rem magnam eos esse ad ab?
-                        </p>
-                        <button class="btn right bg-primary">Buy Now</button>
+                        <a href="contact" class="btn pos-abs white text-primary"
+                            style="bottom: 24px;right: 24px;">Enquire</a>
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="col s12 l4 p-m-3">
-                    <div class="card-panel">
+                <div class="col s12 l4 p-m-3 flex">
+                    <div class="card-panel pos-rel red darken-4 white-text">
                         <h4 class="center-align">Crash Course</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            vero perspiciatis quas quidem laudantium dolore similique
-                            provident ea inventore molestias dolores impedit, cupiditate
-                            sequi. Rem magnam eos esse ad ab?
+                        <hr class="short-border white" />
+                        <h5 class="center-align">
+                            Be a giant!
+                        </h5>
+                        <p class="py-4">
+                            Masters in Advanced Digital Marketing is made to assist you to develop an advanced
+                            understanding of the realistic skills required to apply and manage successful digital
+                            marketing techniques. A course specially designed for start-up owners and aspiring
+                            businessmen, a course where you’ll learn 62 Modules with 17 certifications to give you
+                            complete knowledge of Digital Marketing from the basics.
+
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                            vero perspiciatis quas quidem laudantium dolore similique
-                            provident ea inventore molestias dolores impedit, cupiditate
-                            sequi. Rem magnam eos esse ad ab?
-                        </p>
-                        <button class="btn right bg-primary">Buy Now</button>
+                        <a href="contact" class="btn pos-abs white red-text text-darken-4"
+                            style="bottom: 24px;right: 24px;">Enquire</a>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section style="background-image: url('images/background2.jpg'); background-size: cover; background-attachment: fixed;background-position: center">
+        <section
+            style="background-image: url('images/background2.jpg'); background-size: cover; background-attachment: fixed;background-position: center">
             <div class="p-4" style="background-color: rgba(0,0,0,0.5);">
                 <h3 class="white-text center-align text-z-depth-2">
                     What will you get?
                 </h3>
                 <p class="white-text mx-4 center-align text-z-depth-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                    cumque voluptatibus inventore fugit exercitationem odit impedit
-                    laboriosam officia quas obcaecati distinctio nemo ea porro, labore
-                    possimus dolorem recusandae rerum sit?
+                    Digital Marketing is the new age marketing trend that you need to learn, as the skills will open a
+                    plethora of gates for your career growth. WAMP Institute in South Delhi is working on imparting the
+                    best knowledge to all students.
+
                 </p>
-                <div class="row mx-2">
-                    <div class="col s12 m4 p-m-3">
-                        <div class="card-panel">
-                            <h4><i class="material-icons">star</i> Title</h4>
+                <div class="flex row mx-2">
+                    <div class="col s12 l4 p-m-3 flex">
+                        <div class="card-panel w-full">
+                            <h4>Working professionals
+                            </h4>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                                vero perspiciatis quas quidem laudantium dolore similique
-                                provident ea inventore molestias dolores impedit, cupiditate
-                                sequi. Rem magnam eos esse ad ab?
+                                Add-on skills opening gates for multiple industries, with your prior knowledge, get
+                                various job opportunities in the digital marketing industry. The course helps in
+                                advanced career growth and skills to start your own business.
+
                             </p>
                         </div>
                     </div>
-                    <div class="col s12 m4 p-m-3">
-                        <div class="card-panel">
-                            <h4><i class="material-icons">star</i> Title</h4>
+                    <div class="col s12 l4 p-m-3 flex">
+                        <div class="card-panel w-full">
+                            <h4>Start-up owners
+                            </h4>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                                vero perspiciatis quas quidem laudantium dolore similique
-                                provident ea inventore molestias dolores impedit, cupiditate
-                                sequi. Rem magnam eos esse ad ab?
+                                Begin to generate more qualified leads for your business and convert them into sales.
+                                This will surely help you with increasing your business revenue. No more dependence on
+                                traditional forms of marketing, as you’ll track your performance and expand your
+                                business to a wider geographical area.
+
                             </p>
                         </div>
                     </div>
-                    <div class="col s12 m4 p-m-3">
-                        <div class="card-panel">
-                            <h4><i class="material-icons">star</i> Title</h4>
+                    <div class="col s12 l4 p-m-3 flex">
+                        <div class="card-panel w-full">
+                            <h4>Job Seekers
+                            </h4>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                                vero perspiciatis quas quidem laudantium dolore similique
-                                provident ea inventore molestias dolores impedit, cupiditate
-                                sequi. Rem magnam eos esse ad ab?
+                                With the advancement in the digital marketing sector, there are about 4.6 lacs job
+                                opportunities. So, it is time you update your CV; however, learn something that will be
+                                a trend tomorrow. Add unique skills and get guaranteed success. Be a freelancer or give
+                                a reason for companies to hire you.
                             </p>
                         </div>
                     </div>
@@ -329,17 +365,189 @@
             </div>
         </section>
 
-        <?php require_once "layouts/instructors.inc.html"; ?>
+        <section class="p-4">
+            <br />
+            <div class="flex row">
+                <div class="flex col m6 center">
+                    <img src="images/img-tablet-vertical.png" class="center center-align full mx-auto"
+                        style="max-width: 400px; object-fit: contain;object-position: top center" />
+                </div>
+                <div class="col m6 flex">
+                    <div style="max-width: 500px;">
+                        <h5 class="text-uppercase fw-700 text-primary">Get Enrolled in a Certified Digital Marketing
+                            Course
+                            Today!</h5>
+                        <h3>
+                            Become a
+                            <!-- <span class="fw-700">Certified</span> --> Digital Marketing Professional
+                        </h3>
+                        <p class="text-justify">WAMP Digital Marketing Institute offers courses ranging from Executive
+                            level to Master’s
+                            level.
+                            Therefore, you will learn about strategy, planning, social media, search marketing—all you
+                            have
+                            to do is choose your area of interest. Time to find out what works best for you! </p>
+                        <div class="flex row">
+                            <div class="col s4 flex">
+                                <h3 class="text-primary w-full center-align center">95%</h3>
+                                <small class="center-align center w-full grey-text text-darken-2 text-uppercase fw-700">
+                                    Graduates are currently
+                                    Employed
+                                </small>
+                            </div>
+                            <div class="col s4 flex">
+                                <h3 class="text-primary w-full center-align center">88%</h3>
+                                <small class="center-align center w-full grey-text text-darken-2 text-uppercase fw-700">
+                                    Working at Senior or Management Level
+                                </small>
+                            </div>
+
+                            <div class="col s4 flex">
+                                <h3 class="text-primary w-full center-align center">81%</h3>
+                                <small class="center-align center w-full grey-text text-darken-2 text-uppercase fw-700">
+                                    Promoted after completing the Course
+                                </small>
+                            </div>
+                        </div>
+                        <br />
+                        <a href="#" class="btn bg-primary text-uppercase btn-large">View our
+                            Courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-4 grey lighten-2 lazy-background" id="testimonial">
+            <h3 class="text-capitalize center-align px-2 fw-600">What People say</h3>
+            <hr class="short-border" />
+
+            <div class="carousel">
+                <div class="carousel-item card-panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
+                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
+                        sapiente cupiditate.
+                    </p>
+                    <h4 class="right-align">- Anonymous</h4>
+                </div>
+                <div class="carousel-item card-panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
+                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
+                        sapiente cupiditate.
+                    </p>
+                    <h4 class="right-align">- Anonymous</h4>
+                </div>
+                <div class="carousel-item card-panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
+                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
+                        sapiente cupiditate.
+                    </p>
+                    <h4 class="right-align">- Anonymous</h4>
+                </div>
+                <div class="carousel-item card-panel">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
+                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
+                        sapiente cupiditate.
+                    </p>
+                    <h4 class="right-align">- Anonymous</h4>
+                </div>
+            </div>
+
+
+        </section>
+
         <?php require_once "layouts/footer.inc.html"; ?>
     </div>
     <?php require_once "includes/scripts.inc.php" ?>
     <script>
+        var playing = false;
+        var nextVideo;
         $(document).ready(function () {
-            $(".carousel").carousel({
+            $('#testimonial .carousel').carousel({
+                padding: 100,
+                numVisible: 3,
+                dist: 0
+            });
+            $("#about .carousel").carousel({
                 numVisible: 3,
                 dist: -200
             });
+
+            $("#about .carousel .active").on("mouseenter", videoPlayed);
+            $("#about .carousel").on("mouseenter", stopping);
+            $("#about .carousel").on("mouseleave", starting);
+
+            function stopping(e) {
+                console.log("Scolling Stopped");
+                clearTimeout(nextVideo);
+            }
+            function starting(e) {
+                console.log("Scrolling Started");
+                autoplay();
+            }
+
+            autoplay();
+            autoplayTest();
+
+            function autoplay() {
+                if (!playing) {
+                    $('#about .carousel').carousel('next');
+                    nextVideo = setTimeout(autoplay, 4500);
+                } else {
+                    clearTimeout(nextVideo);
+                }
+            }
+            function videoPlayed() {
+                playing = true;
+                console.log("Played Video");
+                clearTimeout(nextVideo);
+            }
+
+            function autoplayTest() {
+                $('#testimonial .carousel').carousel('next');
+                setTimeout(autoplayTest, 4500);
+            }
+
+
+            $('.modal').modal();
         });
+
+        var tag = document.createElement('script');
+        tag.id = 'iframe-demo';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            console.log("Hello0");
+            player = new YT.Player('ytVideo-1', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+        function onPlayerReady(event) {
+            console.log("Hello1");
+
+        }
+        function onPlayerStateChange(event) {
+            console.log("Hello2");
+
+            if (event.data == YT.PlayerState.PLAYING) {
+                alert('video started');
+                playing = true;
+            }
+
+            else if (event.data == YT.PlayerState.PAUSED) {
+                alert('video paused');
+                playing = false;
+            }
+        }
     </script>
 </body>
 

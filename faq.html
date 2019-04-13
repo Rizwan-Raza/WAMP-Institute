@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Digital Marketing Agency, Web Development Company | WAMP Institute
+    </title>
+    <?php include "includes/head.inc.php"; ?>
+    <style>
+        .home-banner {
+            height: 240px;
+        }
+
+        .map {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        #c_message {
+            height: 80px !important;
+        }
+
+        .select-wrapper .dropdown-content li>a,
+        .select-wrapper .dropdown-content li:not(li[disabled])>span {
+            color: #3d85c6;
+        }
+
+        #contact_form {
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .home-banner {
+                height: 200px;
+            }
+
+            #contact_form {
+                width: 80%;
+                margin: 1rem 10% 2rem 10%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .home-banner {
+                height: 200px;
+            }
+
+            .map {
+                height: 240px;
+            }
+
+            #contact_form {
+                width: 100% !important;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <?php include "layouts/nav.inc.html"; ?>
+    <div class="scrollable white">
+        <header>
+            <img src="images/contactbanner.jpg" class="home-banner" alt="WAMP Banner" />
+        </header>
+        <section class="container py-4 mb-4">
+            <h4 class="center-align fw-600">Frequently Asked Questions & Answers</h4>
+            <hr class="short-border" />
+            <br />
+            <ul class="collapsible">
+                <li class="active">
+                    <div class="collapsible-header"><i class="material-icons">help</i>Why Should I join Online Marketing
+                        or Digital Marketing Course at WAMP Institute?</div>
+                    <div class="collapsible-body"><span>WAMP Digital Marketing Institute is located in New Delhi and has
+                            been established internationally. It is very easy for us to say why we different from rest
+                            of the Institutes in the same field, we provide quality training with the best Digital
+                            Marketing Gurus, our trainers are Gold Medallists and have been in the same field for years
+                            knowing all the ups and downs the industry has faced. Our curriculum is up to date because
+                            technology is all about being updated. The best part for joining us is that we have
+                            micro-batches, our batch comprise of 7 to 9 students at maximum that makes the student
+                            trainer ratio perfect as sitting in a class of 30-40 students under 1 trainer, would be like
+                            a crowd. We prefer on imparting qualitative over quantitative education. We also help the
+                            students in their personality development as many students are very shy and scared but they
+                            are given personal sessions to overcome their fears.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">help</i>Will this Internet Marketing
+                        course give me Placement?</div>
+                    <div class="collapsible-body"><span>Yes, we give you 100% placement assistance. As we have tie-ups
+                            with various MNCs & Domestic companies, but your hard-work matters a lot as we can help you
+                            polish your skills but to master in those skills is up to you. Also, if you have confusions
+                            about your speaking skills that could be a downfall during the interview, we will assist you
+                            with basic English Training.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">help</i>Who Can Join this Course?</div>
+                    <div class="collapsible-body"><span>People who want to be successful at their first job, those who
+                            want to polish their skills or people who want to grow their business or people interested
+                            in start-ups. So this means a huge number of people can join this course, right after their
+                            12th class to people who have been working for past 10-15 years, because what matters is the
+                            sharpening of the skills which has no age. Also, it does not matter which profession you are
+                            in as you learn to improve your digital skills in the course.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">help</i>Would I be able to earn, once the
+                        course is completed?</div>
+                    <div class="collapsible-body"><span>Once your course is completed you will have various certificates
+                            in hand, which means added skills. Therefore, yes you will be able to earn as we assist you
+                            for job placement, you can get hired by any renowned company or if you want you can work as
+                            a freelancer from your comfort zone. Also, the businessmen would get leads for their
+                            business thus they will also gain profit.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">help</i>What salary will I be able to draw
+                        from the Digital Marketing industry after the course?</div>
+                    <div class="collapsible-body"><span>As we assist you in job placements, the interviewer will see a
+                            lot of things in you as a Digital Marketer, thus you can draw around 3 lacs per annum as a
+                            fresher in the field, if you have some experience in the industry then you can raise a
+                            higher package.</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">help</i>Will I get the certificate, study
+                        material, and software after the course?</div>
+                    <div class="collapsible-body"><span>The course is mainly about practical knowledge. As per our
+                            course, we deliver 80% of practical and 20% theoretical information. But the students are
+                            given all the study material for their better understanding and their personal gains.
+                            Yes, you will be given certificates; in our Masters in Advanced Digital Marketing course we
+                            provide 17 certifications.
+                            Yes you will be given free tools and software during the course period, which would cost you
+                            no penny.</span></div>
+                </li>
+            </ul>
+
+        </section>
+        <?php include "layouts/footer.inc.html"; ?>
+    </div>
+
+    <?php include "includes/scripts.inc.php"; ?>
+    <script>
+        M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+    </script>
+</body>
+
+</html>

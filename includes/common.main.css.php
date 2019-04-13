@@ -375,6 +375,9 @@
     .text-capitalize {
         text-transform: capitalize
     }
+    .text-justify {
+        text-align: justify;
+    }
 
     .text-uppercase {
         text-transform: uppercase !important
@@ -433,19 +436,6 @@
         background-blend-mode: soft-light
     }
 
-    body {
-        height: 100vh;
-        overflow: hidden
-    }
-
-    .scrollable {
-        height: calc(100vh - 64px);
-        width: 100vw;
-        overflow-x: hidden;
-        overflow-y: visible;
-        margin-right: -8px
-    }
-
     article,
     div,
     figure,
@@ -466,10 +456,10 @@
     p,
     span,
     strong {
-        -moz-user-select: none;
+        /* -moz-user-select: none;
         -ms-user-select: none;
         -webkit-user-select: none;
-        user-select: none
+        user-select: none */
     }
 
     nav {
@@ -611,7 +601,7 @@
 
     .sidenav .top-banner {
         background-color: #444;
-        background-image: url(images/back_banner_x600.webp);
+        background-image: url(images/background2.jpg);
         background-position: center;
         height: 150px
     }
@@ -736,6 +726,10 @@
     .flow-text li,
     .flow-text p {
         font-size: 1rem
+    }
+
+    .instructors .card .btn-floating i {
+        font-size: 1.3rem;
     }
 
     #footer {

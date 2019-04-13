@@ -1,4 +1,10 @@
 RewriteEngine On
+
+#RewriteRule ^/?courses/(.*?)/?$ /course.html?url=$1 [L]
+
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /course\.html\?url=([^\&\ ]+)
+#RewriteRule ^/?course\.html$ /courses/%1? [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]

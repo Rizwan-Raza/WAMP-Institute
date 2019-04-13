@@ -1,0 +1,21 @@
+{
+    "courses": [{
+        "src": "images/banner2.jpg",
+        "title": "Executive Digital Marketing",
+        "url": "executive-digital-marketing",
+        "content": "And they say ‘with great power, comes great responsibility’, Momin is always full of energy and life. He is a lawyer by profession but he knew the digital field is at a boom and therefore wanted to explore in the same field. Even with his hectic schedule in the state court, he pays regular visits to the office and discusses about the work with all the employs. His bright smile and positive energy is infectious. He serves as the President and the legal advisor for the company."
+      },
+      {
+        "src": "images/banner2.jpg",
+        "title": "Advance Digital Marketing",
+        "url": "advance-digital-marketing",
+        "content": "And they say ‘with great power, comes great responsibility’, Momin is always full of energy and life. He is a lawyer by profession but he knew the digital field is at a boom and therefore wanted to explore in the same field. Even with his hectic schedule in the state court, he pays regular visits to the office and discusses about the work with all the employs. His bright smile and positive energy is infectious. He serves as the President and the legal advisor for the company."
+      },
+      {
+        "src": "images/banner2.jpg",
+        "title": "Master Digital Marketing",
+        "url": "masters-digital-marketing",
+        "content": "And they say ‘with great power, comes great responsibility’, Momin is always full of energy and life. He is a lawyer by profession but he knew the digital field is at a boom and therefore wanted to explore in the same field. Even with his hectic schedule in the state court, he pays regular visits to the office and discusses about the work with all the employs. His bright smile and positive energy is infectious. He serves as the President and the legal advisor for the company."
+      }
+    ]
+}

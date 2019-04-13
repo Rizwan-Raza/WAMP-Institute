@@ -11,12 +11,9 @@
     });
 
     function scrollToTop() {
-        let container = $(".scrollable");
-        container.animate({
-                scrollTop: 0
-            },
-            container.get(0).scrollHeight / 10
-        );
+        var body = $("html, body");
+
+        body.stop().animate({scrollTop:0}, body.get(0).scrollHeight/10, 'swing');
     }
 
     function popOut(elem) {
