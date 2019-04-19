@@ -6,44 +6,78 @@
         Digital Marketing Agency, Web Development Company | WAMP Institute
     </title>
     <?php include "includes/head.inc.php"; ?>
+    <style>
+        @media (max-width: 600px) {
+            #trainers .valign-wrapper {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <?php include "layouts/nav.inc.html"; ?>
     <div class="scrollable grey lighten-3">
         <header class="lh-0">
-            <img class="home-banner lazy" src="images/banner1.jpg" alt="WAMP Home Banner" />
+            <img class="home-banner lazy" src="images/about.jpg" alt="WAMP Home Banner" />
         </header>
         <section class="p-4 white m-0" id="about">
-            <div class="row m-0 py-2">
-                <div class="col m12 l6">
-                    <h2 class="mt-2">
-                        About <span class="fw-700">WAMP</span> Digital Marketing Institute
-                    </h2>
-                    <hr class="short-border left">
-                    <div class="clearfix"></div>
-                    <br />
-                    <p class="text-justify">
-                        WAMP Digital Marketing Institute is a venture of WAMP InfoTech Pvt. Ltd., however, we promise to
-                        provide you quality training in Digital Marketing for corporate, professionals, entrepreneurs
-                        and students. We provide live-classroom training helping the executives and entrepreneurs to
-                        achieve targets with lower investments in the best possible ways. We ensure to cover best
-                        practices using case studies and offer a practical guide to the core techniques of Digital
-                        Marketing.
-                    </p>
+            <h2 class="mt-2">
+                About <span class="fw-700">WAMP</span> Digital Marketing Institute
+            </h2>
+            <hr class="short-border left">
+            <div class="clearfix"></div>
+            <br />
+            <p class="text-justify">
+                WAMP Digital Marketing Institute is a venture of WAMP InfoTech Pvt. Ltd., however, we promise to
+                provide you quality training in Digital Marketing for corporate, professionals, entrepreneurs
+                and students. We provide live-classroom training helping the executives and entrepreneurs to
+                achieve targets with lower investments in the best possible ways. We ensure to cover best
+                practices using case studies and offer a practical guide to the core techniques of Digital
+                Marketing.
+            </p>
 
-                    <a href="overview" class="waves-effect waves-light btn bg-primary">Start Demo</a>
-                    <br />
-                    <br />
-                </div>
-                <div class="col s12 m12 l6">
-                    <img src="images/background4.jpg" class="w-full" />
-                    <!-- <iframe src="https://www.youtube.com/embed/WL44vPIqkds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen class="yt-video w-full"></iframe> -->
-                </div>
-            </div>
+            <a href="overview" class="waves-effect waves-light btn bg-primary">Start Demo</a>
+            <br />
+            <br />
         </section>
-        <?php require_once "layouts/instructors.inc.html"; ?>
+        <section class="grey lighten-4 p-4">
+            <h4>Classroom training</h4>
+            <hr class="short-border left" />
+            <br />
+            <p class="text-justify">
+                We provide live classroom training, helping trainees to come up with their issues, with the
+                concept of micro-batches. Training is provided through the weekdays and weekends, where the
+                trainees work on live projects and discuss their problems with highly qualified and
+                experienced trainers.
+            </p>
+            <br />
+            <div class="border-top-1 grey-border border-lighten-1"></div>
+            <br />
+            <h4>Corporate training</h4>
+            <hr class="short-border left" />
+            <br />
+            <p class="text-justify">
+                We provide detailed workshops on various topics in Digital Marketing, helping working
+                professionals to learn the updates skills. The trainers help the professionals to acquire
+                advanced skills, therefore helping them increase their leads and business. It is essential
+                to cope with the changing digital technologies to keep up with your business on the
+                international platforms.
+            </p>
+            <br />
+            <div class="border-top-1 grey-border border-lighten-1"></div>
+            <br />
+            <h4>Campus training</h4>
+            <hr class="short-border left" />
+            <br />
+            <p class="text-justify">
+                The students who are currently pursuing their graduation or diploma need to understand the
+                importance and emergence of digital marketing in every field. Therefore, we help them learn
+                the
+                basics of digital marketing.
+            </p>
+        </section>
+        <?php require_once "layouts/trainers.inc.html"; ?>
         <?php require_once "layouts/footer.inc.html"; ?>
     </div>
     <?php require_once "includes/scripts.inc.php" ?>

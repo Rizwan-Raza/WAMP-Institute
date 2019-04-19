@@ -1,0 +1,633 @@
+{
+    "executive": [
+        {
+            "title": "Overview of Digital Marketing",
+            "src": "overview-digital-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#78909c"
+        },
+        {
+            "title": "Website Introduction",
+            "src": "website-intro.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffb74d"
+        },
+        {
+            "title": "Website Creation (Wordpress+HTML)",
+            "src": "website-creation.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#e57373"
+        },
+        {
+            "title": "Search Engine Optimization",
+            "src": "seo.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#8bc34a"
+        },
+        {
+            "title": "Google Ads",
+            "src": "adwords.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#388e3c"
+        },
+        {
+            "title": "Social Media Optimization",
+            "src": "social-media-optimization.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#303f9f"
+        },
+        {
+            "title": "Social Media Marketing",
+            "src": "social-media-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#bbdefb"
+        },
+        {
+            "title": "Content Marketing",
+            "src": "content-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#00BFC8"
+        },
+        {
+            "title": "Email Marketing",
+            "src": "email-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#fbc02d"
+        },
+        {
+            "title": "Google Analytics",
+            "src": "google-analytics.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#616161"
+        },
+        {
+            "title": "Google Webmaster",
+            "src": "google-webmaster.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#1976d2"
+        },
+        {
+            "title": "Google Trends",
+            "src": "google-trend.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Mobile Marketing",
+            "src": "mobile-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#64b5f6"
+        },
+        {
+            "title": "Lead Generation",
+            "src": "lead-generation.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#5c999c"
+        },
+        {
+            "title": "E-Commerce Setup &amp; SEO",
+            "src": "e-comm-seo.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#b71c1c"
+        },
+        {
+            "title": "E-Commerce Marketing &amp; SCM Tools",
+            "src": "e-comm-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#ff5722"
+        },
+        {
+            "title": "Online Reputation Management",
+            "src": "online-reputation.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#f6f6f6"
+        },
+        {
+            "title": "Audio Engineering",
+            "src": "audio-engg.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#7986cb"
+        },
+        {
+            "title": "Online Graphic Designing Tools",
+            "src": "graphics-design.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#fff176"
+        },
+        {
+            "title": "Video Editing",
+            "src": "video-editing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#424242"
+        },
+        {
+            "title": "Video Optimization",
+            "src": "video-optimization.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#7986cb"
+        },
+        {
+            "title": "Earning From YouTube",
+            "src": "youtube-earning.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ff0000"
+        },
+        {
+            "title": "Earning From Google AdSense",
+            "src": "adsense.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Earning As A Freelancer",
+            "src": "freelancer.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#f4f4f4"
+        }
+    ],
+    "advance": [
+        {
+            "title": "Basic Digital Marketing",
+            "src": "basic-digital-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#e64a19"
+        },
+        {
+            "title": "Overview of Digital Marketing",
+            "src": "overview-digital-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#78909c"
+        },
+        {
+            "title": "Website Introduction",
+            "src": "website-intro.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffb74d"
+        },
+        {
+            "title": "Website Creation (Wordpress+HTML)",
+            "src": "website-creation.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#e57373"
+        },
+        {
+            "title": "Search Engine Optimization",
+            "src": "seo.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#8bc34a"
+        },
+        {
+            "title": "Google Ads",
+            "src": "adwords.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#388e3c"
+        },
+        {
+            "title": "Bing Ads",
+            "src": "bing-ads.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#008572"
+        },
+        {
+            "title": "Social Media Optimization",
+            "src": "social-media-optimization.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#303f9f"
+        },
+        {
+            "title": "Social Media Marketing",
+            "src": "social-media-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#bbdefb"
+        },
+        {
+            "title": "Content Marketing",
+            "src": "content-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#00BFC8"
+        },
+        {
+            "title": "Email Marketing",
+            "src": "email-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#fbc02d"
+        },
+        {
+            "title": "Google Analytics",
+            "src": "google-analytics.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#616161"
+        },
+        {
+            "title": "Google Tag Manager",
+            "src": "google-tag-manager.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#e3f2fd"
+        },
+        {
+            "title": "Google Webmaster",
+            "src": "google-webmaster.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#1976d2"
+        },
+        {
+            "title": "Bing Tag Manager",
+            "src": "bing-tag-manager.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#aaaaff"
+        },
+        {
+            "title": "Bing Webmaster Tools",
+            "src": "bing-webmaster-tools.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#008572"
+        },
+        {
+            "title": "Google Trends",
+            "src": "google-trend.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Google Admin (G-Suite)",
+            "src": "google-admin.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#00796b"
+        },
+        {
+            "title": "Google Forms With Google Survey",
+            "src": "google-forms.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#d1c4e9"
+        },
+        {
+            "title": "Google Sheets",
+            "src": "google-sheet.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#a5d6a7"
+        },
+        {
+            "title": "Google Docs",
+            "src": "google-docs.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#bbdefb"
+        },
+        {
+            "title": "Mobile Marketing",
+            "src": "mobile-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#64b5f6"
+        },
+        {
+            "title": "Lead Generation",
+            "src": "lead-generation.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#5c999c"
+        },
+        {
+            "title": "E-Commerce Setup &amp; SEO",
+            "src": "e-comm-seo.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#b71c1c"
+        },
+        {
+            "title": "E-Commerce Marketing &amp; SCM Tools",
+            "src": "e-comm-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#ff5722"
+        },
+        {
+            "title": "Online Reputation Management",
+            "src": "online-reputation.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#f6f6f6"
+        },
+        {
+            "title": "Growth Hacking",
+            "src": "growth-hacking.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#b8eaf1"
+        },
+        {
+            "title": "Adobe Spark",
+            "src": "adobe-spark.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#3E3D42"
+        },
+        {
+            "title": "Audio Engineering",
+            "src": "audio-engg.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#7986cb"
+        },
+        {
+            "title": "Video Editing",
+            "src": "video-editing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#424242"
+        },
+        {
+            "title": "Video Optimization",
+            "src": "video-optimization.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#7986cb"
+        },
+        {
+            "title": "Conversion Rate Optimization",
+            "src": "conversion-rate-optimization.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#64798A"
+        },
+        {
+            "title": "Automation Tool",
+            "src": "automation-tool.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Quora Optimization",
+            "src": "quora.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#ff9980"
+        },
+        {
+            "title": "Product Marketing",
+            "src": "product-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#ffe0b2"
+        },
+        {
+            "title": "Affiliate Marketing",
+            "src": "affiliate-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffee"
+        },
+        {
+            "title": "Earning From YouTube",
+            "src": "youtube-earning.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ff0000"
+        },
+        {
+            "title": "Earning From Google AdSense",
+            "src": "adsense.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Earning From Digital Networking",
+            "src": "digital-earning.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#4CAF50"
+        },
+        {
+            "title": "Earning As A Freelancer",
+            "src": "freelancer.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#f4f4f4"
+        }
+    ],
+    "crash-course": [
+        {
+            "title": "Basic Digital Marketing",
+            "src": "basic-digital-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#e64a19"
+        },
+        {
+            "title": "Overview of Digital Marketing",
+            "src": "overview-digital-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#78909c"
+        },
+        {
+            "title": "Website Introduction",
+            "src": "website-intro.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffb74d"
+        },
+        {
+            "title": "Website Creation (Wordpress+HTML)",
+            "src": "website-creation.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#e57373"
+        },
+        {
+            "title": "Content Marketing",
+            "src": "content-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#00BFC8"
+        },
+        {
+            "title": "Adobe Spark",
+            "src": "adobe-spark.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#3E3D42"
+        },
+        {
+            "title": "Search Engine Optimization",
+            "src": "seo.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#8bc34a"
+        },
+        {
+            "title": "Google Analytics",
+            "src": "google-analytics.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#616161"
+        },
+        {
+            "title": "Google Webmaster",
+            "src": "google-webmaster.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#1976d2"
+        },
+        {
+            "title": "Google Ads",
+            "src": "adwords.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#388e3c"
+        },
+        {
+            "title": "Social Media Optimization",
+            "src": "social-media-optimization.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#303f9f"
+        },
+        {
+            "title": "Social Media Marketing",
+            "src": "social-media-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#bbdefb"
+        },
+        {
+            "title": "Mobile Marketing",
+            "src": "mobile-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#64b5f6"
+        },
+        {
+            "title": "Email Marketing",
+            "src": "email-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#fbc02d"
+        },
+        {
+            "title": "E-Commerce Marketing &amp; SCM Tools",
+            "src": "e-comm-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#ff5722"
+        },
+        {
+            "title": "Lead Generation",
+            "src": "lead-generation.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#5c999c"
+        },
+        {
+            "title": "Affiliate Marketing",
+            "src": "affiliate-marketing.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffee"
+        },
+        {
+            "title": "Earning As A Freelancer",
+            "src": "freelancer.jpg",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#f4f4f4"
+        },
+        {
+            "title": "Earning From Google AdSense",
+            "src": "adsense.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        }
+    ],
+    "extras": [
+        {
+            "title": "Advance Analytics",
+            "src": "advance-analytics.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#d32f2f"
+        },
+        {
+            "title": "Automation Tool",
+            "src": "automation-tool.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Black Hat",
+            "src": "black-hat.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#ff8a80"
+        },
+        {
+            "title": "Blogger",
+            "src": "blogger.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#00bcd4"
+        },
+        {
+            "title": "Blogging",
+            "src": "blogging.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "dark",
+            "bc": "#ffffff"
+        },
+        {
+            "title": "Adobe Spark",
+            "src": "adobe-spark.png",
+            "desc": "Hello and welcome to the world of programmers ... ",
+            "theme": "light",
+            "bc": "#3E3D42"
+        }
+    ]
+}

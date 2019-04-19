@@ -1,0 +1,19 @@
+{
+    "testimonials": [
+        {
+            "image": "rivika.jpg",
+            "owner" : "Rivika Manya",
+            "message": "Both the administrative staff and the tutors were quite helpful, supportive and approachable. The location's proximity to the metro station made commuting much easier for everybody. The teachers are very friendly, always present and ready to help. If I could go back in time, I would definitely take the Digital Marketing course again despite it's intense curriculum."
+        },
+        {
+            "image": "raghav.jpg",
+            "owner": "Raghav Kapoor",
+            "message": "The teachers and the the staff are really professional. The teachers have complete knowledge of the topics being taught. They tend to our doubts and questions really well. I had a great over all learning experience. Best Digital Marketing Institute in Delhi. Thank you WAMP Institute!"
+        },
+        {
+            "image": "farha.jpg",
+            "owner": "Farha Qureshi",
+            "message":"I am a business owner; digital marketing ting is one of the most critical skills every entrepreneur needs to acquire today. Thanks to WAMP Institute to give me such wonderful knowledge of Digital Marketing."
+        }
+    ]
+}

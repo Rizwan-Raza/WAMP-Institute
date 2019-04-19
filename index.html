@@ -31,7 +31,7 @@
         }
 
         #testimonial .carousel .carousel-item {
-            height: auto
+            height: 280px;
         }
 
         .carousel .carousel-item {
@@ -47,7 +47,7 @@
             pointer-events: none
         }
 
-        .card-panel {
+        .card-panel p {
             text-align: justify;
         }
 
@@ -70,12 +70,26 @@
         }
 
         @media (max-width: 600px) {
+            .home-banner {
+                background-color: #808080;
+                background-blend-mode: screen;
+            }
+
+            .home-banner h1 {
+                font-size: 3.5rem;
+                text-shadow: 0 2px 2px rgba(0, 0, 0, .14), 0 3px 1px rgba(0, 0, 0, .12), 0 1px 5px rgba(0, 0, 0, .2);
+            }
+
             #about .carousel .carousel-item {
                 width: 200px;
             }
 
             #about .carousel {
                 height: 200px;
+            }
+
+            #testimonial .carousel .carousel-item {
+                width: 300px;
             }
         }
     </style>
@@ -149,7 +163,7 @@
         <section class="p-4 amber">
             <div class="row">
                 <div class="col m6">
-                    <h1 class="center fw-700 px-4">Best Digital Marketing Courses in Delhi!</h1>
+                    <h1 class="center fw-700">Best Digital Marketing Courses in Delhi!</h1>
                 </div>
                 <div class="col m6">
                     <h5 class="center p-4">
@@ -241,6 +255,11 @@
                 </div>
             </div>
         </section>
+        <section class="bg-primary p-4">
+            <h1 class="center fw-500 my-4">
+                All you need is <span class="fw-700">45 Days</span> to become an impeccable Digital Marketer!
+            </h1>
+        </section>
         <section class="p-4">
             <h3 class="center-align">Digital Marketing Courses
             </h3>
@@ -296,11 +315,10 @@
                             Be a giant!
                         </h5>
                         <p class="py-4">
-                            Masters in Advanced Digital Marketing is made to assist you to develop an advanced
-                            understanding of the realistic skills required to apply and manage successful digital
-                            marketing techniques. A course specially designed for start-up owners and aspiring
-                            businessmen, a course where you’ll learn 62 Modules with 17 certifications to give you
-                            complete knowledge of Digital Marketing from the basics.
+                            A new concept of Crash Course in Digital Marketing is introduced by WAMP Institute, where
+                            all you need is 36 hours to learn the best skills. Yes! you read that right, as per the
+                            calculations very less people are able to reach the managerial posts before they reach
+                            mid-thirties. But are you passionate, then you need to take the right step.
 
                         </p>
                         <a href="contact" class="btn pos-abs white red-text text-darken-4"
@@ -369,8 +387,8 @@
             <br />
             <div class="flex row">
                 <div class="flex col m6 center">
-                    <img src="images/img-tablet-vertical.png" class="center center-align full mx-auto"
-                        style="max-width: 400px; object-fit: contain;object-position: top center" />
+                    <img src="images/Ipad-pro.png" class="center center-align full mx-auto"
+                        style="max-width: 540px; object-fit: contain;object-position: top center" />
                 </div>
                 <div class="col m6 flex">
                     <div style="max-width: 500px;">
@@ -421,39 +439,26 @@
             <h3 class="text-capitalize center-align px-2 fw-600">What People say</h3>
             <hr class="short-border" />
 
-            <div class="carousel">
-                <div class="carousel-item card-panel">
+            <div class="carousel flex">
+                <?php require_once "includes/fetcher.php";
+        $testimonials = getJson("./data/testimonials.json", "testimonials");foreach ($testimonials
+        as $review) { ?>
+
+                <div class="carousel-item card-panel flex">
+                    <div class="avatar pos-abs w-full center" style="top: -30px; margin: 0px -24px">
+                        <img src="images/testimonials/<?=$review['image']?>" class="border-round  z-depth-2"
+                            style="border: 4px solid white;" />
+                        <h6 class="center fw-500">
+                            <?=$review['owner']?>
+                        </h6>
+                    </div>
+                    <br />
+                    <br />
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
-                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
-                        sapiente cupiditate.
+                        <?=$review['message']?>
                     </p>
-                    <h4 class="right-align">- Anonymous</h4>
                 </div>
-                <div class="carousel-item card-panel">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
-                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
-                        sapiente cupiditate.
-                    </p>
-                    <h4 class="right-align">- Anonymous</h4>
-                </div>
-                <div class="carousel-item card-panel">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
-                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
-                        sapiente cupiditate.
-                    </p>
-                    <h4 class="right-align">- Anonymous</h4>
-                </div>
-                <div class="carousel-item card-panel">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum incidunt ex porro ut fugiat iste
-                        atque maxime omnis, vel debitis quis maiores expedita doloribus quibusdam dolor itaque optio
-                        sapiente cupiditate.
-                    </p>
-                    <h4 class="right-align">- Anonymous</h4>
-                </div>
+                <?php } ?>
             </div>
 
 
@@ -515,39 +520,6 @@
             $('.modal').modal();
         });
 
-        var tag = document.createElement('script');
-        tag.id = 'iframe-demo';
-        tag.src = 'https://www.youtube.com/iframe_api';
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            console.log("Hello0");
-            player = new YT.Player('ytVideo-1', {
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-        function onPlayerReady(event) {
-            console.log("Hello1");
-
-        }
-        function onPlayerStateChange(event) {
-            console.log("Hello2");
-
-            if (event.data == YT.PlayerState.PLAYING) {
-                alert('video started');
-                playing = true;
-            }
-
-            else if (event.data == YT.PlayerState.PAUSED) {
-                alert('video paused');
-                playing = false;
-            }
-        }
     </script>
 </body>
 

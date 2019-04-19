@@ -417,11 +417,11 @@
     }
 
     .pos-rel {
-        position: relative
+        position: relative !important;
     }
 
     .pos-abs {
-        position: absolute
+        position: absolute !important;
     }
 
     @media (min-width:992px) {
@@ -622,7 +622,7 @@
     }
 
     hr.short-border {
-        border: 2px solid #3d85c6;
+        border: 2px solid #263a73;
         width: 100px;
         margin: 0 auto
     }
@@ -631,7 +631,7 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
-        max-height: 240px
+        max-height: 370px
     }
 
     section.card-panel {
@@ -778,6 +778,10 @@
 
     .instagram:hover {
         background-color: #e1306c
+    }
+
+    .youtube:hover {
+        background-color: #ff0000
     }
 
     footer .left.shift-left {

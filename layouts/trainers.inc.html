@@ -1,0 +1,62 @@
+<section class="p-4" id="trainers">
+    <h3 class="center-align">Trainers</h3>
+    <p class="mx-4">
+        It is truly said that if you wish to climb up a mountain, you need to take the first step. However, a journey of
+        discovery begins with a step. A good trainer helps you discover the best in you.
+    </p>
+
+    <div class="p-4">
+
+        <?php require_once "includes/fetcher.php";
+        $trainers = getJson("./data/trainers.json", "trainers"); usort($trainers,
+        function($a,$b) { return $a['order'] <=> $b['order']; }); foreach ($trainers
+        as $trainer) { ?>
+
+        <div class="row valign-wrapper white border-radius-8 z-depth-2 mb-4">
+            <div class="col s12 m3 l2 p-0" id="<?=$trainer['id']?>">
+                <div class="avatar lh-0">
+                    <img src="<?=$trainer['image']?>" alt="<?=$trainer['name']?>" class="w-full responsive-img" />
+                </div>
+            </div>
+            <div class="col s12 m9 l10 pl-4 py-2">
+                <h4 class="black-text mt-0 fw-500"><?=$trainer['name']?></h4>
+                <h6 class="text-primary fw-500"><?=$trainer['role']?></h6>
+                <p class="grey-text text-darken-1"><?=$trainer['desc']?></p>
+                <div>
+                    <?php if(isset($trainer['email'])) { ?>
+                    <a href="mailto:<?=$trainer['email']?>"
+                        class="waves-effect waves-light btn btn-flat bg-primary my-1">
+                        <i class="material-icons">email</i>
+                    </a>
+                    <?php } ?> <?php if(isset($trainer['linkedin'])) { ?>
+                    <a href="<?=$trainer['linkedin']?>" class="waves-effect waves-light btn btn-flat bg-primary my-1"
+                        target="_blank">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIxLDIxSDE3VjE0LjI1QzE3LDEzLjE5IDE1LjgxLDEyLjMxIDE0Ljc1LDEyLjMxQzEzLjY5LDEyLjMxIDEzLDEzLjE5IDEzLDE0LjI1VjIxSDlWOUgxM1YxMUMxMy42Niw5LjkzIDE1LjM2LDkuMjQgMTYuNSw5LjI0QzE5LDkuMjQgMjEsMTEuMjggMjEsMTMuNzVWMjFNNywyMUgzVjlIN1YyMU01LDNBMiwyIDAgMCwxIDcsNUEyLDIgMCAwLDEgNSw3QTIsMiAwIDAsMSAzLDVBMiwyIDAgMCwxIDUsM1oiIC8+PC9zdmc+"
+                            style="margin:4px -4px 0px -4px" alt="linkedin" />
+                    </a>
+                    <?php } ?>
+                    <!--
+                          <button class="btn btn-flat waves-light waves-effect bg-primary my-1"><i class="material-icons">email</i></button>
+                          <button class="btn btn-flat waves-light waves-effect bg-primary my-1"><i class="material-icons">call</i></button>
+                        -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <?php } ?>
+    </div>
+</section>
+
+
+<!-- Modal Structure -->
+<div id="instructorInfo" class="modal" style="max-width: 500px">
+    <div class="modal-content">
+        <h4>Instructor Name</h4>
+        <p>His/Her information</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-red btn-flat">Close</a>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{
+    "trainers": [{
+        "image": "images/trainers/Puneet-Saxena.jpg",
+        "name": "Puneet Saxena",
+        "id": "puneet-saxena",
+        "role": "Senior Digital Marketing Trainer",
+        "order": 1,
+        "desc": "Being an International scholar in BCA, Gold Medalist of MCA, he has worked as an Ethical Hacker. Currently he is handling the Digital Marketing Team for Zero Gravity India Gurugram. With more than 7 years of working experience alongside 4 years of training experience, he believes in worshipping his work by educating as many people as he can. Since his career began as a trainer in Digital Marketing he has trained more than 570 working professionals and students.",
+        "linkedin": "#",
+        "email": "#"
+      },
+      {
+        "image": "images/trainers/Faris-Shah.jpg",
+        "name": "S M Faris",
+        "id": "sm-faris",
+        "role": "Digital Advertising Trainer",
+        "order": 2,
+        "desc": "Recognised as an expert in Digital Marketing, his core specialization includes Digital Advertising. With an experience of about 5 years in the field, S M Faris has worked on a great number of projects taking several organizations to a greater height. He holds a Bachelors degree in Business Management and Marketing; however he works throughout for WAMP Institute and WAMP InfoTech, helping students to specialize with live projects.  ",
+          "linkedin": "https://www.linkedin.com/in/s-m-faris-9406a153/",
+          "email": "faris@wampinfotech.com"
+      },
+      {
+        "image": "images/trainers/Vivek-Dubey.jpg",
+        "name": "Vivek Dubey",
+        "id": "vivek-dubey",
+        "role": "Content and Digital Marketing Trainer",
+        "order": 3,
+        "desc": "Vivek has a great responsibility to work for WAMP InfoTech as he serves as the SEO team leader. With a great amount of experience in the SEO and website creation field; he takes care of various organizations’ website rankings. However, his work is his passion making him the best trainers for SEO and Website creation. With that he also holds a degree masters in computer applications. ",
+          "linkedin": "https://www.linkedin.com/in/vivek-dubey/",
+          "email": "vivek@wampinfotech.com"
+      },
+      {
+        "image": "images/trainers/Amir-Siddiqui.jpg",
+        "name": "Amir Siddiqui",
+        "id": "amir-siddiqui",
+        "role": "SEO Trainer",
+        "order": 4,
+        "desc": "With commendable explanation qualities Amir has an eye to correct the mistakes; however, he is an SEO expert and has delivered great results in the same field. He maps out his great strategies to come up with result oriented SEO training.",
+          "linkedin": "https://www.linkedin.com/in/amir-siddiqui/",
+          "email": "amir@wampinfotech.com"
+      }
+    ]
+}

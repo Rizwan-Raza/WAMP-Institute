@@ -1,21 +1,27 @@
 {
     "courses": [{
-        "src": "images/banner2.jpg",
+        "src": "images/b1.jpg",
         "title": "Executive Digital Marketing",
+        "subtitle": "Unlock the secrets of the Digital Marketing world!",
         "url": "executive-digital-marketing",
-        "content": "And they say ‘with great power, comes great responsibility’, Momin is always full of energy and life. He is a lawyer by profession but he knew the digital field is at a boom and therefore wanted to explore in the same field. Even with his hectic schedule in the state court, he pays regular visits to the office and discusses about the work with all the employs. His bright smile and positive energy is infectious. He serves as the President and the legal advisor for the company."
+        "module": "executive",
+        "content": "A course specially designed to present a base for marketers and job-seekers, who would like to specialize in Digital Marketing. With 8 certifications in just two and a half months; you will learn a wide range of modules like SEO, SMM, Google Ads, and several others."
       },
       {
-        "src": "images/banner2.jpg",
+        "src": "images/b2.jpg",
         "title": "Advance Digital Marketing",
+        "subtitle": "Be the champ of the Digital Marketing world!",
         "url": "advance-digital-marketing",
-        "content": "And they say ‘with great power, comes great responsibility’, Momin is always full of energy and life. He is a lawyer by profession but he knew the digital field is at a boom and therefore wanted to explore in the same field. Even with his hectic schedule in the state court, he pays regular visits to the office and discusses about the work with all the employs. His bright smile and positive energy is infectious. He serves as the President and the legal advisor for the company."
+        "module": "advance",
+        "content": "Advanced Digital Marketing Course is one of the most reputed courses by WAMP Institute. A four months course, where you’ll learn 40 Modules; perfect for students who want to add skills and knowledge for better job opportunities. The course is bifurcated on the basis of practical knowledge and theoretical knowledge, as it is 90% practical and 10% theory."
       },
       {
-        "src": "images/banner2.jpg",
-        "title": "Master Digital Marketing",
-        "url": "masters-digital-marketing",
-        "content": "And they say ‘with great power, comes great responsibility’, Momin is always full of energy and life. He is a lawyer by profession but he knew the digital field is at a boom and therefore wanted to explore in the same field. Even with his hectic schedule in the state court, he pays regular visits to the office and discusses about the work with all the employs. His bright smile and positive energy is infectious. He serves as the President and the legal advisor for the company."
+        "src": "images/b3.jpg",
+        "title": "Crash Course in Digital Marketing",
+        "subtitle": "Be a giant!",
+        "url": "crash-course-digital-marketing",
+        "module": "crash-course",
+        "content": "A new concept of Crash Course in Digital Marketing is introduced by WAMP Institute, where all you need is 36 hours to learn the best skills. Yes! you read that right, as per the calculations very less people are able to reach the managerial posts before they reach mid-thirties. But are you passionate, then you need to take the right step."
       }
     ]
 }

@@ -1,9 +1,14 @@
 <?php
-session_start();
-if (isset($_GET['url'])) {
-    require_once "includes/fetcher.php";
-    $courses = array_filter(getJson("./data/courses.json", "courses"), function ($value) {
-        return $value['url'] == $_GET['url'];
+// session_start();
+// print_r($_SERVER);
+// if (isset($_GET['url'])) {
+    $url = explode("/",$_SERVER['PHP_SELF']);
+    $url = explode(".", $url[count($url)-1]);
+    $url = $url[0];
+    $GLOBALS['current_page_url'] = $url;
+    require_once "../includes/fetcher.php";
+    $courses = array_filter(getJson("../data/courses.json", "courses"), function ($value) {
+        return $value['url'] == $GLOBALS['current_page_url'];
     });
 
     if (count($courses) != 1) {
@@ -15,11 +20,12 @@ if (isset($_GET['url'])) {
     foreach ($courses as $course) {
         extract($course, EXTR_SKIP);
     }
-} else {
-    http_response_code(404);
-    // header("Location: ../4O4");
-    return;
-} ?>
+// } else {
+//     http_response_code(404);
+//     // header("Location: ../4O4");
+//     return;
+// }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +33,8 @@ if (isset($_GET['url'])) {
     <title>
         Digital Marketing Agency, Web Development Company | WAMP Institute
     </title>
+    <base href="../" />
+    <?php chdir("../"); ?>
     <?php include "includes/head.inc.php"; ?>
 </head>
 
@@ -37,13 +45,44 @@ if (isset($_GET['url'])) {
             <img class="home-banner lazy" src="<?=$src?>" alt="<?=$title?>" />
         </header>
         <section class="p-4 m-0">
-            <h4 class="center-align fw-600"><?=$title?></h4>
-            <hr class="short-border" />
+            <h3 class="center-align"><?=$title?></h3>
+            <h5 class="center-align text-primary fw-700"><?=$subtitle?></h5>
+            <hr class="short-border my-4" />
             <br />
+            <div class="container">
+                
+                <?=$content?>
+                <br />
+                <div class="row" style="margin: 20px -0.75rem">
+                    <?php require_once "includes/fetcher.php";
+                $modules = getJson("./data/modules.json", $module); 
+                foreach ($modules as $module) { ?>
+                    <div class="col s6 m4 l3">
+                        <div class="card waves-effect waves-<?=$module['theme']?> w-full" style="height: 150px;background-color: <?=$module['bc']?>" onclick="openModal('<?=$module['title']?>')">
+                            <img src="images/courses/<?=$module['src']?>" class="pos-abs"
+                                style="top:0;left:0;right:0;bottom:0;margin:auto" />
+                        </div>
+                        <h6 class="center fw-500" style="height: 50px;"><?=$module['title']?></h6>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
         </section>
         <?php require_once "layouts/footer.inc.html"; ?>
+        <div id="moduleDetailModal" class="modal border-radius-8">
+            <div class="modal-content">
+                <h4>Module Title</h4>
+                <p></p>
+            </div>
+        </div>
     </div>
     <?php require_once "includes/scripts.inc.php" ?>
+    <script>
+    function openModal(title) {
+        $(".moduleDetailModal h4").text(title);
+        $(".moduleDetailModal").modal("open");
+    }
+    </script>
 </body>
 
 </html>
