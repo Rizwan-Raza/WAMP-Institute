@@ -3,47 +3,14 @@
 
 <head>
   <title>
-    Digital Marketing Agency, Web Development Company | WAMP Institute
+    Get in touch with us | WAMP Digital Marketing Institute South Delhi
   </title>
+  <meta name="description"
+    content="WAMP Institute offers Digital Marketing courses in South Extension-1, focusing on qualitative training by professionals, in micro batches. Get in touch to know more." />
+  <meta name="keywords"
+    content="Conatct Wamp Institute, Contact Digital Marketing Institute, Contact Digital Marketing Course, digital marketing institute contact number, digital marketing advisor, contact us" />
   <?php include "includes/head.inc.php"; ?>
-  <style>
-    .map {
-      width: 100%;
-      height: 400px;
-      border: 0;
-    }
-
-    #c_message {
-      height: 80px !important;
-    }
-
-    .select-wrapper .dropdown-content li>a,
-    .select-wrapper .dropdown-content li:not(li[disabled])>span {
-      color: #263a73;
-    }
-
-    #contact_form {
-      position: relative;
-    }
-
-    @media (max-width: 992px) {
-      #contact_form {
-        width: 80%;
-        margin: 1rem 10% 2rem 10%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .map {
-        height: 240px;
-      }
-
-      #contact_form {
-        width: 100% !important;
-        margin-left: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 
 <body>
@@ -52,7 +19,7 @@
     <header>
       <img src="images/contact.jpg" class="home-banner" alt="WAMP Banner" />
     </header>
-    <section class="p-4" id="contact">
+    <section class="p-4 pb-0" id="contact">
       <h4 class="center-align fw-600">Contact Us</h4>
       <hr class="short-border" />
       <br />
@@ -84,34 +51,6 @@
               </label>
             </div>
             <div class="input-field">
-              <select name="country">
-                <option value="" disabled selected>Choose your Country</option>
-                <option value="1">United States</option>
-                <option value="2">India</option>
-                <option value="3">Others</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <select name="service">
-                <option value="" disabled selected>Choose your Service</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Web App Development">Web App Development</option>
-                <option value="Software Development">Software Development</option>
-                <option value="Android Development">Android Development</option>
-                <option value="E-Commerce Solution">E-Commerce Solution</option>
-                <option value="Web Maintenance">Web Maintenance</option>
-                <option value="Tech Support">Tech Support</option>
-                <option value="Others">Others</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <input type="text" name="company" id="c_company" />
-              <label for="c_company">
-                Company
-              </label>
-            </div>
-            <div class="input-field">
               <textarea id="c_message" class="materialize-textarea" data-length="100" required
                 name="message"></textarea>
               <label for="c_message">Message</label>
@@ -135,8 +74,7 @@
             <a href="tel:+918376075908" class="grey-text text-darken-2 fw-500 mr-4">+91-9990067806</a>
           </div>
           <p class="grey-text text-darken-2">
-            26-E, White House Building, S3 Khizrabad, Near Lions Hospital, New
-            Delhi-110025
+            C-23, near Dena Bank, South Extension-I, New Delhi- 110049
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.9131367516584!2d77.27352471467859!3d28.572370982441598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce390f4e4c257%3A0x9222d850b2bb009d!2sWAMP+Institute!5e0!3m2!1sen!2sin!4v1527589111383"
@@ -156,7 +94,7 @@
   </div>
 
   <?php include "includes/scripts.inc.php"; ?>
-  <script src="ui-scripts/contact.js"></script>
+  <script async src="js/contact.js"></script>
 </body>
 
 </html>

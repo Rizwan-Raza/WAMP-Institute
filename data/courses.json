@@ -1,27 +1,67 @@
 {
-    "courses": [{
-        "src": "images/b1.jpg",
-        "title": "Executive Digital Marketing",
-        "subtitle": "Unlock the secrets of the Digital Marketing world!",
-        "url": "executive-digital-marketing",
-        "module": "executive",
-        "content": "A course specially designed to present a base for marketers and job-seekers, who would like to specialize in Digital Marketing. With 8 certifications in just two and a half months; you will learn a wide range of modules like SEO, SMM, Google Ads, and several others."
-      },
-      {
-        "src": "images/b2.jpg",
-        "title": "Advance Digital Marketing",
-        "subtitle": "Be the champ of the Digital Marketing world!",
-        "url": "advance-digital-marketing",
-        "module": "advance",
-        "content": "Advanced Digital Marketing Course is one of the most reputed courses by WAMP Institute. A four months course, where you’ll learn 40 Modules; perfect for students who want to add skills and knowledge for better job opportunities. The course is bifurcated on the basis of practical knowledge and theoretical knowledge, as it is 90% practical and 10% theory."
-      },
-      {
-        "src": "images/b3.jpg",
-        "title": "Crash Course in Digital Marketing",
-        "subtitle": "Be a giant!",
-        "url": "crash-course-digital-marketing",
-        "module": "crash-course",
-        "content": "A new concept of Crash Course in Digital Marketing is introduced by WAMP Institute, where all you need is 36 hours to learn the best skills. Yes! you read that right, as per the calculations very less people are able to reach the managerial posts before they reach mid-thirties. But are you passionate, then you need to take the right step."
+  "courses": [
+    {
+      "src": "images/b1.jpg",
+      "title": "Executive Digital Marketing Course",
+      "subtitle": "Unlock the secrets of the Digital Marketing world!",
+      "url": "executive-digital-marketing",
+      "module": "executive",
+      "content": "A course specially designed to present a base for marketers and job-seekers, who would like to specialize in Digital Marketing. With 8 certifications in just two and a half months; you will learn a wide range of modules like SEO, SMM, Google Ads, and several others. Executive Digital Marketing Course is specially designed for beginners, who want to kick start their <a href='faq'>career in Digital Marketing</a> and at the same time specializes in multiple modules. The course covers an array of 24 Modules giving the trainees a choice to choose amongst the several modules. They can either work as a <a href='https://www.wampinfotech.com/services/search-engine-optimization'>specialist in SEO</a> or they may work as a freelancer and cover various aspects of Internet Marketing for an organization.",
+      "meta": {
+        "title": "Executive Digital Marketing Course | WAMP Institute South Delhi",
+        "desc": "WAMP Institute offers Executive Digital Marketing Course, designed especially for beginners. Learn from the best trainers with live projects and 100% internship.",
+        "keywords": [
+          "best digital marketing course in delhi",
+          "online digital marketing course",
+          "complete digital marketing course",
+          "digital marketing course delhi",
+          "digital marketing course online",
+          "best digital marketing course in india",
+          "digital marketing training in delhi"
+        ]
       }
-    ]
+    },
+    {
+      "src": "images/b2.jpg",
+      "title": "Advanced Digital Marketing Course",
+      "subtitle": "Be the champ of the Digital Marketing world!",
+      "url": "advanced-digital-marketing",
+      "module": "advanced",
+      "content": "Advanced Digital Marketing Course is one of the most reputed courses by <a href='./'>WAMP Institute</a>. A four months course, where you’ll learn 40 Modules; perfect for professionals who want to add skills and knowledge for better job opportunities. The course is bifurcated on the basis of practical knowledge and theoretical knowledge, as it is 90% practical and 10% theory. However, the Advanced Digital Marketing Course promises to deliver enough knowledge to the trainee so that they may start their own business. The course covers a wide range of modules for better understanding of the complexities of <a href='https://blog.hubspot.com/marketing/what-is-digital-marketing'>Digital Marketing</a>, giving the trainees exemplary live projects and assisting them to know better.",
+      "meta": {
+        "title": "Advanced Digital Marketing Course | WAMP Institute South Delhi",
+        "desc": "WAMP Institute offers Advanced Digital Marketing Course, helping trainees to excel in Digital Marketing and preparing them for managerial posts with quality training.",
+        "keywords": [
+          "advanced digital marketing course",
+          "digital marketing courses",
+          "digital marketing modules",
+          "digital marketing course details",
+          "diploma in digital marketing",
+          "digital marketing course syllabusgoogle digital marketing course",
+          "digital marketing course pdf"
+        ]
+      }
+    },
+    {
+      "src": "images/b3.jpg",
+      "title": "Crash Course in Digital Marketing",
+      "subtitle": "Be a giant!",
+      "url": "crash-course-digital-marketing",
+      "module": "crash-course",
+      "content": "A new concept of Crash Course in Digital Marketing is introduced by <a href='./'>WAMP Institute</a>, where all you need is 36 hours to learn the best skills. Yes! you read that right, as per the calculations very fewer people are able to reach the managerial posts before they reach mid-thirties. But are you passionate, then you need to take the right step. A course designed for quick-learners, trainees will be given <a href='https://www.youtube.com/channel/UCIpvPRHKe6mciQ3_kw7oxxg'>special educational videos</a> which they may refer to once they take a class. The course will help you learn the basics and advanced Digital Marketing techniques in just 45 days, giving you the qualities of great marketing of the digital world.",
+      "meta": {
+        "title": "Crash Course in Digital Marketing | WAMP Institute South Delhi",
+        "desc": "WAMP Institute offers a Crash Course in Digital Marketing that will help you become a professional in 45 days with quality training & experience with live projects.",
+        "keywords": [
+          "digital marketing crash course",
+          "crash course",
+          "digital marketing training",
+          "best digital marketing course",
+          "digital marketing course near me",
+          "digital marketing course syllabus",
+          "learn digital marketing"
+        ]
+      }
+    }
+  ]
 }

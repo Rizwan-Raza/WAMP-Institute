@@ -1,0 +1,32 @@
+#courses .container .row {
+    margin: 20px -0.75rem
+}
+
+#courses .container .row.flex {
+    justify-content: center
+}
+
+#courses .card img.pos-abs {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto
+}
+
+#courses .row .card {
+    height: 150px;
+}
+
+#courses .row .card+h6 {
+    height: 50px;
+}
+
+#courses #whatsApp a {
+    width: auto;
+    border-radius: 32px;
+}
+
+#courses #whatsApp a svg {
+    margin: 16px 16px 16px 4px;
+}

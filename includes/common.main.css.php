@@ -142,10 +142,21 @@
         padding-right: 1rem !important
     }
 
+    .px-3 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important
+    }
+
     .px-4 {
         padding-left: 2rem !important;
         padding-right: 2rem !important
     }
+
+    .py-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important
+    }
+
 
     .py-2 {
         padding-top: 1rem !important;
@@ -212,8 +223,13 @@
     .pt-4 {
         padding-top: 2rem !important
     }
+
     .p-m-3 {
-            padding: 0.5rem 0 !important;
+        padding: 0.5rem 0 !important;
+    }
+
+    .p-l-3 {
+        padding: 0.5rem 0 !important;
     }
 
     @media (min-width:600px) {
@@ -375,6 +391,7 @@
     .text-capitalize {
         text-transform: capitalize
     }
+
     .text-justify {
         text-align: justify;
     }
@@ -498,44 +515,48 @@
     }
 
     .small-drop {
-            height: 0;
-            opacity: 0;
-            transition: 0.2s all ease;
-        }
+        height: 0;
+        opacity: 0;
+        transition: 0.2s all ease;
+    }
 
-        .nav-wrapper .drop {
-            position: relative;
-        }
+    .nav-wrapper .drop {
+        position: relative;
+    }
 
-        .nav-wrapper .drop ul {
-            background-color: #ffffff;
-            position: absolute;
-            left: 0;
-            transition: all 0.3s ease;
-            -webkit-transform: scale(0);
-            transform: scale(0);
-            -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
-                0 2px 8px 0 rgba(0, 0, 0, 0.12);
-        }
+    .nav-wrapper .drop ul {
+        background-color: #ffffff;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
+            0 2px 8px 0 rgba(0, 0, 0, 0.12);
+    }
 
-        .nav-wrapper .drop ul li {
-            display: block;
-            width: 100%;
-        }
+    .nav-wrapper .drop ul li {
+        display: block;
+        width: 100%;
+    }
 
-        .nav-wrapper .drop ul li a {
-            width: 100%;
-            display: inline-block;
-            white-space: pre;
-            box-sizing: border-box;
-        }
+    .nav-wrapper .drop ul li a {
+        width: 100%;
+        display: inline-block;
+        white-space: pre;
+        box-sizing: border-box;
+    }
 
-        .nav-wrapper .drop:hover ul {
-            -webkit-transform: scale(1);
-            transform: scale(1);
-        }
+    .nav-wrapper .drop:hover ul {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    nav .right.hide-on-large-only li {
+        padding-top: 14px;
+    }
 
 
     #page_loader {
@@ -642,6 +663,7 @@
         section.card-panel {
             margin: 1rem
         }
+
         .row.mx-2 {
             margin: 0px !important;
         }
@@ -732,12 +754,6 @@
         font-size: 1.3rem;
     }
 
-    #footer {
-        background-image: url(images/footer_x600.webp);
-        background-position: top;
-        background-color: #181820
-    }
-
     #footer a i.at-symbol {
         font-size: 14px
     }
@@ -789,6 +805,11 @@
         padding-left: 5rem
     }
 
+    #footer ul li a.text-light span {
+        width: calc(100% - 40px);
+        display: inline-block
+    }
+
     @media (min-width:600px) {
 
         .flow-text li,
@@ -806,6 +827,10 @@
             left: 40px;
             transform: none;
             padding-left: 1rem
+        }
+
+        nav .right.hide-on-large-only li {
+            padding-top: 10px;
         }
 
         nav .brand-img {
@@ -833,11 +858,16 @@
             width: 100%;
             padding-left: 0
         }
+
     }
 
     @media (min-width:992px) {
         .serviceDropDownContainer .dropdown-content li {
             clear: none
+        }
+
+        .p-l-3 {
+            padding: 0.5rem 1.5rem !important;
         }
     }
 

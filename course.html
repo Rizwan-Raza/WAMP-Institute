@@ -2,87 +2,112 @@
 // session_start();
 // print_r($_SERVER);
 // if (isset($_GET['url'])) {
-    $url = explode("/",$_SERVER['PHP_SELF']);
-    $url = explode(".", $url[count($url)-1]);
-    $url = $url[0];
-    $GLOBALS['current_page_url'] = $url;
-    require_once "../includes/fetcher.php";
-    $courses = array_filter(getJson("../data/courses.json", "courses"), function ($value) {
-        return $value['url'] == $GLOBALS['current_page_url'];
-    });
+$url = explode("/", $_SERVER['PHP_SELF']);
+$url = explode(".", $url[count($url) - 1]);
+$url = $url[0];
+$GLOBALS['current_page_url'] = $url;
+require_once "../includes/fetcher.php";
+$courses = array_filter(getJson("../data/courses.json", "courses"), function ($value) {
+    return $value['url'] == $GLOBALS['current_page_url'];
+});
 
-    if (count($courses) != 1) {
-        http_response_code(500);
-        // header("Location: ../5OO");
-        return;
-    }
-    
-    foreach ($courses as $course) {
-        extract($course, EXTR_SKIP);
-    }
+if (count($courses) != 1) {
+    http_response_code(500);
+    // header("Location: ../5OO");
+    return;
+}
+
+foreach ($courses as $course) {
+    extract($course, EXTR_SKIP);
+}
 // } else {
 //     http_response_code(404);
 //     // header("Location: ../4O4");
 //     return;
 // }
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>
-        Digital Marketing Agency, Web Development Company | WAMP Institute
+        <?= $meta['title'] ?>
     </title>
+    <meta name="description" content="<?= $meta['desc'] ?>" />
+    <meta name="keywords" content="<?= implode(", ", $meta['keywords']) ?>" />
     <base href="../" />
     <?php chdir("../"); ?>
     <?php include "includes/head.inc.php"; ?>
+    <link rel="stylesheet" href="css/course.css" />
 </head>
 
 <body>
     <?php include "layouts/nav.inc.html"; ?>
-    <div class="scrollable grey lighten-3">
-        <header class="lh-0">
-            <img class="home-banner lazy" src="<?=$src?>" alt="<?=$title?>" />
-        </header>
-        <section class="p-4 m-0">
-            <h3 class="center-align"><?=$title?></h3>
-            <h5 class="center-align text-primary fw-700"><?=$subtitle?></h5>
-            <hr class="short-border my-4" />
+    <header class="lh-0">
+        <img class="home-banner lazy" src="<?= $src ?>" alt="<?= $title ?>" />
+    </header>
+    <section class="m-0" id="courses">
+        <h3 class="center-align"><?= $title ?></h3>
+        <h5 class="center-align text-primary fw-700"><?= $subtitle ?></h5>
+        <hr class="short-border my-4" />
+        <br />
+        <div class="container flow-text">
+
+            <p class="text-justify"><?= $content ?></p>
             <br />
-            <div class="container">
-                
-                <?=$content?>
-                <br />
-                <div class="row" style="margin: 20px -0.75rem">
-                    <?php require_once "includes/fetcher.php";
-                $modules = getJson("./data/modules.json", $module); 
-                foreach ($modules as $module) { ?>
+            <div class="row">
+                <?php require_once "includes/fetcher.php";
+                $modules = getJson("./data/modules.json", $module);
+                $normals = $modules['normal'];
+                foreach ($normals as $module) { ?>
                     <div class="col s6 m4 l3">
-                        <div class="card waves-effect waves-<?=$module['theme']?> w-full" style="height: 150px;background-color: <?=$module['bc']?>" onclick="openModal('<?=$module['title']?>')">
-                            <img src="images/courses/<?=$module['src']?>" class="pos-abs"
-                                style="top:0;left:0;right:0;bottom:0;margin:auto" />
+                        <div class="card waves-effect waves-<?= $module['theme'] ?> w-full" style="background-color: <?= $module['bc'] ?>" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>')">
+                            <img src="images/courses/<?= $module['src'] ?>" class="pos-abs" />
                         </div>
-                        <h6 class="center fw-500" style="height: 50px;"><?=$module['title']?></h6>
+                        <h6 class="center fw-500"><?= $module['title'] ?></h6>
                     </div>
+                <?php } ?>
+            </div>
+            <?php $compliments = $modules['complimentary'];
+            if (count($compliments) > 0) { ?>
+                <h4 class="text-primary fw-500 center-align">Complimentary </h4>
+                <hr class="short-border" />
+                <div class="row flex">
+                    <?php foreach ($compliments as $module) { ?>
+                        <div class="col s6 m4 l3 m-0">
+                            <div class="card waves-effect waves-<?= $module['theme'] ?> w-full" style="background-color: <?= $module['bc'] ?>">
+                                <img src="images/courses/<?= $module['src'] ?>" class="pos-abs" />
+                            </div>
+                            <h6 class="center fw-500"><?= $module['title'] ?></h6>
+                        </div>
                     <?php } ?>
                 </div>
-            </div>
-        </section>
-        <?php require_once "layouts/footer.inc.html"; ?>
-        <div id="moduleDetailModal" class="modal border-radius-8">
-            <div class="modal-content">
-                <h4>Module Title</h4>
-                <p></p>
+            <?php } ?>
+
+            <div class="container p-2 center-align" id="whatsApp">
+                <a href="https://wa.me/919990067806?text=Hello!%0AI%20am%20looking%20for%20a%20Digital%20Marketing%20Course%2C%20kindly%20elaborate!" class="fw-500 waves-effect waves-light btn-large px-2 pr-3 btn-floating my-2 bg-whatsapp" target="_blank"><svg class="left" role="img" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fff" d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.576-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411" />
+                    </svg>
+                    WhatsApp Us <span class="hide-on-med-and-down">for more details</span></a>
             </div>
         </div>
-    </div>
-    <?php require_once "includes/scripts.inc.php" ?>
-    <script>
-    function openModal(title) {
-        $(".moduleDetailModal h4").text(title);
-        $(".moduleDetailModal").modal("open");
-    }
-    </script>
+        <?php require_once "layouts/footer.inc.html"; ?>
+        <!-- <div id="moduleDetailModal" class="modal border-radius-8">
+                <div class="modal-content">
+                    <h4>Module Title</h4>
+                    <p></p>
+                </div>
+            </div> -->
+        </div>
+        <?php require_once "includes/scripts.inc.php" ?>
+        <script>
+            function openModal(title, desc) {
+                $("#moduleDetailModal h4").text(title);
+                $("#moduleDetailModal p").text(desc);
+                $("#moduleDetailModal").modal("open");
+            }
+        </script>
+    </section>
 </body>
 
 </html>

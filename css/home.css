@@ -1,0 +1,164 @@
+@font-face {
+    font-family: "CenturySchoolbookBold";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(../fonts/CenturySchoolbookBold.ttf);
+}
+
+.fancy-font {
+    font-family: 'CenturySchoolbookBold';
+}
+
+.home-banner {
+    max-height: 400px;
+    height: 400px;
+    background-image: url('../images/Digital-Marketing.jpg');
+    background-position: 75% 25%;
+    background-size: cover
+}
+
+.home-banner>.pos-abs {
+    bottom: 10%;
+    left: 5%
+}
+
+#about .carousel {
+    height: 300px;
+}
+
+#amber-banner .center a.btn {
+    max-width: 300px;
+}
+
+#careerGrowth,
+#rewards {
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    -o-background-attachment: fixed;
+    -moz-background-attachment: fixed;
+    -webkit-background-attachment: fixed;
+    background-attachment: fixed;
+
+    background-position: center;
+}
+
+#careerGrowth {
+    background-image: url('../images/background.jpg');
+}
+
+#careerGrowth>.p-4,
+#rewards>.p-4 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#courses .card-panel a.btn {
+    bottom: 24px;
+    right: 24px;
+}
+
+#rewards {
+    background-image: url('../images/background2.jpg');
+}
+
+#enroll .flex img.mx-auto {
+    max-width: 540px;
+    object-fit: contain;
+    object-position: top center
+}
+
+#enroll .col.flex>div {
+    max-width: 500px;
+}
+
+#testimonial .carousel .carousel-item {
+    height: 280px;
+}
+
+#testimonial .carousel .carousel-item .avatar {
+    top: -30px;
+    margin: 0px -24px
+}
+
+#testimonial .carousel .carousel-item .avatar img {
+    border: 4px solid white;
+}
+
+.carousel .carousel-item {
+    width: 400px;
+}
+
+.carousel .carousel-item iframe {
+    width: 100%;
+}
+
+#about .carousel-item:not(.active) iframe {
+    touch-action: pan-x !important;
+    pointer-events: none
+}
+
+.card-panel p {
+    text-align: justify;
+}
+
+.colored-cards .row .col .card-panel {
+    color: #ffffff;
+}
+
+.short-border.white {
+    border-color: white;
+}
+
+#testimonial .carousel-item {
+    opacity: 1 !important;
+}
+
+@media (min-width: 601px) {
+    #about .carousel .carousel-item iframe {
+        height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #careerGrowth {
+        background-image: url('../images/background-min.jpg');
+    }
+
+    #rewards {
+        background-image: url('../images/background2-min.jpg');
+    }
+
+    .banner-text {
+        font-size: 3.5rem;
+    }
+
+    .home-banner {
+        background-image: url('../images/Digital-Marketing-min.jpg');
+        background-color: #808080;
+        background-blend-mode: screen;
+    }
+
+    .home-banner h2 {
+        text-shadow: 0 2px 2px rgba(0, 0, 0, .14), 0 3px 1px rgba(0, 0, 0, .12), 0 1px 5px rgba(0, 0, 0, .2);
+    }
+
+    #about .carousel .carousel-item {
+        width: 200px;
+    }
+
+    #about .carousel {
+        height: 200px;
+    }
+
+    #testimonial .carousel {
+        height: 450px;
+    }
+
+    #testimonial .carousel .carousel-item {
+        width: 280px;
+        height: 350px;
+    }
+}

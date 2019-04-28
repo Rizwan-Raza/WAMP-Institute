@@ -1,9 +1,24 @@
+<section class="p-4 grey lighten-4" id="u-footer">
+    <div class="container">
+        <div class="row m-0">
+            <div class="col s12 m6 center-align"><a href="#signupModal"
+                    class="btn btn-large bg-primary w-full center my-1 modal-trigger">Start
+                    Free
+                    Demo</a></div>
+            <div class="col s12 m6 center-align"><a href="uploads/WAMP Institute (Brochure).pdf"
+                    download="WAMP Institute (Brochure).pdf"
+                    class="btn btn-large white text-primary w-full center my-1">Download
+                    Curriculum</a></div>
+        </div>
+    </div>
+</section>
+
 <section class="bg-primary" id="footer">
-    <div style="background-color: rgba(0,0,0,0.2);" class="p-4">
+    <div class="p-m-3">
         <div class="row">
             <div class="col s12 m5 px-4">
                 <h4>WAMP Institute</h4>
-                <p class="text-light">
+                <p class="text-light text-justify">
                     Digital marketing is a career that has the highest growth potential. It has a high potential rate in
                     the market. WAMP Digital Marketing Institute gives you deep knowledge of concepts and ideas. As the
                     market is currently flooded with Digital Marketing jobs, however all you need are skills to enhance
@@ -42,21 +57,25 @@
                 <h4>Quick Links</h4>
                 <ul class="text-light">
                     <li><a href="about" class="text-light">About</a></li>
-                    <li><a href="blog" class="text-light">Blog</a></li>
+                    <li><a href="https://blog.wampinstitute.in" class="text-light">Blog</a></li>
                     <li><a href="faq" class="text-light">FAQ</a></li>
                     <li><a href="contact" class="text-light">Contact</a></li>
+                    <li><a href="sitemap" class="text-light">Sitemap</a></li>
                 </ul>
             </div>
             <div class="col s12 m3 px-4">
                 <h4>Visit us for Coffee</h4>
-                <ul class="text-light">
-                    <li class="left my-1 w-full"><i class="material-icons left">place</i> White House Building,S3
-                        Khizrabad,
-                        Near
-                        Lions Hospital,
-                        New Delhi-110025</li>
-                    <li class="left my-1 w-full"><i class="material-icons left">call</i> +91-9990067806</li>
-                    <li class="left my-1 w-full"><i class="material-icons left">email</i> info@wampinstitute.in</li>
+                <ul>
+                    <li class="left my-1 w-full"><a class="text-light" target="_blank"
+                            href="https://maps.google.com/maps?ll=28.572979,77.219607&z=16&t=m&hl=en-IN&gl=IN&mapclient=embed&daddr=WAMP%20Institute%20-%20Digital%20Marketing%20Institute%20C%2023%20NEAR-%20Dena%20Bank%2C%20South%20Extension%20I%20New%20Delhi%2C%20Delhi%20110049@28.5729794,77.2196075"><i
+                                class="material-icons left">place</i><span>C-23, near Dena Bank, South Extension-I, New
+                                Delhi - 110049</span></a></li>
+                    <li class="left my-1 w-full"><a class="text-light" target="_blank" href="tel:+919990067806"><i
+                                class="material-icons left">call</i>
+                            <span>+91-9990067806</span></a></li>
+                    <li class="left my-1 w-full"><a class="text-light" target="_blank"
+                            href="mailto:info@wampinstitute.in"><i
+                                class="material-icons left">email</i><span>info@wampinstitute.in</span> </a></li>
                 </ul>
             </div>
 
@@ -70,14 +89,55 @@
     </div>
 </section>
 
-<footer class="bg-primary px-4 py-1" style="padding: 4px 0px;">
-    <div class="pl-3 left my-1">
+<footer class="bg-primary p-m-3">
+    <div class="left my-1 px-2">
         Copyright © 2019 | <strong>WAMP Institute</strong> | All rights
         reserved.
     </div>
-    <div class="pr-3 right my-1">
+    <div class="right my-1 px-2">
         Designed and Developed by
         <strong><a href="https://www.wampinfotech.com" class="white-text">WAMP Infotech Pvt Ltd.</a></strong>
     </div>
     <div class="clearfix"></div>
 </footer>
+
+<div id="signupModal" class="modal border-radius-8">
+    <div class="progress-holder hide">
+        <div class="progress">
+            <div class="indeterminate bg-primary"></div>
+        </div>
+    </div>
+    <div class="prevent-overlay hide full border-radius-8"></div>
+    <div class="modal-content">
+        <h4 class="modal-title">Get in touch</h4>
+        <p class="grey-text text-darken-2">Take your first step towards Digital Marketing absolutely free!</p>
+        <br />
+        <form class="validate">
+            <div class="input-field">
+                <input type="text" name="name" id="c_name" required />
+                <label for="c_name">
+                    Name
+                </label>
+            </div>
+            <div class="input-field">
+                <input type="email" name="email" id="c_email" required />
+                <label for="c_email">
+                    Email
+                </label>
+            </div>
+            <div class="input-field">
+                <input type="tel" name="number" id="c_number" required minlength="10" maxlength="12" />
+                <label for="c_number">
+                    Number
+                </label>
+            </div>
+            <button type="submit" class="btn bg-primary waves-effect waves-light white-text right">
+                Submit
+            </button>
+            <button type="reset" class="btn btn-flat text-primary waves-effect waves-dark right modal-close mr-2">
+                Not now
+            </button>
+            <br clear="both" />
+        </form>
+    </div>
+</div>
