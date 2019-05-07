@@ -1,5 +1,77 @@
 RewriteEngine On
 
+Redirect /executive-digital-marketing-course /courses/executive-digital-marketing
+Redirect /advanced-digital-marketing-course /courses/advanced-digital-marketing
+Redirect /digital-marketing-course /courses/crash-course-digital-marketing
+
+Redirect /overview-digital-marketing /courses/advanced-digital-marketing
+Redirect /social-media-marketing /courses/advanced-digital-marketing
+Redirect /mobile-marketing /courses/advanced-digital-marketing
+Redirect /online-graphic-designing-tools /courses/advanced-digital-marketing
+Redirect /website-introduction /courses/advanced-digital-marketing
+Redirect /content-writing /courses/advanced-digital-marketing
+Redirect /lead-generation /courses/advanced-digital-marketing
+Redirect /video-editing /courses/advanced-digital-marketing
+Redirect /website-creation-html-wordpress /courses/advanced-digital-marketing
+Redirect /email-marketing /courses/advanced-digital-marketing
+Redirect /e-commerce-setup-seo /courses/advanced-digital-marketing
+Redirect /video-optimization /courses/advanced-digital-marketing
+Redirect /search-engine-optimization /courses/advanced-digital-marketing
+Redirect /google-analytics /courses/advanced-digital-marketing
+Redirect /e-commerce-marketing-scm-tools /courses/advanced-digital-marketing
+Redirect /earning-youtube /courses/advanced-digital-marketing
+Redirect /google-adwords /courses/advanced-digital-marketing
+ Redirect /google-webmaster-tools /courses/advanced-digital-marketing
+Redirect /online-reputation-management /courses/advanced-digital-marketing
+Redirect /earning-google-adsense /courses/advanced-digital-marketing
+Redirect /google-trends /courses/advanced-digital-marketing
+Redirect /audio-engineering /courses/advanced-digital-marketing
+Redirect /earning-freelancer /courses/advanced-digital-marketing
+Redirect /social-media-optimization /courses/advanced-digital-marketing
+
+Redirect /basics-marketing-branding /courses/advanced-digital-marketing
+Redirect /google-docs /courses/advanced-digital-marketing
+Redirect /conversion-rate-optimization /courses/advanced-digital-marketing
+Redirect /google-tag-manager /courses/advanced-digital-marketing
+Redirect /automation-tools-digital-marketing /courses/advanced-digital-marketing
+Redirect /quora-optimization /courses/advanced-digital-marketing
+Redirect /bing-tag-manager /courses/advanced-digital-marketing
+Redirect /product-marketing /courses/advanced-digital-marketing
+Redirect /bing-webmaster-tools /courses/advanced-digital-marketing
+Redirect /growth-hacking /courses/advanced-digital-marketing
+Redirect /affiliate-marketing /courses/advanced-digital-marketing
+Redirect /bing-adwords /courses/advanced-digital-marketing
+Redirect /google-admin-g-suite /courses/advanced-digital-marketing
+Redirect /google-forms-google-survey /courses/advanced-digital-marketing
+Redirect /adobe-spark /courses/advanced-digital-marketing
+Redirect /earning-digital-networking /courses/advanced-digital-marketing
+Redirect /google-sheets /courses/advanced-digital-marketing
+
+Redirect /advanced-analytics-tools /
+Redirect /introduction-url-shorteners /
+Redirect /hosting-server-security /
+Redirect /viral-marketing /
+Redirect /bing-tag-manager /
+Redirect /business-law /
+Redirect /pro-blogging /
+Redirect /website-creation-magento /
+Redirect /coupons-work-marketing /
+Redirect /importance-gst-digital-marketing /
+Redirect /google-doubleclick /
+Redirect /best-practices-job-seekers /
+Redirect /entrepreneurship-now-never /
+Redirect /whatsapp-marketing /
+Redirect /automation-tools-digital-marketing /
+Redirect /entrepreneurship-now-never /
+Redirect /personal-branding /
+Redirect /startup-hacks /
+Redirect /earning-third-party-services /
+Redirect /updated-digital-marketer /
+Redirect /soft-skill-training /
+Redirect /earning-domains /
+Redirect /stock-management-digital-marketing /
+
+
 #RewriteRule ^/?courses/(.*?)/?$ /course.html?url=$1 [L]
 
 #RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /course\.html\?url=([^\&\ ]+)
@@ -12,3 +84,6 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 #AddHandler application/x-httpd-lsphp .htm .html
 #AddHandler application/x-httpd-lsphp .htm .html
 AddType application/x-httpd-php .html
+
+ErrorDocument 404 /4O4.html
+ErrorDocument 500 /5OO.html

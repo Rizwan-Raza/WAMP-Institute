@@ -11,7 +11,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto
+    margin: auto;
+    width: 64px;
+    height: 64px;
 }
 
 #courses .row .card {
