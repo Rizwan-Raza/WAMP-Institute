@@ -534,8 +534,14 @@ nav ul li a {
 }
 
 .bg-whatsapp,
-.bg-whatsapp:hover {
-    background-color: #25D366
+.bg-whatsapp:hover,
+.bg-whatsapp:focus {
+    background-color: #25D366;
+}
+
+.bg-whatsapp:hover,
+.bg-whatsapp:focus {
+    background-color: #1a9948 !important;
 }
 
 

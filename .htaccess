@@ -21,7 +21,7 @@ Redirect /google-analytics /courses/advanced-digital-marketing
 Redirect /e-commerce-marketing-scm-tools /courses/advanced-digital-marketing
 Redirect /earning-youtube /courses/advanced-digital-marketing
 Redirect /google-adwords /courses/advanced-digital-marketing
- Redirect /google-webmaster-tools /courses/advanced-digital-marketing
+Redirect /google-webmaster-tools /courses/advanced-digital-marketing
 Redirect /online-reputation-management /courses/advanced-digital-marketing
 Redirect /earning-google-adsense /courses/advanced-digital-marketing
 Redirect /google-trends /courses/advanced-digital-marketing
@@ -81,7 +81,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-#AddHandler application/x-httpd-lsphp .htm .html
 #AddHandler application/x-httpd-lsphp .htm .html
 AddType application/x-httpd-php .html
 

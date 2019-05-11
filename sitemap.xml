@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://www.wampinstitute.in/</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/about</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/courses/digital-marketing</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/courses/executive-digital-marketing</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/courses/advanced-digital-marketing</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/faq</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/contact</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.wampinstitute.in/sitemap</loc>
+  <lastmod>2019-05-11T08:55:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
