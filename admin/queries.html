@@ -64,7 +64,7 @@ if (
                             <td>
                                 <?= $user['number'] ?>
                             </td>
-                            <td>
+                            <td class="tooltipped" data-tooltip="<?=$user['time']?>">
                                 <?php $count = strlen($user['message']); ?>
                                 <?= substr($user['message'], 0, 50) ?>
                                 <?php echo $count > 50 ? '... <a href="javascript:openQuery(\'' . $user['name'] . '\', \'' . addslashes($user['message']) . '\')">Read more</a>' : ''; ?>

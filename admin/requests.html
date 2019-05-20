@@ -66,7 +66,7 @@ if (
                                         <td>
                                             <?= $user['number'] ?>
                                         </td>
-                                        <td class="tooltipped" data-tooltip="<?= $user['time'] ?>">
+                                        <td class="tooltipped" data-tooltip="<?=date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A")?>">
                                             <?= daysUntilToday($user['time']) ?>
                                         </td>
                                         <td>
