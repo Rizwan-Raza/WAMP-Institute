@@ -1,0 +1,384 @@
+<?php if (!isset($_SESSION)) {
+    session_start();
+}
+if (
+    isset($_SESSION['admin']) and
+    $_SESSION['admin'] == true
+) {
+    ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Digital Marketing Company | Web Design Company</title>
+    <base href="../" />
+    <?php include "includes/head.inc.php"; ?>
+    <link rel="stylesheet" href="admin/css/deduct.css" />
+    <style>
+        #canvas {
+            background-image: -webkit-linear-gradient(-135deg, white, #EEE);
+            background-image: -moz-linear-gradient(-135deg, white, #EEE);
+            background-image: -o-linear-gradient(-135deg, white, #EEE);
+            background-image: linear-gradient(-135deg, white, #EEE);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 24px;
+        }
+
+        .modal.full {
+            top: 0 !important;
+            max-height: 100%;
+        }
+
+        .sizePanel div {
+            float: left;
+            border-radius: 20px;
+        }
+
+        .sizes .sizeHolder {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .sizes .sizeHolder div {
+            background-color: #000;
+        }
+
+        .sizes .sizeHolder:nth-child(1) div {
+            height: 1px;
+            width: 1px;
+        }
+
+        .sizes .sizeHolder:nth-child(2) div {
+            height: 2px;
+            width: 2px;
+        }
+
+        .sizes .sizeHolder:nth-child(3) div {
+            height: 5px;
+            width: 5px;
+        }
+
+        .sizes .sizeHolder:nth-child(4) div {
+            height: 10px;
+            width: 10px;
+        }
+
+        .sizes .sizeHolder:nth-child(5) div {
+            height: 20px;
+            width: 20px;
+        }
+
+        .sizes .sizeHolder:nth-child(6) div {
+            height: 30px;
+            width: 30px;
+        }
+
+        .sizes .sizeHolder:nth-child(7) div {
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Layout here -->
+    <section class="row m-0 p-0">
+        <?php include "includes/sidenav.inc.html" ?>
+
+        <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
+            <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
+            <div class="px-4">
+                <h4 class="my-1">Deduct Fee</h4>
+            </div>
+            <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
+            <div class="grey lighten-4">
+                <div class="container pt-2">
+                    <div class="card pos-rel" id="deductFee">
+                        <div class="progress-holder hide border-radius-0">
+                            <div class="progress border-radius-0">
+                                <div class="indeterminate bg-primary"></div>
+                            </div>
+                        </div>
+                        <div class="prevent-overlay hide full"></div>
+
+                        <form id="deductFeeForm" class="p-4">
+                            <table class="border-0">
+                                <tr>
+                                    <td>Student: </td>
+                                    <td class="input-field">
+                                        <select required name="stud_id" class="validate" id="studId">
+                                            <option value="" disabled selected>Choose Student</option>
+                                            <?php $sql = "SELECT * FROM `students`";
+                                            require "../services/db.inc.php";
+                                            $conn = DB::getConnection();
+                                            $result = $conn->query($sql); 
+                                            while($user = $result->fetch_assoc()) { ?>
+                                            <option value="<?= $user['_sid'] ?>"><?=$user['name']?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Amount: </td>
+                                    <td class="input-field">
+                                        <input id="ddf_amount" type="number" class="validate" name="amount"
+                                            placeholder="Enter Amount">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Signature: </td>
+                                    <td>
+                                        <button class="btn bg-primary my-2 modal-trigger"
+                                            data-target="signatureModal">Draw signature <i
+                                                class="material-icons right">launch</i></button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <button type="submit"
+                                class="btn bg-primary white-text right mt-4 waves-effect waves-light modal-trigger scale-transition">Deduct</button>
+                            <br clear="all" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="signatureModal" class="modal full">
+        <div class="modal-content">
+            <h4>Draw Signature <button
+                    class="right mr-2 modal-close waves-effect waves-light btn-floating bg-primary"><i
+                        class="material-icons">close</i></button><button id="button_clear"
+                    class="right mr-2 waves-effect waves-light btn bg-primary">Clear Canvas</button></h4>
+            <div class="sizePanel">
+                <div>
+                    <button class="btn-floating bg-primary"><i class="material-icons">edit</i></button>
+                </div>
+                <div class="sizes z-depth-2">
+                    <div class="sizeHolder" data-size="1">
+                        <div></div>
+                    </div>
+                    <div class="sizeHolder" data-size="2">
+                        <div></div>
+                    </div>
+                    <div class="sizeHolder" data-size="5">
+                        <div></div>
+                    </div>
+                    <div class="sizeHolder" data-size="10">
+                        <div></div>
+                    </div>
+                    <div class="sizeHolder" data-size="20">
+                        <div></div>
+                    </div>
+                    <div class="sizeHolder" data-size="30">
+                        <div></div>
+                    </div>
+                    <div class="sizeHolder" data-size="40">
+                        <div></div>
+                    </div>
+
+                </div>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div id="alltools">
+            <div class="tools" id="colors">
+                <div>COLORS</div>
+                <input type="radio" style="background:black" name="colors" />
+                <input type="radio" style="background:rgb(200, 50, 50)" name="colors" />
+                <input type="radio" style="background:#222" name="colors" />
+                <input type="radio" style="background:rgb(50, 200, 50)" name="colors" />
+                <input type="radio" style="background:#666" name="colors" />
+                <input type="radio" style="background:rgb(50, 50, 200)" name="colors" />
+                <input type="radio" style="background:#AAA" name="colors" />
+                <input type="radio" style="background:rgb(200, 200, 50)" name="colors" />
+                <input type="radio" style="background:white" name="colors" />
+                <input type="radio" style="background:rgb(200, 50, 200)" name="colors" />
+            </div>
+        </div>
+        <div class="option_name">
+            <span>WIDTH</span>
+        </div>
+        <div class="option">
+            <input id="size_range" type="range" min="1" max="250" value="10" />
+            <input id="size_text" type="text" value="10" />
+        </div>
+    </div>
+
+    <?php include "includes/scripts.inc.php"; ?>
+    <script src="admin/js/queries.js"></script>
+    <script>
+        function getParam(parameterName) {
+            var result = null,
+                tmp = [];
+            var items = location.search.substr(1).split("&");
+            for (var index = 0; index < items.length; index++) {
+                tmp = items[index].split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            }
+            return result;
+        }
+        if (getParam("sid")) {
+            console.log("DOne");
+            $("#deductFeeForm #studId option").removeAttr("selected");
+            $("#deductFeeForm #studId option[value='" + getParam("sid") + "']").attr("selected", "selected");
+            $("#deductFeeForm #studId input").val($("#deductFeeForm #studId option[value='" + getParam("sid") + "']").text());
+        }
+
+
+        //////////////////////////////////////////////////////////////////////////////////
+        // Defining variables
+        var first = 1,
+            canvas = document.getElementById("canvas"),
+            ctx = canvas.getContext("2d"),
+            isMouseDown = false,
+            allInputs = document.querySelectorAll("input[type='text']");
+
+        // Canvas size
+        canvas.width = window.innerWidth - 48;
+        canvas.height = window.innerHeight - 150;
+
+        // Events in canvas
+        canvas.addEventListener("mousedown", drawTrue, false);
+        canvas.addEventListener("click", function () { return false; }, false);
+        canvas.addEventListener("mouseup", drawFalse, false);
+        canvas.addEventListener("mouseout", drawFalse, false);
+        canvas.addEventListener("mousemove", draw, false);
+
+        // Change input value
+        // If key up or key right >> input value +1
+        // If key down or key left >> input value -1
+        for (i = 0; i < allInputs.length; i++) {
+            allInputs[i].addEventListener("keydown", function (ev) {
+                ev = ev || window.event;
+                // Check if value is number
+                if (!isNaN(this.value)) {
+                    // Read keyCode from event and when it's arrow up or right, value will increment
+                    if (ev.keyCode == "38" || ev.keyCode == "39") {
+                        ++this.value;
+                    }
+                    // If event keyCode will be from arrow down or left, value will decrement
+                    else if (ev.keyCode == "40" || ev.keyCode == "37") {
+                        // Check if value isn't zero. If is value stay same.
+                        if (this.value !== 0) {
+                            --this.value;
+                        }
+                    }
+                }
+                // If value isn't number
+                else {
+                    return false;
+                }
+            }, false);
+        }
+
+        // Declaring more event listeners
+        document.getElementById("button_clear").addEventListener("click", clear, false);
+        document.getElementById("size_range").addEventListener("change", sizeSelectRange, false);
+        document.getElementById("size_text").addEventListener("keyup", sizeSelectText, false);
+
+        // Function that select brush size
+        function sizeSelectRange() {
+            document.getElementById("size_text").value = document.getElementById("size_range").value;
+            Brush.size = document.getElementById("size_text").value;
+        }
+
+        // Function that select brush size if it's changed by text input
+        function sizeSelectText() {
+            document.getElementById("size_range").value = parseInt(document.getElementById("size_text").value, 10);
+            Brush.size = document.getElementById("size_text").value;
+        }
+
+        // This function return selected color
+        function colorSelect() {
+            colors = document.getElementsByName("colors");
+            for (i = 0; i < colors.length; i++) {
+                colors[i].addEventListener("click", function () {
+                    Brush.color = this.style.background;
+                    document.getElementById("type_of_option").style.background = this.style.background;
+                }, false);
+            }
+        }
+
+        // Defning object Brush
+        Brush = {
+            size: 10,
+            color: colorSelect()
+        };
+
+        // Defining object BrushType
+        BrushType = {
+            // Normal Brush
+            normalBefore: function () {
+                // Drawing line
+                // Defining color of line    
+                ctx.strokeStyle = Brush.color;
+                ctx.beginPath();
+                // Defining size of brush
+                ctx.lineWidth = Brush.size;
+                // Start point of line
+                ctx.moveTo(x, y);
+                // Lines ending >> lines will be rounded on ends
+                ctx.lineCap = 'round';
+            },
+            normalAfter: function () {
+                // End point of line
+                ctx.lineTo(x, y);
+                // Draw line
+                ctx.stroke();
+            }
+        };
+
+        // Clearing of canvas
+        function clear() {
+            canvas.width = canvas.width;
+        }
+
+        // Check if mouse is down
+        function drawTrue() {
+            isMouseDown = true;
+        }
+
+        // Check if mouse is down
+        function drawFalse() {
+            first = 1;
+            isMouseDown = false;
+        }
+
+        // Function of drawing
+        function draw(ev) {
+            // Check if mouse is down or not
+            if (isMouseDown) {
+                if (first == 1) {
+                    // Return mouse X position to var x
+                    x = ev.clientX - canvas.offsetLeft;
+                    // Return mouse Y position to var y
+                    y = ev.clientY - canvas.offsetTop;
+                    first = 0;
+                }
+                else if (first === 0) {
+                    // Calling of brush function
+                    BrushType.normalBefore();
+                    x = ev.clientX - canvas.offsetLeft;
+                    y = ev.clientY - canvas.offsetTop;
+                    // Calling of other brush function
+                    BrushType.normalAfter();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<?php
+} else {
+    header("Location: /admin/?redirect_to=" . $_SERVER['REDIRECT_URL']);
+} ?>

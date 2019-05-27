@@ -1,0 +1,12 @@
+table td {
+    padding: 0px;
+}
+
+table tr {
+    border-bottom: 0;
+}
+
+#deductFeeForm .dropdown-content li>a,
+.dropdown-content li>span {
+    color: #263a73;
+}
