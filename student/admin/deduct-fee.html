@@ -15,15 +15,26 @@ if (
     <?php include "includes/head.inc.php"; ?>
     <link rel="stylesheet" href="admin/css/deduct.css" />
     <style>
-        #canvas {
-            background-image: -webkit-linear-gradient(-135deg, white, #EEE);
+        #canvasSimple {
+            /* background-image: -webkit-linear-gradient(-135deg, white, #EEE);
             background-image: -moz-linear-gradient(-135deg, white, #EEE);
             background-image: -o-linear-gradient(-135deg, white, #EEE);
             background-image: linear-gradient(-135deg, white, #EEE);
             border: 1px solid rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 75px rgba(0, 0, 0, 0.5); */
+            /* border: 1px solid rgba(0, 0, 0, 0.5); */
             position: absolute;
-            bottom: 24px;
+            bottom: 0px;
+            right: 0;
+            user-select: none;
+
+        }
+
+        .tools {
+            background-color: #eee;
+            height: 86px;
+            overflow-y: hidden;
+            padding: 1rem;
         }
 
         .modal.full {
@@ -31,22 +42,61 @@ if (
             max-height: 100%;
         }
 
-        .sizePanel div {
+        .sizePanel div,
+        .colorPanel div {
             float: left;
-            border-radius: 20px;
+            border-radius: 28px;
+        }
+
+        .colors {
+            width: 392px;
+        }
+
+        .sizes,
+        .sizes * .colors,
+        .colors * {
+            overflow-y: hidden;
+            transition: all 300ms ease;
+            opacity: 1;
+        }
+
+        .sizes.shrink,
+        .sizes.shrink *,
+        .colors.shrink,
+        .colors.shrink * {
+            border: 0 !important;
+            width: 0px !important;
+            opacity: 0;
         }
 
         .sizes .sizeHolder {
-            height: 40px;
-            width: 40px;
+            height: 56px;
+            width: 56px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #fff;
         }
 
+        .colors .colorHolder {
+            height: 56px;
+            width: 56px;
+            border: 4px solid transparent;
+        }
+
+        .sizes .sizeHolder.active,
+        .colors .colorHolder.active {
+            border: 4px solid #263a73;
+        }
+
         .sizes .sizeHolder div {
             background-color: #000;
+        }
+
+        .colors .colorHolder div {
+            height: 48px;
+            width: 48px;
+            border: 4px solid white;
         }
 
         .sizes .sizeHolder:nth-child(1) div {
@@ -55,18 +105,18 @@ if (
         }
 
         .sizes .sizeHolder:nth-child(2) div {
-            height: 2px;
-            width: 2px;
-        }
-
-        .sizes .sizeHolder:nth-child(3) div {
             height: 5px;
             width: 5px;
         }
 
-        .sizes .sizeHolder:nth-child(4) div {
+        .sizes .sizeHolder:nth-child(3) div {
             height: 10px;
             width: 10px;
+        }
+
+        .sizes .sizeHolder:nth-child(4) div {
+            height: 15px;
+            width: 15px;
         }
 
         .sizes .sizeHolder:nth-child(5) div {
@@ -82,6 +132,34 @@ if (
         .sizes .sizeHolder:nth-child(7) div {
             height: 40px;
             width: 40px;
+        }
+
+        .colors .colorHolder:nth-child(1) div {
+            background-color: #000;
+        }
+
+        .colors .colorHolder:nth-child(2) div {
+            background-color: #f00;
+        }
+
+        .colors .colorHolder:nth-child(3) div {
+            background-color: #0f0;
+        }
+
+        .colors .colorHolder:nth-child(4) div {
+            background-color: #00f;
+        }
+
+        .colors .colorHolder:nth-child(5) div {
+            background-color: #ff0;
+        }
+
+        .colors .colorHolder:nth-child(6) div {
+            background-color: #0ff;
+        }
+
+        .colors .colorHolder:nth-child(7) div {
+            background-color: #fff;
         }
     </style>
 </head>
@@ -132,7 +210,7 @@ if (
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Signature: </td>
+                                    <td>Signature: &nbsp; </td>
                                     <td>
                                         <button class="btn bg-primary my-2 modal-trigger"
                                             data-target="signatureModal">Draw signature <i
@@ -152,64 +230,77 @@ if (
 
     <!-- Modal Structure -->
     <div id="signatureModal" class="modal full">
-        <div class="modal-content">
-            <h4>Draw Signature <button
-                    class="right mr-2 modal-close waves-effect waves-light btn-floating bg-primary"><i
-                        class="material-icons">close</i></button><button id="button_clear"
-                    class="right mr-2 waves-effect waves-light btn bg-primary">Clear Canvas</button></h4>
+        <div class="tools">
+            <div><button class="right mr-2 modal-close waves-effect waves-light btn-floating bg-primary"><i
+                        class="material-icons">close</i></button><button id="clearCanvasSimple"
+                    class="right mr-2 waves-effect waves-light btn-floating bg-primary"><i
+                        class="material-icons">clear_all</i></button><button id="redoCanvas"
+                    class="right mr-2 waves-effect waves-light btn-floating bg-primary"><i
+                        class="material-icons">redo</i></button><button id="undoCanvas"
+                    class="right mr-2 waves-effect waves-light btn-floating bg-primary"><i
+                        class="material-icons">undo</i></button></div>
             <div class="sizePanel">
                 <div>
-                    <button class="btn-floating bg-primary"><i class="material-icons">edit</i></button>
+                    <button class="btn-floating btn-large bg-primary waves-effect waves-light"
+                        onclick="toggleSizePanel()"><i class="material-icons">edit</i></button>
                 </div>
-                <div class="sizes z-depth-2">
-                    <div class="sizeHolder" data-size="1">
-                        <div></div>
+                <div class="sizes z-depth-2 white shrink">
+                    <div class="sizeHolder">
+                        <div data-size="1" class="size"></div>
                     </div>
-                    <div class="sizeHolder" data-size="2">
-                        <div></div>
+                    <div class="sizeHolder">
+                        <div data-size="5" class="size"></div>
                     </div>
-                    <div class="sizeHolder" data-size="5">
-                        <div></div>
+                    <div class="sizeHolder active">
+                        <div data-size="10" class="size"></div>
                     </div>
-                    <div class="sizeHolder" data-size="10">
-                        <div></div>
+                    <div class="sizeHolder">
+                        <div data-size="15" class="size"></div>
                     </div>
-                    <div class="sizeHolder" data-size="20">
-                        <div></div>
+                    <div class="sizeHolder">
+                        <div data-size="20" class="size"></div>
                     </div>
-                    <div class="sizeHolder" data-size="30">
-                        <div></div>
+                    <div class="sizeHolder">
+                        <div data-size="30" class="size"></div>
                     </div>
-                    <div class="sizeHolder" data-size="40">
-                        <div></div>
+                    <div class="sizeHolder">
+                        <div data-size="40" class="size"></div>
                     </div>
 
                 </div>
             </div>
-            <canvas id="canvas"></canvas>
-        </div>
-        <div id="alltools">
-            <div class="tools" id="colors">
-                <div>COLORS</div>
-                <input type="radio" style="background:black" name="colors" />
-                <input type="radio" style="background:rgb(200, 50, 50)" name="colors" />
-                <input type="radio" style="background:#222" name="colors" />
-                <input type="radio" style="background:rgb(50, 200, 50)" name="colors" />
-                <input type="radio" style="background:#666" name="colors" />
-                <input type="radio" style="background:rgb(50, 50, 200)" name="colors" />
-                <input type="radio" style="background:#AAA" name="colors" />
-                <input type="radio" style="background:rgb(200, 200, 50)" name="colors" />
-                <input type="radio" style="background:white" name="colors" />
-                <input type="radio" style="background:rgb(200, 50, 200)" name="colors" />
+            <div class="colorPanel">
+                <div>
+                    <button class="btn-floating btn-large bg-primary waves-effect waves-light"
+                        onclick="toggleColorPanel()"><i class="material-icons">palette</i></button>
+                </div>
+                <div class="colors z-depth-2 white shrink">
+                    <div class="colorHolder">
+                        <div data-color="#000000" class="color"></div>
+                    </div>
+                    <div class="colorHolder">
+                        <div data-color="#ff0000" class="color"></div>
+                    </div>
+                    <div class="colorHolder active">
+                        <div data-color="#00ff00" class="color"></div>
+                    </div>
+                    <div class="colorHolder">
+                        <div data-color="#0000ff" class="color"></div>
+                    </div>
+                    <div class="colorHolder">
+                        <div data-color="#ffff00" class="color"></div>
+                    </div>
+                    <div class="colorHolder">
+                        <div data-color="#00ffff" class="color"></div>
+                    </div>
+                    <div class="colorHolder">
+                        <div data-color="#ffffff" class="color"></div>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="option_name">
-            <span>WIDTH</span>
-        </div>
-        <div class="option">
-            <input id="size_range" type="range" min="1" max="250" value="10" />
-            <input id="size_text" type="text" value="10" />
-        </div>
+        <div id="canvasSimpleDiv"></div>
     </div>
 
     <?php include "includes/scripts.inc.php"; ?>
@@ -226,153 +317,327 @@ if (
             return result;
         }
         if (getParam("sid")) {
-            console.log("DOne");
             $("#deductFeeForm #studId option").removeAttr("selected");
             $("#deductFeeForm #studId option[value='" + getParam("sid") + "']").attr("selected", "selected");
             $("#deductFeeForm #studId input").val($("#deductFeeForm #studId option[value='" + getParam("sid") + "']").text());
         }
+        /////////////////////////////////////////////////////
 
 
-        //////////////////////////////////////////////////////////////////////////////////
-        // Defining variables
-        var first = 1,
-            canvas = document.getElementById("canvas"),
-            ctx = canvas.getContext("2d"),
-            isMouseDown = false,
-            allInputs = document.querySelectorAll("input[type='text']");
+        /****************************************************************************** Simple Canvas */
 
-        // Canvas size
-        canvas.width = window.innerWidth - 48;
-        canvas.height = window.innerHeight - 150;
+        var clickX_simple = new Array();
+        var clickY_simple = new Array();
+        var clickDrag_simple = new Array();
 
-        // Events in canvas
-        canvas.addEventListener("mousedown", drawTrue, false);
-        canvas.addEventListener("click", function () { return false; }, false);
-        canvas.addEventListener("mouseup", drawFalse, false);
-        canvas.addEventListener("mouseout", drawFalse, false);
-        canvas.addEventListener("mousemove", draw, false);
+        var redoX_points = new Array();
+        var redoY_points = new Array();
+        var redo_drag = new Array();
 
-        // Change input value
-        // If key up or key right >> input value +1
-        // If key down or key left >> input value -1
-        for (i = 0; i < allInputs.length; i++) {
-            allInputs[i].addEventListener("keydown", function (ev) {
-                ev = ev || window.event;
-                // Check if value is number
-                if (!isNaN(this.value)) {
-                    // Read keyCode from event and when it's arrow up or right, value will increment
-                    if (ev.keyCode == "38" || ev.keyCode == "39") {
-                        ++this.value;
-                    }
-                    // If event keyCode will be from arrow down or left, value will decrement
-                    else if (ev.keyCode == "40" || ev.keyCode == "37") {
-                        // Check if value isn't zero. If is value stay same.
-                        if (this.value !== 0) {
-                            --this.value;
-                        }
-                    }
+        var paint_simple;
+        var canvas_simple;
+        var context_simple;
+        var canvasWidth = window.innerWidth, canvasHeight = window.innerHeight - 86;
+        var strokeWidth = 10;
+        /**
+        * Creates a canvas element.
+        */
+        function prepareSimpleCanvas() {
+            // Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
+            var canvasDiv = document.getElementById('canvasSimpleDiv');
+            canvas_simple = document.createElement('canvas');
+            canvas_simple.setAttribute('width', canvasWidth);
+            canvas_simple.setAttribute('height', canvasHeight);
+            canvas_simple.setAttribute('id', 'canvasSimple');
+            canvasDiv.appendChild(canvas_simple);
+            if (typeof G_vmlCanvasManager != 'undefined') {
+                canvas_simple = G_vmlCanvasManager.initElement(canvas_simple);
+            }
+            context_simple = canvas_simple.getContext("2d");
+
+            // Add mouse events
+            // ----------------
+            $('#canvasSimple').mousedown(function (e) {
+                // Mouse down location
+                var mouseX = e.pageX - this.offsetLeft;
+                var mouseY = e.pageY - this.offsetTop;
+
+                paint_simple = true;
+                addClickSimple(mouseX, mouseY, false);
+                redrawSimple();
+            });
+
+            $('#canvasSimple').mousemove(function (e) {
+                if (paint_simple) {
+                    addClickSimple(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+                    redrawSimple();
                 }
-                // If value isn't number
-                else {
-                    return false;
+            });
+
+            $('#canvasSimple').mouseup(function (e) {
+                paint_simple = false;
+                redrawSimple();
+            });
+
+            $('#canvasSimple').mouseleave(function (e) {
+                paint_simple = false;
+            });
+
+            $('#clearCanvasSimple').mousedown(function (e) {
+                clickX_simple = new Array();
+                clickY_simple = new Array();
+                clickDrag_simple = new Array();
+                clearCanvas_simple();
+            });
+
+            // Add touch event listeners to canvas element
+            canvas_simple.addEventListener("touchstart", function (e) {
+                // Mouse down location
+                var mouseX = (e.changedTouches ? e.changedTouches[0].pageX : e.pageX) - this.offsetLeft,
+                    mouseY = (e.changedTouches ? e.changedTouches[0].pageY : e.pageY) - this.offsetTop;
+
+                paint_simple = true;
+                addClickSimple(mouseX, mouseY, false);
+                redrawSimple();
+            }, false);
+            canvas_simple.addEventListener("touchmove", function (e) {
+
+                var mouseX = (e.changedTouches ? e.changedTouches[0].pageX : e.pageX) - this.offsetLeft,
+                    mouseY = (e.changedTouches ? e.changedTouches[0].pageY : e.pageY) - this.offsetTop;
+
+                if (paint_simple) {
+                    addClickSimple(mouseX, mouseY, true);
+                    redrawSimple();
                 }
+                e.preventDefault()
+            }, false);
+            canvas_simple.addEventListener("touchend", function (e) {
+                paint_simple = false;
+                redrawSimple();
+            }, false);
+            canvas_simple.addEventListener("touchcancel", function (e) {
+                paint_simple = false;
             }, false);
         }
 
-        // Declaring more event listeners
-        document.getElementById("button_clear").addEventListener("click", clear, false);
-        document.getElementById("size_range").addEventListener("change", sizeSelectRange, false);
-        document.getElementById("size_text").addEventListener("keyup", sizeSelectText, false);
-
-        // Function that select brush size
-        function sizeSelectRange() {
-            document.getElementById("size_text").value = document.getElementById("size_range").value;
-            Brush.size = document.getElementById("size_text").value;
+        function addClickSimple(x, y, dragging) {
+            clickX_simple.push(x);
+            clickY_simple.push(y);
+            clickDrag_simple.push(dragging);
         }
 
-        // Function that select brush size if it's changed by text input
-        function sizeSelectText() {
-            document.getElementById("size_range").value = parseInt(document.getElementById("size_text").value, 10);
-            Brush.size = document.getElementById("size_text").value;
+        function clearCanvas_simple() {
+            context_simple.clearRect(0, 0, canvasWidth, canvasHeight);
         }
 
-        // This function return selected color
-        function colorSelect() {
-            colors = document.getElementsByName("colors");
-            for (i = 0; i < colors.length; i++) {
-                colors[i].addEventListener("click", function () {
-                    Brush.color = this.style.background;
-                    document.getElementById("type_of_option").style.background = this.style.background;
-                }, false);
-            }
-        }
+        function redrawSimple() {
+            clearCanvas_simple();
 
-        // Defning object Brush
-        Brush = {
-            size: 10,
-            color: colorSelect()
-        };
+            context_simple.strokeStyle = "#df4b26";
+            context_simple.lineJoin = "round";
+            context_simple.lineWidth = strokeWidth;
 
-        // Defining object BrushType
-        BrushType = {
-            // Normal Brush
-            normalBefore: function () {
-                // Drawing line
-                // Defining color of line    
-                ctx.strokeStyle = Brush.color;
-                ctx.beginPath();
-                // Defining size of brush
-                ctx.lineWidth = Brush.size;
-                // Start point of line
-                ctx.moveTo(x, y);
-                // Lines ending >> lines will be rounded on ends
-                ctx.lineCap = 'round';
-            },
-            normalAfter: function () {
-                // End point of line
-                ctx.lineTo(x, y);
-                // Draw line
-                ctx.stroke();
-            }
-        };
-
-        // Clearing of canvas
-        function clear() {
-            canvas.width = canvas.width;
-        }
-
-        // Check if mouse is down
-        function drawTrue() {
-            isMouseDown = true;
-        }
-
-        // Check if mouse is down
-        function drawFalse() {
-            first = 1;
-            isMouseDown = false;
-        }
-
-        // Function of drawing
-        function draw(ev) {
-            // Check if mouse is down or not
-            if (isMouseDown) {
-                if (first == 1) {
-                    // Return mouse X position to var x
-                    x = ev.clientX - canvas.offsetLeft;
-                    // Return mouse Y position to var y
-                    y = ev.clientY - canvas.offsetTop;
-                    first = 0;
+            for (var i = 0; i < clickX_simple.length; i++) {
+                context_simple.beginPath();
+                if (clickDrag_simple[i] && i) {
+                    context_simple.moveTo(clickX_simple[i - 1], clickY_simple[i - 1]);
+                } else {
+                    context_simple.moveTo(clickX_simple[i] - 1, clickY_simple[i]);
                 }
-                else if (first === 0) {
-                    // Calling of brush function
-                    BrushType.normalBefore();
-                    x = ev.clientX - canvas.offsetLeft;
-                    y = ev.clientY - canvas.offsetTop;
-                    // Calling of other brush function
-                    BrushType.normalAfter();
-                }
+                context_simple.lineTo(clickX_simple[i], clickY_simple[i]);
+                context_simple.closePath();
+                context_simple.stroke();
             }
         }
+
+        $('#undoCanvas').click(function () {
+            let remIndex = clickDrag_simple.lastIndexOf(false);
+
+            redoX_points = [...redoX_points, ...clickX_simple.slice(remIndex)];
+            redoY_points = [...redoY_points, ...clickY_simple.slice(remIndex)];
+            redo_drag = [...redo_drag, ...clickDrag_simple.slice(remIndex)];
+
+            clickDrag_simple = clickDrag_simple.slice(0, remIndex);
+            clickX_simple = clickX_simple.slice(0, remIndex);
+            clickY_simple = clickY_simple.slice(0, remIndex);
+            redrawSimple();
+        });
+
+        $('#redoCanvas').click(function () {
+            let remIndex = redo_drag.lastIndexOf(false);
+            clickDrag_simple = [...clickDrag_simple, ...redo_drag.slice(remIndex)];
+            clickX_simple = [...clickX_simple, ...redoX_points.slice(remIndex)];
+            clickY_simple = [...clickY_simple, ...redoY_points.slice(remIndex)];
+
+            redo_drag = redo_drag.slice(0, remIndex);
+            redoX_points = redoX_points.slice(0, remIndex);
+            redoY_points = redoY_points.slice(0, remIndex);
+            redrawSimple();
+        });
+
+        $('.sizeHolder').click(function (e) {
+            var elem;
+            if ($(e.target).hasClass("size")) {
+                elem = $(e.target);
+            } else {
+                elem = $(e.target).find(".size");
+            }
+            elem.parent().siblings().removeClass("active");
+            elem.parent().addClass("active");
+            strokeWidth = elem.data("size");
+        });
+
+        function toggleSizePanel() {
+            $(".sizes").toggleClass("shrink");
+            $(".colors").addClass("shrink");
+        }
+        function toggleColorPanel() {
+            $(".colors").toggleClass("shrink");
+            $(".sizes").addClass("shrink");
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////
+        // Defining variables
+        // var first = 1,
+        //     canvas = document.getElementById("canvas"),
+        //     ctx = canvas.getContext("2d"),
+        //     isMouseDown = false,
+        //     allInputs = document.querySelectorAll("input[type='text']");
+
+        // // Canvas size
+        // canvas.width = window.innerWidth - 48;
+        // canvas.height = window.innerHeight - 150;
+
+        // // Events in canvas
+        // canvas.addEventListener("mousedown", drawTrue, false);
+        // canvas.addEventListener("click", function () { return false; }, false);
+        // canvas.addEventListener("mouseup", drawFalse, false);
+        // canvas.addEventListener("mouseout", drawFalse, false);
+        // canvas.addEventListener("mousemove", draw, false);
+
+        // // Change input value
+        // // If key up or key right >> input value +1
+        // // If key down or key left >> input value -1
+        // for (i = 0; i < allInputs.length; i++) {
+        //     allInputs[i].addEventListener("keydown", function (ev) {
+        //         ev = ev || window.event;
+        //         // Check if value is number
+        //         if (!isNaN(this.value)) {
+        //             // Read keyCode from event and when it's arrow up or right, value will increment
+        //             if (ev.keyCode == "38" || ev.keyCode == "39") {
+        //                 ++this.value;
+        //             }
+        //             // If event keyCode will be from arrow down or left, value will decrement
+        //             else if (ev.keyCode == "40" || ev.keyCode == "37") {
+        //                 // Check if value isn't zero. If is value stay same.
+        //                 if (this.value !== 0) {
+        //                     --this.value;
+        //                 }
+        //             }
+        //         }
+        //         // If value isn't number
+        //         else {
+        //             return false;
+        //         }
+        //     }, false);
+        // }
+
+        // // Declaring more event listeners
+        // document.getElementById("button_clear").addEventListener("click", clear, false);
+        // document.getElementById("size_range").addEventListener("change", sizeSelectRange, false);
+        // document.getElementById("size_text").addEventListener("keyup", sizeSelectText, false);
+
+        // // Function that select brush size
+        // function sizeSelectRange() {
+        //     document.getElementById("size_text").value = document.getElementById("size_range").value;
+        //     Brush.size = document.getElementById("size_text").value;
+        // }
+
+        // // Function that select brush size if it's changed by text input
+        // function sizeSelectText() {
+        //     document.getElementById("size_range").value = parseInt(document.getElementById("size_text").value, 10);
+        //     Brush.size = document.getElementById("size_text").value;
+        // }
+
+        // // This function return selected color
+        // function colorSelect() {
+        //     colors = document.getElementsByName("colors");
+        //     for (i = 0; i < colors.length; i++) {
+        //         colors[i].addEventListener("click", function () {
+        //             Brush.color = this.style.background;
+        //             document.getElementById("type_of_option").style.background = this.style.background;
+        //         }, false);
+        //     }
+        // }
+
+        // // Defning object Brush
+        // Brush = {
+        //     size: 10,
+        //     color: colorSelect()
+        // };
+
+        // // Defining object BrushType
+        // BrushType = {
+        //     // Normal Brush
+        //     normalBefore: function () {
+        //         // Drawing line
+        //         // Defining color of line    
+        //         ctx.strokeStyle = Brush.color;
+        //         ctx.beginPath();
+        //         // Defining size of brush
+        //         ctx.lineWidth = Brush.size;
+        //         // Start point of line
+        //         ctx.moveTo(x, y);
+        //         // Lines ending >> lines will be rounded on ends
+        //         ctx.lineCap = 'round';
+        //     },
+        //     normalAfter: function () {
+        //         // End point of line
+        //         ctx.lineTo(x, y);
+        //         // Draw line
+        //         ctx.stroke();
+        //     }
+        // };
+
+        // // Clearing of canvas
+        // function clear() {
+        //     canvas.width = canvas.width;
+        // }
+
+        // // Check if mouse is down
+        // function drawTrue() {
+        //     isMouseDown = true;
+        // }
+
+        // // Check if mouse is down
+        // function drawFalse() {
+        //     first = 1;
+        //     isMouseDown = false;
+        // }
+
+        // // Function of drawing
+        // function draw(ev) {
+        //     // Check if mouse is down or not
+        //     if (isMouseDown) {
+        //         if (first == 1) {
+        //             // Return mouse X position to var x
+        //             x = ev.clientX - canvas.offsetLeft;
+        //             // Return mouse Y position to var y
+        //             y = ev.clientY - canvas.offsetTop;
+        //             first = 0;
+        //         }
+        //         else if (first === 0) {
+        //             // Calling of brush function
+        //             BrushType.normalBefore();
+        //             x = ev.clientX - canvas.offsetLeft;
+        //             y = ev.clientY - canvas.offsetTop;
+        //             // Calling of other brush function
+        //             BrushType.normalAfter();
+        //         }
+        //     }
+        // }
+
+        prepareSimpleCanvas();
     </script>
 </body>
 

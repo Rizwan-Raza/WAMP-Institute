@@ -1,75 +1,74 @@
 RewriteEngine On
 
-Redirect /executive-digital-marketing-course /courses/executive-digital-marketing
-Redirect /advanced-digital-marketing-course /courses/advanced-digital-marketing
-Redirect /digital-marketing-course /courses/crash-course-digital-marketing
-
-Redirect /overview-digital-marketing /courses/advanced-digital-marketing
-Redirect /social-media-marketing /courses/advanced-digital-marketing
-Redirect /mobile-marketing /courses/advanced-digital-marketing
-Redirect /online-graphic-designing-tools /courses/advanced-digital-marketing
-Redirect /website-introduction /courses/advanced-digital-marketing
-Redirect /content-writing /courses/advanced-digital-marketing
-Redirect /lead-generation /courses/advanced-digital-marketing
-Redirect /video-editing /courses/advanced-digital-marketing
-Redirect /website-creation-html-wordpress /courses/advanced-digital-marketing
-Redirect /email-marketing /courses/advanced-digital-marketing
-Redirect /e-commerce-setup-seo /courses/advanced-digital-marketing
-Redirect /video-optimization /courses/advanced-digital-marketing
-Redirect /search-engine-optimization /courses/advanced-digital-marketing
-Redirect /google-analytics /courses/advanced-digital-marketing
-Redirect /e-commerce-marketing-scm-tools /courses/advanced-digital-marketing
-Redirect /earning-youtube /courses/advanced-digital-marketing
-Redirect /google-adwords /courses/advanced-digital-marketing
-Redirect /google-webmaster-tools /courses/advanced-digital-marketing
-Redirect /online-reputation-management /courses/advanced-digital-marketing
-Redirect /earning-google-adsense /courses/advanced-digital-marketing
-Redirect /google-trends /courses/advanced-digital-marketing
-Redirect /audio-engineering /courses/advanced-digital-marketing
-Redirect /earning-freelancer /courses/advanced-digital-marketing
-Redirect /social-media-optimization /courses/advanced-digital-marketing
-
-Redirect /basics-marketing-branding /courses/advanced-digital-marketing
-Redirect /google-docs /courses/advanced-digital-marketing
-Redirect /conversion-rate-optimization /courses/advanced-digital-marketing
-Redirect /google-tag-manager /courses/advanced-digital-marketing
-Redirect /automation-tools-digital-marketing /courses/advanced-digital-marketing
-Redirect /quora-optimization /courses/advanced-digital-marketing
-Redirect /bing-tag-manager /courses/advanced-digital-marketing
-Redirect /product-marketing /courses/advanced-digital-marketing
-Redirect /bing-webmaster-tools /courses/advanced-digital-marketing
-Redirect /growth-hacking /courses/advanced-digital-marketing
-Redirect /affiliate-marketing /courses/advanced-digital-marketing
-Redirect /bing-adwords /courses/advanced-digital-marketing
-Redirect /google-admin-g-suite /courses/advanced-digital-marketing
-Redirect /google-forms-google-survey /courses/advanced-digital-marketing
-Redirect /adobe-spark /courses/advanced-digital-marketing
-Redirect /earning-digital-networking /courses/advanced-digital-marketing
-Redirect /google-sheets /courses/advanced-digital-marketing
-
-Redirect /advanced-analytics-tools /
-Redirect /introduction-url-shorteners /
-Redirect /hosting-server-security /
-Redirect /viral-marketing /
-Redirect /bing-tag-manager /
-Redirect /business-law /
-Redirect /pro-blogging /
-Redirect /website-creation-magento /
-Redirect /coupons-work-marketing /
-Redirect /importance-gst-digital-marketing /
-Redirect /google-doubleclick /
-Redirect /best-practices-job-seekers /
-Redirect /entrepreneurship-now-never /
-Redirect /whatsapp-marketing /
-Redirect /automation-tools-digital-marketing /
-Redirect /entrepreneurship-now-never /
-Redirect /personal-branding /
-Redirect /startup-hacks /
-Redirect /earning-third-party-services /
-Redirect /updated-digital-marketer /
-Redirect /soft-skill-training /
-Redirect /earning-domains /
-Redirect /stock-management-digital-marketing /
+RewriteCond %{HTTP_HOST} ^www\.wampinstitute\.in [NC] 
+RewriteRule  .?  -  [S=67]
+RewriteRule ^digital-marketing-course$ /courses/digital-marketing [R=301,L]
+RewriteRule ^executive-digital-marketing-course$ /courses/executive-digital-marketing [R=301,L]
+RewriteRule ^advanced-digital-marketing-course$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^overview-digital-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^social-media-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^mobile-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^online-graphic-designing-tools$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^website-introduction$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^content-writing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^lead-generation$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^video-editing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^website-creation-html-wordpress$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^email-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^e-commerce-setup-seo$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^video-optimization$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^search-engine-optimization$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-analytics$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^e-commerce-marketing-scm-tools$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^earning-youtube$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-adwords$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-webmaster-tools$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^online-reputation-management$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^earning-google-adsense$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-trends$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^audio-engineering$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^earning-freelancer$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^social-media-optimization$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^basics-marketing-branding$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-docs$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^conversion-rate-optimization$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-tag-manager$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^automation-tools-digital-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^quora-optimization$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^bing-tag-manager$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^product-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^bing-webmaster-tools$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^growth-hacking$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^affiliate-marketing$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^bing-adwords$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-admin-g-suite$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-forms-google-survey$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^adobe-spark$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^earning-digital-networking$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^google-sheets$ /courses/advanced-digital-marketing [R=301,L]
+RewriteRule ^advanced-analytics-tools$ / [R=301,L]
+RewriteRule ^introduction-url-shorteners$ / [R=301,L]
+RewriteRule ^hosting-server-security$ / [R=301,L]
+RewriteRule ^viral-marketing$ / [R=301,L]
+RewriteRule ^bing-tag-manager$ / [R=301,L]
+RewriteRule ^business-law$ / [R=301,L]
+RewriteRule ^pro-blogging$ / [R=301,L]
+RewriteRule ^website-creation-magento$ / [R=301,L]
+RewriteRule ^coupons-work-marketing$ / [R=301,L]
+RewriteRule ^importance-gst-digital-marketing$ / [R=301,L]
+RewriteRule ^google-doubleclick$ / [R=301,L]
+RewriteRule ^best-practices-job-seekers$ / [R=301,L]
+RewriteRule ^entrepreneurship-now-never$ / [R=301,L]
+RewriteRule ^whatsapp-marketing$ / [R=301,L]
+RewriteRule ^automation-tools-digital-marketing$ / [R=301,L]
+RewriteRule ^entrepreneurship-now-never$ / [R=301,L]
+RewriteRule ^personal-branding$ / [R=301,L]
+RewriteRule ^startup-hacks$ / [R=301,L]
+RewriteRule ^earning-third-party-services$ / [R=301,L]
+RewriteRule ^updated-digital-marketer$ / [R=301,L]
+RewriteRule ^soft-skill-training$ / [R=301,L]
+RewriteRule ^earning-domains$ / [R=301,L]
+RewriteRule ^stock-management-digital-marketing$ / [R=301,L]
 
 
 #RewriteRule ^/?courses/(.*?)/?$ /course.html?url=$1 [L]
@@ -81,8 +80,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-AddHandler application/x-httpd-lsphp .htm .html
-#AddType application/x-httpd-php .html
+#AddHandler application/x-httpd-lsphp .htm .html
+AddType application/x-httpd-php .html
 
 ErrorDocument 404 /4O4.html
 ErrorDocument 500 /5OO.html
