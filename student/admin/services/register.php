@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // echo $sql;
 
-    require '../../../services/db.inc.php';
+    require '../../services/db.inc.php';
     $conn = DB::getConnection();
     if ($conn->query($sql) === true) {
         $data = array("message" => "Student Added Successfully!", "status" => "success");
