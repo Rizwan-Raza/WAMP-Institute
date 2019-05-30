@@ -8,11 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     // print_r($_POST);
 
     session_start();
-    $sql = "INSERT INTO `students` (`name`, `username`, `password`, `fee`, `time`) VALUES('$name', '$username', MD5('*WAMP*$password*WAMP*'), $fee, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'))";
+    $sql = "INSERT INTO `students` (`name`, `username`, `password`, `fee`, `active`, `time`) VALUES('$name', '$username', MD5('*WAMP*$password*WAMP*'), $fee, 1, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'))";
 
     // echo $sql;
 
-    require '../../services/db.inc.php';
+    require '../../../services/db.inc.php';
     $conn = DB::getConnection();
     if ($conn->query($sql) === true) {
         $data = array("message" => "Student Added Successfully!", "status" => "success");

@@ -22,7 +22,7 @@ if (!isset($_SESSION['student']) or $_SESSION['student'] != true) {
                     </div>
                 </div>
                 <div class="prevent-overlay hide full border-radius-8"></div>
-                <div class="card-panel border-radius-8">
+                <div class="card-panel border-radius-8" id="signinPanel">
                     <h5 class="fw-600">Sign in</h5>
                     <br />
                     <form id="signinForm">
@@ -47,25 +47,27 @@ if (!isset($_SESSION['student']) or $_SESSION['student'] != true) {
                                 <input type="checkbox" name="remember_me" />
                                 <span>Remember me</span>
                             </label>
-                            <a href="#" class="right align-right right-align text-primary fw-500"
-                                id="forgotPassword">Forgot password?</a>
+                            <a href="javascript:togglePanels('forgotPanel')"
+                                class="right align-right right-align text-primary fw-500" id="forgotPassword">Forgot
+                                password?</a>
                         </div>
                         <br /><br /><br />
                         <button type="submit"
                             class="btn bg-primary waves-effect waves-light white-text right text-capitalize">Sign
                             in</button>
                     </form>
-                    <a href="javascript:togglePanels()"
+                    <a href="javascript:togglePanels('registerPanel')"
                         class="btn text-primary btn-flat white waves-effect waves-primary fw-500 ml--1 text-capitalize">Not
                         registered yet?</a>
                     <br clear="both" />
                 </div>
-                <div class="card-panel border-radius-8 hide">
-                    <h5 class="fw-600">Send Request</h5>
+                <div class="card-panel border-radius-8 hide" id="registerPanel">
+                    <h5 class="fw-600">Create an account</h5>
                     <br />
-                    <form id="requestForm">
-                        <div class="input-field"><input type="text" class="validate" id="s_name" name="name" required>
-                            <label for="s_name">
+                    <form id="registerForm">
+                        <div class="input-field"><input type="text" class="validate" id="set_s_name" name="name"
+                                required>
+                            <label for="set_s_name">
                                 Name
                             </label>
                         </div>
@@ -88,10 +90,35 @@ if (!isset($_SESSION['student']) or $_SESSION['student'] != true) {
                         </div>
                         <br />
                         <button type="submit"
-                            class="btn bg-primary waves-effect waves-light white-text right text-capitalize">Send
-                            Request</button>
+                            class="btn bg-primary waves-effect waves-light white-text right text-capitalize">Create</button>
                     </form>
-                    <a href="javascript:togglePanels()"
+                    <a href="javascript:togglePanels('signinPanel')"
+                        class="btn text-primary btn-flat white waves-effect waves-primary fw-500 ml--1 text-capitalize">Sign
+                        in instead</a>
+                    <br clear="both" />
+                </div>
+                <div class="card-panel border-radius-8 hide" id="forgotPanel">
+                    <h5 class="fw-600">Account Recovery</h5>
+                    <br />
+                    <form id="forgotForm">
+                        <div class="input-field"><input type="text" class="validate" id="f_s_username" name="username"
+                                required>
+                            <label for="f_s_username">
+                                Username
+                            </label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" class="validate" id="f_s_email" name="email" required>
+                            <label for="f_s_email">
+                                Recovery Email
+                            </label>
+                        </div>
+                        <br />
+                        <button type="submit"
+                            class="btn bg-primary waves-effect waves-light white-text right text-capitalize">Send Reset
+                            Link</button>
+                    </form>
+                    <a href="javascript:togglePanels('signinPanel')"
                         class="btn text-primary btn-flat white waves-effect waves-primary fw-500 ml--1 text-capitalize">Sign
                         in instead</a>
                     <br clear="both" />

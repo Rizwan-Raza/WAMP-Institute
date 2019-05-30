@@ -8,16 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     // print_r($_POST);
 
     session_start();
-    $sql = "UPDATE `admins` SET `name` = '$name', `username` = '$username'" . ((isset($password) and !empty($password)) ? ", `password` = MD5('*WAMP*$password*WAMP*')" : "") . " WHERE `_aid`=$_SESSION[_aid]";
+    $sql = "INSERT INTO `students` (`name`, `username`, `password`, `time`) VALUES('$name', '$username', MD5('*WAMP*$password*WAMP*'), CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'))";
 
     // echo $sql;
 
-    require '../../../services/db.inc.php';
+    require '../../services/db.inc.php';
     $conn = DB::getConnection();
     if ($conn->query($sql) === true) {
-        $data = array("message" => "Profile Updated Successfully!", "status" => "success");
-        $_SESSION['a_name'] = $name;
-        $_SESSION['a_username'] = $username;
+        $data = array("message" => "Student Added Successfully!", "status" => "success");
     } elseif (strpos($conn->error, "Duplicate entry") === 0) {
         $data = array("message" => "Username already taken, try something else.", "status" => "username_error");
     } else {

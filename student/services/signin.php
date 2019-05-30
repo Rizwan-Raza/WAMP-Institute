@@ -4,21 +4,27 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" and isset($_POST['username']) and isse
     error_reporting(0);
     extract($_POST, EXTR_SKIP);
 
-    $sql = "SELECT `_sid`, `name`, `username` FROM `students` WHERE `username`='$username' AND `password`=MD5('*WAMP*$password*WAMP*')";
+    $sql = "SELECT `_sid`, `name`, `username`, `remain`, `fee`, `active` FROM `students` WHERE `username`='$username' AND `password`=MD5('*WAMP*$password*WAMP*')";
     require '../../services/db.inc.php';
     $conn = DB::getConnection();
     $result = $conn->query($sql);
     if ($result != false) {
         if ($result->num_rows > 0) {
             $u_data = $result->fetch_assoc();
-            $data = array("message" => "Logged In Successfully!", "status" => "success");
-            session_start();
-            $_SESSION['student'] = true;
-            $_SESSION['_sid'] =  $u_data['_sid'];
-            $_SESSION['s_name'] = $u_data['name'];
-            $_SESSION['s_username'] = $u_data['username'];
-            if (isset($remember_me) and $remember_me == "on") {
-                setcookie("stud_id", $_SESSION['_sid']);
+            if ($u_data['active'] == "1") {
+
+                $data = array("message" => "Logged In Successfully!", "status" => "success");
+                session_start();
+                $_SESSION['student'] = true;
+                $_SESSION['_sid'] =  $u_data['_sid'];
+                $_SESSION['s_name'] = $u_data['name'];
+                $_SESSION['s_username'] = $u_data['username'];
+                $_SESSION['s_fee'] = $u_data['fee'];
+                if (isset($remember_me) and $remember_me == "on") {
+                    setcookie("stud_id", $_SESSION['_sid']);
+                }
+            } else {
+                $data = array("message" => "Activate yourself by Registrar first.", "status" => "active_error");
             }
         } else {
             $data = array("message" => "Email and Password combination mismatch!", "status" => "pass_error");

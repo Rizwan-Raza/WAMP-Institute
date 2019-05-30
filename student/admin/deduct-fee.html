@@ -45,7 +45,7 @@ if (
                                         <select required name="stud_id" class="validate" id="studId">
                                             <option value="" disabled selected>Choose Student</option>
                                             <?php $sql = "SELECT * FROM `students`";
-                                            require "../services/db.inc.php";
+                                            require "../../services/db.inc.php";
                                             $conn = DB::getConnection();
                                             $result = $conn->query($sql); 
                                             while($user = $result->fetch_assoc()) { ?>
@@ -96,8 +96,8 @@ if (
                         class="material-icons">undo</i></button></div>
             <div class="sizePanel">
                 <div>
-                    <button class="btn-floating bg-primary waves-effect waves-light tooltipped" data-tooltip="Pen Size"
-                        onclick="toggleSizePanel()"><i class="material-icons">edit</i></button>
+                    <button class="btn-floating bg-primary waves-effect waves-light tooltipped" data-position="right"
+                        data-tooltip="Pen Size" onclick="toggleSizePanel()"><i class="material-icons">edit</i></button>
                 </div>
                 <div class="sizes z-depth-2 white shrink">
                     <div class="sizeHolder">
@@ -127,7 +127,7 @@ if (
             <div class="colorPanel">
                 <div>
                     <button class="btn-floating bg-primary waves-effect waves-light ml-1 tooltipped"
-                        data-tooltip="Pen Color" onclick="toggleColorPanel()"><i
+                        data-tooltip="Pen Color" data-position="right" onclick="toggleColorPanel()"><i
                             class="material-icons">palette</i></button>
                 </div>
                 <div class="colors z-depth-2 white shrink">

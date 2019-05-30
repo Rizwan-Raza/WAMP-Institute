@@ -18,15 +18,20 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
 
         <?php include "includes/sidenav.inc.html";
         $sql = "SELECT COUNT(`_sid`) FROM `students`"; 
-        require_once "../services/db.inc.php"; 
+        require_once "../../services/db.inc.php"; 
         $conn = DB::getConnection(); 
         $result = $conn->query($sql);
         $num_s = $result->fetch_assoc()['COUNT(`_sid`)'];
         
-        $sql = "SELECT COUNT(`_qid`) FROM `queries` WHERE type=2"; 
+        $sql = "SELECT COUNT(`_sid`) FROM `students` WHERE active=0"; 
         $conn = DB::getConnection(); 
         $result = $conn->query($sql);
-        $num_u = $result->fetch_assoc()['COUNT(`_qid`)'];
+        $num_u = $result->fetch_assoc()['COUNT(`_sid`)'];
+
+        $sql = "SELECT COUNT(`_pid`) FROM `payments` WHERE"; 
+        $conn = DB::getConnection(); 
+        $result = $conn->query($sql);
+        $num_p = $result->fetch_assoc()['COUNT(`_pid`)'];
         
         ?>
 
@@ -65,6 +70,20 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                                 </div>
                                 <div class="card-action center-align">
                                     Students
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l4 xl3">
+                        <a href="admin/deductions" class="waves-effect waves-light w-full">
+                            <div class="card bg-primary">
+                                <div class="card-content white-text">
+                                    <h4 class="fw-500 center-align">
+                                        <?=$num_p?>
+                                    </h4>
+                                </div>
+                                <div class="card-action center-align">
+                                    Deductions
                                 </div>
                             </div>
                         </a>
