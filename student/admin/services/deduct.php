@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $fileDir = "uploads/$stud_id-" . time() . ".png";
     $signature = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $signature));
     file_put_contents("../" . $fileDir, $signature);
-    $sql = "INSERT INTO `payments` (`_aid`, `_sid`, `amount`, `auth`, `time`) VALUES($_SESSION[_aid], $stud_id, $amount, '$fileDir', CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'));";
+    $sql = "INSERT INTO `payments` (`_aid`, `_sid`, `amount`, `sign`, `time`) VALUES($_SESSION[_aid], $stud_id, $amount, '$fileDir', CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'));";
 
     // echo $sql;
     require '../../../services/db.inc.php';

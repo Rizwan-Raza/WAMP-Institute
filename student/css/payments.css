@@ -1,4 +1,8 @@
+#materialbox-overlay {
+    background-color: #eeeeee;
+}
+
 tr .signature {
-    margin: -12px;
+    margin: -20px;
     height: 40px;
 }

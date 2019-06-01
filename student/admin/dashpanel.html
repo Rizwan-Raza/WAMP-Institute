@@ -9,7 +9,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
     <title>Digital Marketing Company | Web Design Company</title>
     <base href="../">
     <?php include "includes/head.inc.php"; ?>
-    <!-- <link rel="stylesheet" href="css/signin.css" /> -->
+    <link rel="stylesheet" href="css/dashpanel.css" />
 </head>
 
 <body>
@@ -28,10 +28,22 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
         $result = $conn->query($sql);
         $num_u = $result->fetch_assoc()['COUNT(`_sid`)'];
 
-        $sql = "SELECT COUNT(`_pid`) FROM `payments`"; 
+        $sql = "SELECT COUNT(`_pid`) FROM `payments` WHERE `approved`=1"; 
         $conn = DB::getConnection(); 
         $result = $conn->query($sql);
         $num_p = $result->fetch_assoc()['COUNT(`_pid`)'];
+
+        $sql = "SELECT COUNT(`_pid`) FROM `payments` WHERE `approved`=0"; 
+        $conn = DB::getConnection(); 
+        $result = $conn->query($sql);
+        $num_a = $result->fetch_assoc()['COUNT(`_pid`)'];
+
+        $sql = "SELECT (SELECT SUM(`students`.`fee`) FROM `students`) AS 'total', (SELECT SUM(`payments`.`amount`) FROM `payments`) as 'fee'"; 
+        $conn = DB::getConnection(); 
+        $result = $conn->query($sql);
+        $data = $result->fetch_assoc();
+        $num_tf = $data['total'];
+        $num_f = $data['fee'];
         
         ?>
 
@@ -84,6 +96,48 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                                 </div>
                                 <div class="card-action center-align">
                                     Deductions
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l4 xl3">
+                        <a href="admin/pendings" class="waves-effect waves-light w-full">
+                            <div class="card bg-primary">
+                                <div class="card-content white-text">
+                                    <h4 class="fw-500 center-align">
+                                        <?=$num_a?>
+                                    </h4>
+                                </div>
+                                <div class="card-action center-align">
+                                    Pending Signatures
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l4 xl3">
+                        <a href="admin/deduct-fee" class="waves-effect waves-light w-full">
+                            <div class="card bg-primary">
+                                <div class="card-content white-text">
+                                    <h4 class="fw-500 center-align">
+                                        &#8377; <?=$num_tf - $num_f?><span>/<?=$num_tf?></span>
+                                    </h4>
+                                </div>
+                                <div class="card-action center-align">
+                                    Total Fee to Collect
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 l4 xl3">
+                        <a href="admin/deductions" class="waves-effect waves-light w-full">
+                            <div class="card bg-primary">
+                                <div class="card-content white-text">
+                                    <h4 class="fw-500 center-align">
+                                        &#8377; <?=$num_f?><span>/<?=$num_tf?></span>
+                                    </h4>
+                                </div>
+                                <div class="card-action center-align">
+                                    Total Fee Collected
                                 </div>
                             </div>
                         </a>

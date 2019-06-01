@@ -6,7 +6,3 @@
 .card h4 {
     height: 40px;
 }
-
-.pulse::before {
-    background-color: #f44336;
-}

@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" and isset($_POST['username']) and isse
     error_reporting(0);
     extract($_POST, EXTR_SKIP);
 
-    $sql = "SELECT `_sid`, `name`, `username`, `remain`, `fee`, `active` FROM `students` WHERE `username`='$username' AND `password`=MD5('*WAMP*$password*WAMP*')";
+    $sql = "SELECT `_sid`, `name`, `username`, `fee`, `active` FROM `students` WHERE `username`='$username' AND `password`=MD5('*WAMP*$password*WAMP*')";
     require '../../services/db.inc.php';
     $conn = DB::getConnection();
     $result = $conn->query($sql);
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" and isset($_POST['username']) and isse
             $data = array("message" => "Email and Password combination mismatch!", "status" => "pass_error");
         }
     } else {
-        echo $conn->error;
+        // echo $conn->error;
         $data = array("message" => "Something went wrong!", "status" => "server_error");
     }
 }

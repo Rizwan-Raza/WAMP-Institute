@@ -30,6 +30,9 @@ $(() => {
             },
             error: (data, status) => {
                 console.log(data, status);
+                M.toast({
+                    html: object.message
+                });
             },
             complete: () => {
                 $(".progress-holder, .prevent-overlay").addClass("hide");

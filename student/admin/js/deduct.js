@@ -1,5 +1,22 @@
+var signed = false;
+var signRequire = true;
 $(() => {
     M.AutoInit();
+
+    $("#deductFeeForm input[type='checkbox']").change(e => {
+        signRequire = !e.target.checked;
+        if (!signRequire) {
+            $("#deductFeeForm button.modal-trigger").attr("disabled", "disabled");
+        } else {
+            $("#deductFeeForm button.modal-trigger").removeAttr("disabled");
+        }
+    });
+
+    $("select[required]").css({
+        display: "block",
+        position: 'absolute',
+        visibility: 'hidden'
+    });
 });
 
 function getParam(parameterName) {
@@ -196,6 +213,7 @@ function toggleColorPanel() {
 }
 
 $("#doneBtn").click(function (e) {
+    signed = true;
     var mycanvas = document.getElementById("canvasSimple"); //get your canvas
     $("#signatureField").val(mycanvas.toDataURL("image/png"));
     $("#signImg").attr("src", mycanvas.toDataURL("image/png"));
@@ -206,6 +224,20 @@ $("#doneBtn").click(function (e) {
 
 $("#deductFeeForm").submit(function (e) {
     e.preventDefault();
+    if (e.target.stud_id.value.length == 0) {
+        M.toast({
+            html: "Please choose student."
+        });
+        return;
+    }
+    if (signRequire) {
+        if (!signed) {
+            M.toast({
+                html: "Please make signature!"
+            });
+            return;
+        }
+    }
     $.ajax({
         url: "admin/services/deduct.php",
         method: "POST",

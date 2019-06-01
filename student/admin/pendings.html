@@ -13,7 +13,7 @@ if (
     <title>Digital Marketing Company | Web Design Company</title>
     <base href="../" />
     <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="admin/css/deduct.css" />
+    <link rel="stylesheet" href="admin/css/deductions.css" />
 </head>
 
 <body>
@@ -24,66 +24,65 @@ if (
         <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
             <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
             <div class="px-4">
-                <h4 class="my-1">Deduct Fee</h4>
+                <h4 class="my-1">Pending Signatures</h4>
             </div>
             <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
-            <div class="grey lighten-4">
-                <div class="container pt-2">
-                    <div class="card pos-rel" id="deductFee">
-                        <div class="progress-holder hide border-radius-0">
-                            <div class="progress border-radius-0">
-                                <div class="indeterminate bg-primary"></div>
-                            </div>
-                        </div>
-                        <div class="prevent-overlay hide full"></div>
+            <div class="grey lighten-3">
+                <?php $sql = "SELECT `students`.`name`, `payments`.* FROM `payments`, `students` WHERE `_aid`=$_SESSION[_aid] AND `students`.`_sid`=`payments`.`_sid` AND `approved`=0";
+                    require "../../services/db.inc.php";
+                    include "../includes/functions.inc.php";
+                    date_default_timezone_set("Asia/Kolkata");
+                    $conn =
+                        DB::getConnection();
+                    $result = $conn->query($sql); ?>
 
-                        <form id="deductFeeForm" class="p-4">
-                            <table class="border-0">
-                                <tr>
-                                    <td>Student: </td>
-                                    <td class="input-field">
-                                        <select name="stud_id" id="studId">
-                                            <option value="" disabled selected>Choose Student</option>
-                                            <?php $sql = "SELECT * FROM `students`";
-                                            require "../../services/db.inc.php";
-                                            $conn = DB::getConnection();
-                                            $result = $conn->query($sql); 
-                                            while($user = $result->fetch_assoc()) { ?>
-                                            <option value="<?= $user['_sid'] ?>"><?=$user['name']?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Amount: </td>
-                                    <td class="input-field">
-                                        <input id="ddf_amount" type="number" required class="validate" name="amount"
-                                            placeholder="Enter Amount">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Signature: &nbsp; </td>
-                                    <td class="py-2">
-                                        <div class="left my-1">
-                                            <label>
-                                                <input type="checkbox" />
-                                                <span>Skip, for Student</span>
-                                            </label>
-                                        </div>
-                                        <button class="btn bg-primary modal-trigger right"
-                                            data-target="signatureModal">Draw <span>signature</span> <i
-                                                class="material-icons right">launch</i></button>
-                                        <input type="url" class="hide" id="signatureField" name="signature" />
-                                        <img class="signatureBox hide" src="" alt="Signature" id="signImg" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <button type="submit"
-                                class="btn bg-primary right mt-4 waves-effect waves-light">Deduct</button>
-                            <br clear="all" />
-                        </form>
-                    </div>
-                </div>
+                <table>
+                    <?php if ($result and ($num = $result->num_rows) > 0) {
+                            ?>
+                    <thead>
+                        <tr>
+                            <th class="pl-4">#</th>
+                            <th>Amount</th>
+                            <th>Deduct for</th>
+                            <th>Time</th>
+                            <th>Signature</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php for ($i = 0; $i <
+                                    $num; $i++) {
+                                    $user = $result->fetch_assoc(); ?>
+                        <tr>
+                            <td class="pl-4">
+                                <?= $i + 1 ?>
+                            </td>
+                            <td>
+                                &#8377; <?= $user['amount'] ?>
+                            </td>
+                            <td>
+                                <?= $user['name'] ?>
+                            </td>
+                            <td class="tooltipped"
+                                data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
+                                <?= daysUntilToday($user['time']) ?>
+                            </td>
+                            <td>
+                                <button class="btn btn-small bg-primary waves-effect waves-light">Draw
+                                    Signature<i class="material-icons">launch</i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php
+                        } ?>
+                    <?php
+                    } else {
+                        ?>
+                    <tr>
+                        <td colspan="5" class="center-align">No payments found</td>
+                    </tr>
+                    <?php
+                    } ?>
+                </table>
             </div>
         </div>
     </section>
@@ -167,8 +166,8 @@ if (
                 class="material-icons">done</i></button>
     </div>
 
+
     <?php include "includes/scripts.inc.php"; ?>
-    <script src="admin/js/deduct.js"></script>
 </body>
 
 </html>

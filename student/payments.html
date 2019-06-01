@@ -28,7 +28,7 @@ if (
             </div>
             <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
             <div class="grey lighten-3">
-                <?php $sql = "SELECT `admins`.`name`, `payments`.* FROM `payments`, `admins` WHERE `_sid`=$_SESSION[_sid] AND `payments`.`_aid`=`admins`.`_aid`";
+                <?php $sql = "SELECT `admins`.`name`, `payments`.* FROM `payments`, `admins` WHERE `_sid`=$_SESSION[_sid] AND `payments`.`_aid`=`admins`.`_aid` AND `approved`=1";
                     require "../services/db.inc.php";
                     include "includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
@@ -57,10 +57,14 @@ if (
                                 <?= $i + 1 ?>
                             </td>
                             <td>
-                                <?= $user['amount'] ?>
+                                &#8377; <?= $user['amount'] ?>
                             </td>
                             <td>
-                                <img src="admin/<?= $user['auth'] ?>" class="signature materialboxed" />
+                                <?php if($user['approved']) { ?><div class="pos-rel"><img
+                                        src="admin/<?= $user['sign'] ?>" class="signature pos-abs" /><img
+                                        src="admin/<?= $user['sign'] ?>" class="signature materialboxed pos-abs" />
+                                </div>
+                                <?php } ?>
                             </td>
                             <td>
                                 <?= $user['name'] ?>
