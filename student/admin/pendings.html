@@ -13,7 +13,7 @@ if (
     <title>Digital Marketing Company | Web Design Company</title>
     <base href="../" />
     <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="admin/css/deductions.css" />
+    <link rel="stylesheet" href="admin/css/pendings.css" />
 </head>
 
 <body>
@@ -67,8 +67,17 @@ if (
                                 <?= daysUntilToday($user['time']) ?>
                             </td>
                             <td>
-                                <button class="btn btn-small bg-primary waves-effect waves-light">Draw
-                                    Signature<i class="material-icons">launch</i></button>
+                                <form id="signatureApplyForm">
+                                    <img src="#" class="signature left hide" id="signImg" />
+                                    <input type="text" id="signatureField" name="signature" class="hide" />
+                                    <input type="text" name="pid" value="<?= $user['_pid'] ?>" class="hide" />
+                                    <input type="text" name="stud_id" value="<?= $user['_sid'] ?>" class="hide" />
+                                    <button type="submit"
+                                        class="btn bg-primary waves-effect waves-light btn-small hide right mx-1">Apply</button>
+                                </form>
+                                <button class="btn btn-small bg-primary waves-effect waves-light modal-trigger"
+                                    data-target="signatureModal">Draw
+                                    <span>Signature</span><i class="material-icons right">launch</i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -78,7 +87,7 @@ if (
                     } else {
                         ?>
                     <tr>
-                        <td colspan="5" class="center-align">No payments found</td>
+                        <td colspan="5" class="center-align">No pending payments found</td>
                     </tr>
                     <?php
                     } ?>
@@ -168,6 +177,7 @@ if (
 
 
     <?php include "includes/scripts.inc.php"; ?>
+    <script src="admin/js/pendings.js"></script>
 </body>
 
 </html>

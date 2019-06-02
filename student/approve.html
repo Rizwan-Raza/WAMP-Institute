@@ -13,7 +13,190 @@ if (
     <title>Digital Marketing Company | Web Design Company</title>
     <base href="../" />
     <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="css/payments.css" />
+    <link rel="stylesheet" href="admin/css/pendings.css" />
+    <style>
+        tr .signature {
+            margin: -12px;
+            height: 40px;
+        }
+
+        /*******************************/
+        #canvasSimple {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            user-select: none;
+            cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFK0lEQVRYR8XWCUzTVxwH8O+/7b8t5SiHrEDBwRo2I5NhJ0GFOTygi3N4RR0ZKJuUGeYtUnVuHnixjWnisi1LNNl0anaQLXOb4KwrKIooTo4CVVwEFYsXWizSc//3OOYCHkBx/6RJ09e+9+n3/3u/92fwP19MROSEIzKZzwTGIQw4cmS/8Wl7GLKg0Wh0JqdkgsfwUFNXv+XKpfL3nxaEAlhxSPGZU7/HeXp6Qv1uFsLCwnD8RNlofcXR0sGGUAAkIUF8q33v1ctnx0ulUty81YK1H3wEd3d3/KHVxdZWFZUMFqQDwF0CobzkwL6dY+Ljx8HDwwMikQit98xInbsYwcFBOFyg9aqrO25yNaQbADd5sDsrqjr48y5pVFQU3NzcKIJcCarZ8Pb2RUXd+WDDOe0VVyL+BXSkUP75ZxtGhocroFQqKaALkfjaHC4ZTxhqDRHV1cV6VyH+AyCTiiRDTXu/zvMYMmRID0TStLkwm9vQdOXmaL3eNQXaAwDxs2Grl827qFSOAEFERkbSYiRJ2O12pKuXQV9Tg7Z79vjKyqO6gSbRE0Bm5OpBs/idhlGjIhmCGDZsGHx8fCAQCNDa2ootW3fgl4O/AowksaZKd3ggiN4BnVtziTq5IS4umk8QCoUCfn5+sFqtMJlMKCjU4osvd6O9ja+qqtIW9hfxcEAnInmaqnHGdBWPIORyOUifsFgsNAnt0RJ8s2cfWu5aJ9ZVF2n7g3g0oBMxMTbm8oKMOQy5DaQe/P39aRKkX+zZm4/8/HyY2zFOX6Er7ivi8YBOhDIiojF7RRpPLBbTHiGTyegtIe07c+EalJaWcC1dOra2UneiL4gnA3QiFHJ5/WpNupjsCIlEgujoaHh5edGOqc7IQmPjZa5heaH8bGW1SMiTtrfdyjGb73z1KNCTA8gs4qChEr6zbPOm7GdIEmR3vMC9jhWfQmxcDOalLcLmnNUIDgnCG0kpuFhvaGy53TCX++WfD0P0DUBmYaVKxmYp3LhxjR/DYxEW+hxmzZoGlmXpGkuWrsWO7TloutZMEbX6igtmc3MqN3SyN0TfAWQWgXsCbOaCmbPeYjIXvE2TCAwMBMN0TEcQ2z/NwTVjM5KmpqLiXGm11XI3vTdE/wBkFb578vOKkG83bFjHDB8+HAEBAbRz8ni8bkTeJxvRfP06RZSfOfaX09G2kBs8/mAS/QfQJPy2va6Ky16+fDHTBSA7g8/ndyNyt32IW7dvU8SZ07pzcFpWcYOHuhADA8BHygjYA0sXpalmzkyifYKk4O3tDaFQ2I1Yv06DtvtmTJ+RhlOl2gscYg03+D35wgABZIqgoYzAcXLVyozAKVNUdHGCIB2z6ygnNbFKswROODD7TTVKjhUanY52gtjtAgBByEbwBEyB5jGI5csywQr5SEnNRJHuN5Pddn+GiwCcQSh7kefk5Wuy1OGTJyfA19e31yTey5wPD08JRrwUj5abhgOuA5AgRP7hPIfgOw4RlZAQT9v1g7fjapMRubk7kT4/BbGvTIHpTr2LAbTsfIP5rPCH7KyMmPHj4+gJShAFh4swdswoeo4QxL79P+JGc+1gAAgiwJ/PMj9lZ6nHGi400EXzPl5PEYmTXoXd4cDIlyehualqsAA0CS+BUHxo5Yr0MdU19fTQIgjD+b+RrdmEstNldqftxlTX1sCDLa7jvYh70tatXDE/hmzL0NBQpKYttDjtpks2a2suN75rsAEEweezQYVO2BQOW0sLGHYPHPfyXNQJe/7lvn7yD7xhxGrhwSefAAAAAElFTkSuQmCC'), auto;
+        }
+
+        .tools {
+            background-color: #eee;
+            height: 70px;
+            padding: 1rem;
+        }
+
+        .modal.full {
+            top: 0 !important;
+            max-height: 100%;
+        }
+
+        .sizePanel div,
+        .colorPanel div {
+            float: left;
+            border-radius: 28px;
+        }
+
+        .sizes,
+        .colors {
+            transition: all 300ms ease;
+            opacity: 1;
+        }
+
+        .sizes.shrink,
+        .sizes.shrink *,
+        .colors.shrink,
+        .colors.shrink * {
+            border: 0 !important;
+            width: 0px !important;
+            opacity: 0;
+        }
+
+        .sizes .sizeHolder {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .colors .colorHolder {
+            height: 40px;
+            width: 40px;
+            border: 3px solid transparent;
+        }
+
+        .sizes .sizeHolder.active,
+        .colors .colorHolder.active {
+            border: 3px solid #263a73;
+        }
+
+        .sizes .sizeHolder div {
+            background-color: #000;
+        }
+
+        .colors .colorHolder div {
+            height: 34px;
+            width: 34px;
+            border: 3px solid white;
+        }
+
+        .sizes .sizeHolder:nth-child(1) div {
+            height: 2px;
+            width: 2px;
+        }
+
+        .sizes .sizeHolder:nth-child(2) div {
+            height: 5px;
+            width: 5px;
+        }
+
+        .sizes .sizeHolder:nth-child(3) div {
+            height: 10px;
+            width: 10px;
+        }
+
+        .sizes .sizeHolder:nth-child(4) div {
+            height: 15px;
+            width: 15px;
+        }
+
+        .sizes .sizeHolder:nth-child(5) div {
+            height: 20px;
+            width: 20px;
+        }
+
+        .sizes .sizeHolder:nth-child(6) div {
+            height: 25px;
+            width: 25px;
+        }
+
+        .sizes .sizeHolder:nth-child(7) div {
+            height: 30px;
+            width: 30px;
+        }
+
+        .colors .colorHolder:nth-child(1) div {
+            background-color: #000;
+        }
+
+        .colors .colorHolder:nth-child(2) div {
+            background-color: #d32f2f;
+        }
+
+        .colors .colorHolder:nth-child(3) div {
+            background-color: #388e3c;
+        }
+
+        .colors .colorHolder:nth-child(4) div {
+            background-color: #303f9f;
+        }
+
+        .colors .colorHolder:nth-child(5) div {
+            background-color: #fbc02d;
+        }
+
+        .colors .colorHolder:nth-child(6) div {
+            background-color: #0097a7;
+        }
+
+        .colors .colorHolder:nth-child(7) div {
+            background-color: #aaaaaa;
+        }
+
+        #doneBtn {
+            position: fixed;
+            height: 56px;
+            width: 56px;
+            bottom: 24px;
+            right: 24px;
+        }
+
+        #doneBtn i {
+            line-height: 56px;
+        }
+
+        .signatureBox {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+
+            .sizePanel,
+            .colorPanel {
+                position: relative;
+            }
+
+            .sizes,
+            .colors {
+                position: absolute;
+                z-index: 99;
+                top: 48px;
+            }
+
+            #doneBtn {
+                height: 40px;
+                width: 40px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            #doneBtn i {
+                line-height: 40px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -66,9 +249,18 @@ if (
                                 data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
                                 <?= daysUntilToday($user['time']) ?>
                             </td>
-                            <td>
-                                <button class="btn btn-small bg-primary waves-effect waves-light pulse">Draw
-                                    Signature</button>
+                            <td style="overflow: hidden;" class="center">
+                                <form id="signatureApplyForm">
+                                    <img src="#" class="signature left hide" id="signImg" />
+                                    <input type="text" id="signatureField" name="signature" class="hide" />
+                                    <input type="text" name="pid" value="<?= $user['_pid'] ?>" class="hide" />
+                                    <input type="text" name="stud_id" value="<?= $user['_sid'] ?>" class="hide" />
+                                    <button type="submit"
+                                        class="btn bg-primary waves-effect waves-light btn-small hide right mx-1">Apply</button>
+                                </form>
+                                <button class="btn btn-small bg-primary waves-effect waves-light modal-trigger pulse"
+                                    data-target="signatureModal">Draw
+                                    <span>Signature</span><i class="material-icons right">launch</i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -78,7 +270,7 @@ if (
                     } else {
                         ?>
                     <tr>
-                        <td colspan="5" class="center-align">No payments to be approved</td>
+                        <td colspan="5" class="center-align">No payments to be approve</td>
                     </tr>
                     <?php
                     } ?>
@@ -88,17 +280,86 @@ if (
     </section>
 
     <!-- Modal Structure -->
-    <div id="queryModal" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+    <div id="signatureModal" class="modal full">
+        <div class="tools">
+            <div><button class="right ml-1 modal-close waves-effect waves-light btn-floating bg-primary tooltipped"
+                    data-tooltip="Close"><i class="material-icons">close</i></button><button id="clearCanvasSimple"
+                    class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"
+                    data-tooltip="Clear Canvas"><i class="material-icons">clear_all</i></button><button id="redoCanvas"
+                    class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"
+                    data-tooltip="Redo"><i class="material-icons">redo</i></button><button id="undoCanvas"
+                    data-tooltip="Undo"
+                    class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"><i
+                        class="material-icons">undo</i></button></div>
+            <div class="sizePanel">
+                <div>
+                    <button class="btn-floating bg-primary waves-effect waves-light tooltipped" data-position="right"
+                        data-tooltip="Pen Size" onclick="toggleSizePanel()"><i class="material-icons">edit</i></button>
+                </div>
+                <div class="sizes z-depth-2 white shrink">
+                    <div class="sizeHolder">
+                        <div data-size="2" class="size"></div>
+                    </div>
+                    <div class="sizeHolder">
+                        <div data-size="5" class="size"></div>
+                    </div>
+                    <div class="sizeHolder active">
+                        <div data-size="10" class="size"></div>
+                    </div>
+                    <div class="sizeHolder">
+                        <div data-size="15" class="size"></div>
+                    </div>
+                    <div class="sizeHolder">
+                        <div data-size="20" class="size"></div>
+                    </div>
+                    <div class="sizeHolder">
+                        <div data-size="30" class="size"></div>
+                    </div>
+                    <div class="sizeHolder">
+                        <div data-size="40" class="size"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="colorPanel">
+                <div>
+                    <button class="btn-floating bg-primary waves-effect waves-light ml-1 tooltipped"
+                        data-tooltip="Pen Color" data-position="right" onclick="toggleColorPanel()"><i
+                            class="material-icons">palette</i></button>
+                </div>
+                <div class="colors z-depth-2 white shrink">
+                    <div class="colorHolder tooltipped" data-tooltip="Black">
+                        <div data-color="#000000" class="color"></div>
+                    </div>
+                    <div class="colorHolder tooltipped" data-tooltip="Red">
+                        <div data-color="#d32f2f" class="color"></div>
+                    </div>
+                    <div class="colorHolder tooltipped" data-tooltip="Green">
+                        <div data-color="#388e3c" class="color"></div>
+                    </div>
+                    <div class="colorHolder active tooltipped" data-tooltip="Blue">
+                        <div data-color="#303f9f" class="color"></div>
+                    </div>
+                    <div class="colorHolder tooltipped" data-tooltip="Yellow">
+                        <div data-color="#fbc02d" class="color"></div>
+                    </div>
+                    <div class="colorHolder tooltipped" data-tooltip="Cyan">
+                        <div data-color="#0097a7" class="color"></div>
+                    </div>
+                    <div class="colorHolder tooltipped" data-tooltip="Light Grey">
+                        <div data-color="#aaaaaa" class="color"></div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button class="modal-close waves-effect waves-red btn-flat">Close</button>
-        </div>
+        <div id="canvasSimpleDiv"></div>
+        <button id="doneBtn" class="btn-floating bg-primary waves-effect waves-light"><i
+                class="material-icons">done</i></button>
     </div>
 
     <?php include "includes/scripts.inc.php"; ?>
+    <script src="admin/js/pendings.js"></script>
 </body>
 
 </html>

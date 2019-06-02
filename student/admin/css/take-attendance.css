@@ -1,0 +1,23 @@
+table [type="checkbox"]+span:not(.lever) {
+    height: 16px;
+    line-height: 16px;
+}
+
+table [type="checkbox"].filled-in:checked+span:not(.lever):after,
+[type="checkbox"].filled-in.tabbed:checked:focus+span:not(.lever):after {
+    border: 2px solid #263a73;
+    background-color: #263a73;
+}
+
+.tool-bar {
+    right: 24px;
+    bottom: 24px;
+}
+
+.active-table-row {
+    background-color: #b3c0e6;
+}
+
+table tr td {
+    border-radius: 0;
+}
