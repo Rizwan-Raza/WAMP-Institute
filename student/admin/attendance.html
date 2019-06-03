@@ -13,7 +13,7 @@ if (
     <title>Digital Marketing Company | Web Design Company</title>
     <base href="../" />
     <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="admin/css/take-attendance.css" />
+    <link rel="stylesheet" href="admin/css/attendance.css" />
 </head>
 
 <body>
@@ -28,64 +28,28 @@ if (
             </div>
             <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
             <div class="grey lighten-3">
-                <?php $sql = "SELECT (SELECT SUM(`payments`.`amount`) FROM `payments` WHERE `payments`.`_sid`=`students`.`_sid`) as 'paid', `students`.* FROM `students`";
-                    require "../../services/db.inc.php";
-                    include "../includes/functions.inc.php";
-                    date_default_timezone_set("Asia/Kolkata");
-                    $conn =
-                        DB::getConnection();
-                    $result = $conn->query($sql); ?>
+                <div id="listView" class="grey lighten-3">
+                    <div id="listNav">
+                        <h5 class="m-0 p-2"><span class="fw-700" id="monthTitle"></span><button
+                                class="btn-flat btn-floating white waves-effect waves-dark right align-right mr-2"
+                                onclick="getNext()" id="nextBtn"><i
+                                    class="material-icons black-text">arrow_forward</i></button><button
+                                class="btn-flat btn-floating white waves-effect waves-dark right align-right mr-2"
+                                onclick="getPrevious()" id="prevBtn"><i
+                                    class="material-icons black-text">arrow_back</i></button>
+                        </h5>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="h-scroll border-top-1 grey-border border-lighten-2">
+                        <table id="forView">
+                            <tbody></tbody>
+                        </table>
+                        <table id="monthly-attendance" style="display:none">
+                            <tbody></tbody>
+                        </table>
 
-                <table>
-                    <?php if ($result and ($num = $result->num_rows) > 0) {
-                            ?>
-                    <thead>
-                        <tr>
-                            <th class="pl-4">
-                                <label class="tooltipped" data-tooltip="Select All" data-position="right">
-                                    <input type="checkbox" class="filled-in" id="globalCheckbox" />
-                                    <span></span>
-                                </label>
-                            </th>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for ($i = 0; $i <
-                                    $num; $i++) {
-                                    $user = $result->fetch_assoc(); ?>
-                        <tr id="stud-<?=$user['_sid']?>" data-sid="<?$user['_sid']?>">
-                            <td class="pl-4">
-                                <label>
-                                    <input type="checkbox" class="filled-in" />
-                                    <span></span>
-                                </label>
-                            </td>
-                            <td>
-                                <?= $i + 1 ?>
-                            </td>
-                            <td>
-                                <?= $user['name'] ?>
-                            </td>
-                            <td class="tooltipped"
-                                data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
-                                <?= $user['username'] ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <?php
-                        } ?>
-                    <?php
-                    } else {
-                        ?>
-                    <tr>
-                        <td colspan="6" class="center-align">No students found</td>
-                    </tr>
-                    <?php
-                    } ?>
-                </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -94,7 +58,7 @@ if (
         data-tooltip="Mark Attendance" data-position="left">
         <i class="material-icons">done_all</i></button>
     <?php include "includes/scripts.inc.php"; ?>
-    <script src="admin/js/take-attend.js"></script>
+    <script src="admin/js/attendance.js"></script>
 
 </body>
 

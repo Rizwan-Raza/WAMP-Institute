@@ -65,16 +65,12 @@ function deleteUser(_sid, elem) {
                 M.toast({
                     html: object.message
                 });
-                if (object.status == "server_error") {
-                    elem.css("opacity", 1);
-                    return;
-                } else if (object.status == "success") {
+                if (object.status == "success") {
                     elem.slideUp();
                 }
             },
             error: (data, status) => {
                 console.log(data, status);
-                elem.css("opacity", 1);
             },
             complete: () => {
                 elem.css("opacity", 1);

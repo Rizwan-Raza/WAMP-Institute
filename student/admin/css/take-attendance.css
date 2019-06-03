@@ -9,6 +9,11 @@ table [type="checkbox"].filled-in:checked+span:not(.lever):after,
     background-color: #263a73;
 }
 
+body>.preloader-wrapper {
+    right: 20px;
+    bottom: 20px;
+}
+
 .tool-bar {
     right: 24px;
     bottom: 24px;
@@ -20,4 +25,16 @@ table [type="checkbox"].filled-in:checked+span:not(.lever):after,
 
 table tr td {
     border-radius: 0;
+}
+
+.present {
+    background-color: #b6e2b8;
+}
+
+.absense-btn {
+    visibility: hidden;
+}
+
+.present:hover .absense-btn {
+    visibility: visible;
 }
