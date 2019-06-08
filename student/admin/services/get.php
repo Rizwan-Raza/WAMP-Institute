@@ -5,7 +5,7 @@ $data = array("message" => "Unknown method", "status" => "server_error");
 if ($_SERVER['REQUEST_METHOD'] === "GET" and isset($_GET['what'])) {
     error_reporting(0);
     $sql = "SELECT * FROM `$_GET[what]`;";
-    require '../../services/db.inc.php';
+    require '../../../services/db.inc.php';
     if ($result = DB::getConnection()->query($sql)) {
         $data = array();
         while ($row = $result->fetch_assoc()) {

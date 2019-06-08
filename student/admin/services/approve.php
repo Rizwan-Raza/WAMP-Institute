@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // echo $sql;
 
-    require '../../services/db.inc.php';
+    require '../../../services/db.inc.php';
     $conn = DB::getConnection();
     $result = $conn->query($sql);
     if ($result == true) {

@@ -5,15 +5,19 @@ $(() => {
         if ($(this).prop("checked")) {
             $('td input[type="checkbox"]:not(:disabled)').prop("checked", true);
             $('tbody tr').addClass('active-table-row');
-            $('.tool-bar').removeClass("scale-out");
-            $('.tool-bar').addClass("scale-in");
             $(this).closest(".tooltipped").attr("data-tooltip", "Select None");
         } else {
             $('td input[type="checkbox"]:not(:disabled)').prop("checked", false);
             $('tbody tr').removeClass('active-table-row');
+            $(this).closest(".tooltipped").attr("data-tooltip", "Select All");
+        }
+        /* === Toolbar Toggle */
+        if ($("td input:checkbox:checked:not(:disabled)").length > 0) {
+            $('.tool-bar').removeClass("scale-out");
+            $('.tool-bar').addClass("scale-in");
+        } else {
             $('.tool-bar').removeClass("scale-in");
             $('.tool-bar').addClass("scale-out");
-            $(this).closest(".tooltipped").attr("data-tooltip", "Select All");
         }
     });
 
@@ -55,6 +59,11 @@ $(() => {
                 });
                 $("td input:checked:not(:disabled)").attr("disabled", "disabled").closest("tr").addClass("present");
                 $("th input:checked").prop("checked", false);
+                if (object.status == "success") {
+                    for (let id in object.ids) {
+                        $("tr[data-sid='" + id + "']").find(".btn[type='reset']").attr("onclick", "markAbsense(" + object.ids[id] + ", this)");
+                    }
+                }
                 // if (object.status == "username_error") {
                 //     e.target.username.focus();
                 //     return;
@@ -92,7 +101,7 @@ function markAbsense(atId, elem) {
                 html: object.message
             });
             if (object.status == "success") {
-                elem.removeClass("present").find("input:checked:disabled").removeAttr("disabled").removeAttr("checked");
+                elem.removeClass("present").removeClass("active-table-row").find("input").removeAttr("disabled").removeAttr("checked");
             }
             // if (object.status == "username_error") {
             //     e.target.username.focus();

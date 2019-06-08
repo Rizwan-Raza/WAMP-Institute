@@ -1,0 +1,24 @@
+.fc-scroller.fc-day-grid-container {
+    height: auto !important;
+}
+
+.fc-dayGrid-view .fc-body .fc-row {
+    max-height: 6em;
+}
+
+.fc table {
+    font-size: 1rem;
+}
+
+.fc-today {
+    font-size: 2rem;
+}
+
+tr {
+    border-bottom: 0;
+}
+
+.fc-bgevent {
+    background: #8fdf82;
+    opacity: .3;
+}

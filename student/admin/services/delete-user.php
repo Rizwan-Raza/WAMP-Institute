@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $sql = "DELETE FROM `students` WHERE `_sid`=$_POST[_sid]";
 
-    require '../../services/db.inc.php';
+    require '../../../services/db.inc.php';
     $conn = DB::getConnection();
     $result = $conn->query($sql);
     if ($result == true) {

@@ -10,8 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $sql = " ";
 
     foreach ($stud_id as $sid) {
-        $sql .= " INSERT INTO `attendance` (`_aid`, `_sid`, `time`) VALUES($_SESSION[_aid], $sid, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30
-    '));";
+        $sql .= " INSERT INTO `attendance` (`_aid`, `_sid`, `time`) VALUES($_SESSION[_aid], $sid, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'));";
     }
 
     // echo $sql;
@@ -19,7 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     require '../../../services/db.inc.php';
     $conn = DB::getConnection();
     if ($conn->multi_query($sql) === true) {
-        $data = array("message"  => "Attendance Added Successfully!", "status" => "success");
+        $ids = array();
+        foreach ($stud_id as $sid) {
+            $ids[$sid] = $conn->insert_id;
+            $conn->next_result();
+        }
+        $data = array("message"  => "Attendance Added Successfully!", "status" => "success", "ids" => $ids);
     } else {
         // echo $conn->error;
         $data = array("message " => "Something went wrong!",  "status" => "server_error");

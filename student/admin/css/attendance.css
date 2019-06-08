@@ -1,3 +1,40 @@
+.loader {
+    height: 300px
+}
+
+.loader,
+.loader .preloader-wrapper {
+    display: flex;
+}
+
+.loader .preloader-wrapper {
+    margin: auto
+}
+
+#listView {
+    display: none
+}
+
+.h-scroll {
+    overflow-x: auto;
+}
+
 #listNav h5 button {
     margin-top: -8px;
+}
+
+#listView table td.absent {
+    background-color: #FAE3E3;
+}
+
+#listView table td.present {
+    background-color: #c8e6c9;
+}
+
+#listView table td.attending {
+    background-color: #FDF1BA;
+}
+
+#listView table td {
+    padding: 8px 5px;
 }
