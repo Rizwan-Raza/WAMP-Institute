@@ -1,0 +1,90 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_SESSION['student']) and $_SESSION['student'] == true) {
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>Profile | WAMP Digital Marketing Institute</title>
+        <base href="../">
+        <?php include "includes/head.inc.php"; ?>
+    </head>
+
+    <body>
+        <!-- Page Layout here -->
+        <section class="row m-0 p-0">
+
+            <?php include "includes/sidenav.inc.html"; ?>
+
+            <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
+                <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
+                <div class="px-4">
+                    <h4 class="my-1">
+                        Profile
+                    </h4>
+                </div>
+                <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
+                <div class="grey lighten-4" id="userInfo">
+                    <div class="container pt-2">
+                        <div class="card p-4" id="studentProfile">
+                            <?php if (isset($_GET['username'])) {
+                                $sql = "SELECT (SELECT SUM(`payments`.`amount`) FROM `payments` WHERE `payments`.`_sid`=`students`.`_sid`) as 'paid', `students`.* FROM `students` WHERE `students`.`username`='$_GET[username]'";
+                                require "../services/db.inc.php";
+                                include "includes/functions.inc.php";
+                                date_default_timezone_set("Asia/Kolkata");
+                                $conn =
+                                    DB::getConnection();
+                                $result = $conn->query($sql);
+                                $user = $result->fetch_assoc();
+                                ?>
+                                <table>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td><b id="stu_name"><?= @$user['name'] ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Username</td>
+                                        <td><b id="stu_username"><?= @$user['username'] ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Course</td>
+                                        <td><b id="stu_course"><?= (@$user['course'] == 1 ? 'Crash Course in Digital Marketing' : @$user['course'] == 2 ? 'Executive Digital Marketing Course' : 'Advanced Digital Marketing Course') ?></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Fee</td>
+                                        <td><b>&#8377; <span id="stu_fee"><?= @$user['fee'] ?></span></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fee Remain</td>
+                                        <td><b>&#8377; <span id="stu_remain"><?= $user['fee'] - $user['paid'] ?></span></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Joined on</td>
+                                        <td><b id="stu_joined"><?= date_format(date_create($user['time']), 'M jS, Y \a\\t g:i:s A') ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Around</td>
+                                        <td><b id="stu_time"><?= daysUntilToday($user['time']) ?></b></td>
+                                    </tr>
+                                </table>
+                            <?php } else { ?>
+                                <div class="center h1">Profile not exist</div>
+                            <?php } ?>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <?php include "includes/scripts.inc.php"; ?>
+    </body>
+
+    </html>
+
+<?php } else {
+    header("Location: /?redirect_to=" . $_SERVER['REDIRECT_URL']);
+} ?>

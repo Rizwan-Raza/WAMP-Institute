@@ -10,7 +10,7 @@ if (
     <html lang="en">
 
     <head>
-        <title>Digital Marketing Company | Web Design Company</title>
+        <title>Student Registration  Requests | WAMP Digital Marketing Institute</title>
         <base href="../" />
         <?php include "includes/head.inc.php"; ?>
         <link rel="stylesheet" href="admin/css/requests.css" />
@@ -67,7 +67,7 @@ if (
                                         </td>
                                         <td>
                                             <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="approveUser(<?= $user['_sid'] ?>, this)" data-tooltip="Approve"><i class="material-icons black-text lh-5">check</i></button>
-                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="deleteUser(<?= $user['_sid'] ?>, this)" data-tooltip="Delete"><i class="material-icons black-text lh-5">delete</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-red" onclick="deleteUser(<?= $user['_sid'] ?>, this)" data-tooltip="Delete"><i class="material-icons black-text lh-5">delete</i></button>
                                         </td>
                                     </tr>
                                 </tbody>

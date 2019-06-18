@@ -55,6 +55,11 @@ body {
     color: #263a73 !important;
 }
 
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #263a73;
+}
+
 
 .card-action {
     border-color: rgba(255, 255, 255, 0.4) !important;

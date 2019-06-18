@@ -6,96 +6,131 @@ if (
     $_SESSION['admin'] == true
 ) {
     ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <title>Digital Marketing Company | Web Design Company</title>
-    <base href="../" />
-    <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="admin/css/deductions.css" />
-</head>
+    <head>
+        <title>Deductions | WAMP Digital Marketing Institute</title>
+        <base href="../" />
+        <?php include "includes/head.inc.php"; ?>
+        <link rel="stylesheet" href="admin/css/deductions.css" />
+    </head>
 
-<body>
-    <!-- Page Layout here -->
-    <section class="row m-0 p-0">
-        <?php include "includes/sidenav.inc.html" ?>
+    <body>
+        <!-- Page Layout here -->
+        <section class="row m-0 p-0">
+            <?php include "includes/sidenav.inc.html" ?>
 
-        <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
-            <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
-            <div class="px-4">
-                <h4 class="my-1">Student Payments</h4>
-            </div>
-            <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
-            <div class="grey lighten-3">
-                <?php $sql = "SELECT `students`.`name`, `payments`.* FROM `payments`, `students` WHERE `_aid`=$_SESSION[_aid] AND `students`.`_sid`=`payments`.`_sid` AND `approved`=1";
-                    require "../../services/db.inc.php";
+            <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
+                <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
+                <div class="px-4">
+                    <h4 class="my-1">Student Payments <div class="right m-0"><select name="stud_id" id="studId">
+                                <option value="" disabled selected>All</option>
+                                <?php $sql = "SELECT * FROM `students`";
+                                require "../../services/db.inc.php";
+                                $conn = DB::getConnection();
+                                $result = $conn->query($sql);
+
+                                while ($user = $result->fetch_assoc()) { ?>
+                                    <option value="<?= $user['_sid'] ?>"><?= $user['name'] ?></option>
+                                <?php } ?>
+                            </select></div>
+                    </h4>
+                </div>
+                <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
+                <div class="progress-holder hide border-radius-0">
+                    <div class="progress border-radius-0">
+                        <div class="indeterminate bg-primary"></div>
+                    </div>
+                </div>
+                <div class="prevent-overlay hide full"></div>
+                <div class="grey lighten-3">
+                    <?php $sql = "SELECT `students`.`name`, `payments`.* FROM `payments`, `students` WHERE `_aid`=$_SESSION[_aid] AND `students`.`_sid`=`payments`.`_sid` AND `approved`=1";
+                    if (isset($_GET) and isset($_GET['sid'])) {
+                        $sql .= " AND `students`.`_sid`=" . $_GET['sid'];
+                    }
                     include "../includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
-                    $conn =
-                        DB::getConnection();
                     $result = $conn->query($sql); ?>
 
-                <table>
-                    <?php if ($result and ($num = $result->num_rows) > 0) {
+                    <table>
+                        <?php if ($result and ($num = $result->num_rows) > 0) {
                             ?>
-                    <thead>
-                        <tr>
-                            <th class="pl-4">#</th>
-                            <th>Amount</th>
-                            <th>Signature</th>
-                            <th>Deduct for</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for ($i = 0; $i <
+                            <thead>
+                                <tr>
+                                    <th class="pl-4">#</th>
+                                    <th>Amount</th>
+                                    <th>Signature</th>
+                                    <th>Deduct for</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php for ($i = 0; $i <
                                     $num; $i++) {
                                     $user = $result->fetch_assoc(); ?>
-                        <tr>
-                            <td class="pl-4">
-                                <?= $i + 1 ?>
-                            </td>
-                            <td>
-                                &#8377; <?= $user['amount'] ?>
-                            </td>
-                            <td>
-                                <?php if($user['approved']) { ?><div class="pos-rel"><img
-                                        src="admin/<?= $user['sign'] ?>" class="signature pos-abs" /><img
-                                        src="admin/<?= $user['sign'] ?>" class="signature materialboxed pos-abs" />
-                                </div>
-                                <?php } else { ?>
-                                <i class="material-icons">remove</i>
-                                <?php } ?>
-                            </td>
-                            <td>
-                                <?= $user['name'] ?>
-                            </td>
-                            <td class="tooltipped"
-                                data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
-                                <?= daysUntilToday($user['time']) ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <?php
+                                    <tr>
+                                        <td class="pl-4">
+                                            <?= $i + 1 ?>
+                                        </td>
+                                        <td>
+                                            &#8377; <?= $user['amount'] ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($user['approved']) { ?><div class="pos-rel"><img src="admin/<?= $user['sign'] ?>" class="signature pos-abs" /><img src="admin/<?= $user['sign'] ?>" class="signature materialboxed pos-abs" />
+                                                </div>
+                                            <?php } else { ?>
+                                                <i class="material-icons">remove</i>
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['name'] ?>
+                                        </td>
+                                        <td class="tooltipped" data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
+                                            <?= daysUntilToday($user['time']) ?>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            <?php
                         } ?>
-                    <?php
+                        <?php
                     } else {
                         ?>
-                    <tr>
-                        <td colspan="5" class="center-align">No payments found</td>
-                    </tr>
-                    <?php
+                            <tr>
+                                <td colspan="5" class="center-align">No payments found</td>
+                            </tr>
+                        <?php
                     } ?>
-                </table>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <?php include "includes/scripts.inc.php"; ?>
-</body>
+        <?php include "includes/scripts.inc.php"; ?>
+        <script>
+            function getParam(parameterName) {
+                var result = null,
+                    tmp = [];
+                var items = location.search.substr(1).split("&");
+                for (var index = 0; index < items.length; index++) {
+                    tmp = items[index].split("=");
+                    if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                }
+                return result;
+            }
+            if (getParam("sid")) {
+                $("#studId option").removeAttr("selected");
+                $("#studId option[value='" + getParam("sid") + "']").attr("selected", "selected");
+                $("#studId input").val($("#studId option[value='" + getParam("sid") + "']").text());
+            }
 
-</html>
+            $("#studId").change(() => {
+                window.location.href = '/admin/deductions?sid=' + $("#studId").val();
+            });
+        </script>
+    </body>
+
+    </html>
 
 <?php
 } else {

@@ -10,7 +10,7 @@ if (
     <html lang="en">
 
     <head>
-        <title>Digital Marketing Company | Web Design Company</title>
+        <title>Students | WAMP Digital Marketing Institute</title>
         <base href="../" />
         <?php include "includes/head.inc.php"; ?>
         <link rel="stylesheet" href="admin/css/students.css" />
@@ -28,7 +28,7 @@ if (
                 </div>
                 <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
                 <div class="grey lighten-3">
-                    <?php $sql = "SELECT (SELECT SUM(`payments`.`amount`) FROM `payments` WHERE `payments`.`_sid`=`students`.`_sid`) as 'paid', `students`.* FROM `students`";
+                    <?php $sql = "SELECT (SELECT SUM(`payments`.`amount`) FROM `payments` WHERE `payments`.`_sid`=`students`.`_sid`) as 'paid', `students`.* FROM `students` WHERE `students`.`active`=1";
                     require "../../services/db.inc.php";
                     include "../includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
@@ -71,6 +71,7 @@ if (
                                         </td>
                                         <td>
                                             <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deduct-fee?sid=<?= $user['_sid'] ?>'" data-tooltip="Deduct Fee"><i class="material-icons black-text lh-5">payment</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="viewProfile('<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>,<?= $user['fee'] - $user['paid'] ?>, '<?= date_format(date_create($user['time']), 'M jS, Y \a\\t g:i:s A') ?>', '<?= daysUntilToday($user['time']) ?>')" data-tooltip="View Profile"><i class="material-icons black-text lh-5">visibility</i></button><button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deductions?sid=<?= $user['_sid'] ?>'" data-tooltip="Payment History"><i class="material-icons black-text lh-5">timeline</i></button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -90,17 +91,59 @@ if (
         </section>
 
         <!-- Modal Structure -->
-        <div id="queryModal" class="modal">
+        <div id="profileModal" class="modal">
             <div class="modal-content">
                 <h4>Modal Header</h4>
-                <p>A bunch of text</p>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><b id="stu_name">NA</b></td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td><b id="stu_username">NA</b></td>
+                    </tr>
+                    <tr>
+                        <td>Course</td>
+                        <td><b id="stu_course">NA</b></td>
+                    </tr>
+                    <tr>
+                        <td>Total Fee</td>
+                        <td><b>&#8377; <span id="stu_fee">NA</span></b></td>
+                    </tr>
+                    <tr>
+                        <td>Fee Remain</td>
+                        <td><b>&#8377; <span id="stu_remain">NA</span></b></td>
+                    </tr>
+                    <tr>
+                        <td>Joined on</td>
+                        <td><b id="stu_joined">NA</b></td>
+                    </tr>
+                    <tr>
+                        <td>Around</td>
+                        <td><b id="stu_time">NA</b></td>
+                    </tr>
+                </table>
             </div>
             <div class="modal-footer">
-                <button class="modal-close waves-effect waves-red btn-flat">Close</button>
+                <button class="modal-close waves-effect waves-red btn btn-flat transparent">Close</button>
             </div>
         </div>
 
         <?php include "includes/scripts.inc.php"; ?>
+        <script>
+            function viewProfile(name, username, course, fee, remain, time, hr_time) {
+                $("#profileModal h4").text(`${name} (${username})`);
+                $("#profileModal #stu_name").text(name);
+                $("#profileModal #stu_username").text(username);
+                $("#profileModal #stu_course").text(`${course == 1 ? 'Crash Course in Digital Marketing' : course == 2 ? 'Executive Digital Marketing Course' : 'Advanced Digital Marketing Course'}`);
+                $("#profileModal #stu_fee").text(`${fee}`);
+                $("#profileModal #stu_remain").text(`${remain}`);
+                $("#profileModal #stu_joined").text(`${time}`);
+                $("#profileModal #stu_time").text(`${hr_time}`);
+                $("#profileModal").modal("open");
+            }
+        </script>
     </body>
 
     </html>

@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     // print_r($_POST);
 
     session_start();
-    $sql = "INSERT INTO `students` (`name`, `username`, `password`, `time`) VALUES('$name', '$username', MD5('*WAMP*$password*WAMP*'), CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'))";
+    $sql = "INSERT INTO `students` (`name`, `username`, `password`, `course`, `time`) VALUES('$name', '$username', MD5('*WAMP*$password*WAMP*'), $course, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'))";
 
     // echo $sql;
 

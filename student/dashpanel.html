@@ -8,7 +8,7 @@ if (isset($_SESSION['student']) and $_SESSION['student'] == true) {
 <html lang="en">
 
 <head>
-    <title>Digital Marketing Company | Web Design Company</title>
+    <title>Dashboard | WAMP Digital Marketing Institute</title>
     <base href="../">
     <?php include "includes/head.inc.php"; ?>
     <link rel="stylesheet" href="css/dashpanel.css" />
@@ -81,7 +81,7 @@ if (isset($_SESSION['student']) and $_SESSION['student'] == true) {
                     </div>
 
                     <div class="col s12 m6 l4 xl3">
-                        <a href="javascript:;" class="waves-effect waves-light w-full">
+                        <a href="payments" class="waves-effect waves-light w-full">
                             <div class="card bg-primary">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align truncate">
@@ -95,11 +95,11 @@ if (isset($_SESSION['student']) and $_SESSION['student'] == true) {
                         </a>
                     </div>
                     <div class="col s12 m6 l4 xl3">
-                        <a href="javascript:;" class="waves-effect waves-light w-full">
+                        <a href="payments" class="waves-effect waves-light w-full">
                             <div class="card bg-primary">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align truncate">
-                                        &#8377; <?= $paid ?><span>/<?= $_SESSION['s_fee'] ?></span>
+                                        &#8377; <?= $paid ? $paid : '0' ?><span>/<?= $_SESSION['s_fee'] ?></span>
                                     </h4>
                                 </div>
                                 <div class="card-action center-align">

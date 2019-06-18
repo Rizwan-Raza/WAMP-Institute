@@ -1,3 +1,39 @@
+function deletePayment(_pid, elem) {
+    let answer = confirm("Are you sure, you want to rollback this payment?");
+    if (answer) {
+        elem = $(elem).closest("tr");
+        $.ajax({
+            url: "admin/services/delete-payment.php",
+            method: "POST",
+            data: {
+                _pid: _pid
+            },
+            beforeSend: () => {
+                elem.css("opacity", 0.5);
+                // $("#progress, .prevent-overlay").removeClass("hide");
+            },
+            success: (data, status) => {
+                // console.log(data, status);
+                var object = JSON.parse(data);
+                M.toast({
+                    html: object.message
+                });
+                if (object.status == "success") {
+                    elem.slideUp();
+                }
+            },
+            error: (data, status) => {
+                console.log(data, status);
+            },
+            complete: () => {
+                elem.css("opacity", 1);
+                // $("#progress, .prevent-overlay").addClass("hide");
+            }
+        });
+    }
+}
+
+
 /****************************************************************************** Simple Canvas */
 
 var simpleStrokes = new Array();

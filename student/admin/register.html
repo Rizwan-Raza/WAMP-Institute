@@ -6,7 +6,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
 <html lang="en">
 
 <head>
-    <title>Digital Marketing Company | Web Design Company</title>
+    <title>Add New Student | WAMP Digital Marketing Institute</title>
     <base href="../">
     <?php include "includes/head.inc.php"; ?>
     <link rel="stylesheet" href="admin/css/settings.css" />
@@ -63,6 +63,17 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                                             data-tooltip="Show Password">
                                             <i class="material-icons grey-text text-darken-3"
                                                 style="vertical-align: middle">visibility_off</i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Course</td>
+                                    <td class="input-field">
+                                        <select name="course">
+                                            <option value="" disabled selected>Choose his/her course</option>
+                                            <option value="1">Crash Course in Digital Marketing</option>
+                                            <option value="2">Executive Digital Marketing Course</option>
+                                            <option value="3">Advanced Digital Marketing Course</option>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>

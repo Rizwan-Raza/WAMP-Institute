@@ -6,7 +6,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
 <html lang="en">
 
 <head>
-    <title>Digital Marketing Company | Web Design Company</title>
+    <title>Admin Dashboard | WAMP Digital Marketing Institute</title>
     <base href="../">
     <?php include "includes/head.inc.php"; ?>
     <link rel="stylesheet" href="css/dashpanel.css" />
@@ -17,13 +17,13 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
     <section class="row m-0 p-0">
 
         <?php include "includes/sidenav.inc.html";
-        $sql = "SELECT COUNT(`_sid`) FROM `students`"; 
+        $sql = "SELECT COUNT(`_sid`) FROM `students` WHERE active=0"; 
         require_once "../../services/db.inc.php"; 
         $conn = DB::getConnection(); 
         $result = $conn->query($sql);
-        $num_s = $result->fetch_assoc()['COUNT(`_sid`)'];
+        $num_r = $result->fetch_assoc()['COUNT(`_sid`)'];
         
-        $sql = "SELECT COUNT(`_sid`) FROM `students` WHERE active=0"; 
+        $sql = "SELECT COUNT(`_sid`) FROM `students` WHERE active=1"; 
         $conn = DB::getConnection(); 
         $result = $conn->query($sql);
         $num_u = $result->fetch_assoc()['COUNT(`_sid`)'];
@@ -63,7 +63,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                             <div class="card bg-primary">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
-                                        <?=$num_u?>
+                                        <?=$num_r?>
                                     </h4>
                                 </div>
                                 <div class="card-action center-align">
@@ -77,7 +77,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                             <div class="card bg-primary">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
-                                        <?=$num_s?>
+                                        <?=$num_u?>
                                     </h4>
                                 </div>
                                 <div class="card-action center-align">
@@ -133,7 +133,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                             <div class="card bg-primary">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
-                                        &#8377; <?=$num_f?><span>/<?=$num_tf?></span>
+                                        &#8377; <?=$num_f ? $num_f : 0?><span>/<?=$num_tf?></span>
                                     </h4>
                                 </div>
                                 <div class="card-action center-align">

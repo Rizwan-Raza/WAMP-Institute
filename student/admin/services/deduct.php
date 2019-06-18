@@ -7,10 +7,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     extract($_REQUEST, EXTR_SKIP);
 
     session_start();
-    $fileDir = "uploads/$stud_id-" . time() . ".png";
-    $signature = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $signature));
+    $cols = "`_aid`, `_sid`, `amount`, `time`";
+    $vals = "$_SESSION[_aid], $stud_id, $amount, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30')";
+
+    if (!isset($skipSign) or $skipSign == "off") {
+        $fileDir = "uploads/$stud_id-" . time() . ".png";
+        $signature = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $signature));
+        $cols .= ", `sign`, `approved`";
+        $vals .= ", '$fileDir', 1";
+    }
     file_put_contents("../" . $fileDir, $signature);
-    $sql = "INSERT INTO `payments` (`_aid`, `_sid`, `amount`, `sign`, `time`) VALUES($_SESSION[_aid], $stud_id, $amount, '$fileDir', CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'));";
+    $sql = "INSERT INTO `payments` ($cols) VALUES($vals);";
 
     // echo $sql;
     require '../../../services/db.inc.php';

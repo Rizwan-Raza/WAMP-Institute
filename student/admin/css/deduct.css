@@ -6,11 +6,6 @@ table tr {
     border-bottom: 0;
 }
 
-#deductFeeForm .dropdown-content li>a,
-.dropdown-content li>span {
-    color: #263a73;
-}
-
 #canvasSimple {
     position: absolute;
     bottom: 0px;

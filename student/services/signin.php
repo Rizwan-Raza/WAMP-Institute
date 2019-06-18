@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" and isset($_POST['username']) and isse
                 $_SESSION['s_name'] = $u_data['name'];
                 $_SESSION['s_username'] = $u_data['username'];
                 $_SESSION['s_fee'] = $u_data['fee'];
+                $_SESSION['s_course'] = $u_data['course'];
                 if (isset($remember_me) and $remember_me == "on") {
                     setcookie("stud_id", $_SESSION['_sid']);
                 }

@@ -30,8 +30,7 @@
 <?php
 
 if (isset($_COOKIE["admin_id"])) {
-    // require "../php/rem-me.php";
+    require "../services/rem-me.php";
 }
-
 
 ?>

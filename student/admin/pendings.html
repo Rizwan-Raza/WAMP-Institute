@@ -6,29 +6,29 @@ if (
     $_SESSION['admin'] == true
 ) {
     ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <title>Digital Marketing Company | Web Design Company</title>
-    <base href="../" />
-    <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="admin/css/pendings.css" />
-</head>
+    <head>
+        <title>Pending Signatures | WAMP Digital Marketing Institute</title>
+        <base href="../" />
+        <?php include "includes/head.inc.php"; ?>
+        <link rel="stylesheet" href="admin/css/pendings.css" />
+    </head>
 
-<body>
-    <!-- Page Layout here -->
-    <section class="row m-0 p-0">
-        <?php include "includes/sidenav.inc.html" ?>
+    <body>
+        <!-- Page Layout here -->
+        <section class="row m-0 p-0">
+            <?php include "includes/sidenav.inc.html" ?>
 
-        <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
-            <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
-            <div class="px-4">
-                <h4 class="my-1">Pending Signatures</h4>
-            </div>
-            <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
-            <div class="grey lighten-3">
-                <?php $sql = "SELECT `students`.`name`, `payments`.* FROM `payments`, `students` WHERE `_aid`=$_SESSION[_aid] AND `students`.`_sid`=`payments`.`_sid` AND `approved`=0";
+            <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
+                <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
+                <div class="px-4">
+                    <h4 class="my-1">Pending Signatures</h4>
+                </div>
+                <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
+                <div class="grey lighten-3">
+                    <?php $sql = "SELECT `students`.`name`, `payments`.* FROM `payments`, `students` WHERE `_aid`=$_SESSION[_aid] AND `students`.`_sid`=`payments`.`_sid` AND `approved`=0";
                     require "../../services/db.inc.php";
                     include "../includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
@@ -36,151 +36,137 @@ if (
                         DB::getConnection();
                     $result = $conn->query($sql); ?>
 
-                <table>
-                    <?php if ($result and ($num = $result->num_rows) > 0) {
+                    <table>
+                        <?php if ($result and ($num = $result->num_rows) > 0) {
                             ?>
-                    <thead>
-                        <tr>
-                            <th class="pl-4">#</th>
-                            <th>Amount</th>
-                            <th>Deduct for</th>
-                            <th>Time</th>
-                            <th>Signature</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php for ($i = 0; $i <
+                            <thead>
+                                <tr>
+                                    <th class="pl-4">#</th>
+                                    <th>Amount</th>
+                                    <th>Deduct for</th>
+                                    <th>Time</th>
+                                    <th>Signature</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php for ($i = 0; $i <
                                     $num; $i++) {
                                     $user = $result->fetch_assoc(); ?>
-                        <tr>
-                            <td class="pl-4">
-                                <?= $i + 1 ?>
-                            </td>
-                            <td>
-                                &#8377; <?= $user['amount'] ?>
-                            </td>
-                            <td>
-                                <?= $user['name'] ?>
-                            </td>
-                            <td class="tooltipped"
-                                data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
-                                <?= daysUntilToday($user['time']) ?>
-                            </td>
-                            <td>
-                                <form id="signatureApplyForm">
-                                    <img src="#" class="signature left hide" id="signImg" />
-                                    <input type="text" id="signatureField" name="signature" class="hide" />
-                                    <input type="text" name="pid" value="<?= $user['_pid'] ?>" class="hide" />
-                                    <input type="text" name="stud_id" value="<?= $user['_sid'] ?>" class="hide" />
-                                    <button type="submit"
-                                        class="btn bg-primary waves-effect waves-light btn-small hide right mx-1">Apply</button>
-                                </form>
-                                <button class="btn btn-small bg-primary waves-effect waves-light modal-trigger"
-                                    data-target="signatureModal">Draw
-                                    <span>Signature</span><i class="material-icons right">launch</i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <?php
+                                    <tr>
+                                        <td class="pl-4">
+                                            <?= $i + 1 ?>
+                                        </td>
+                                        <td>
+                                            &#8377; <?= $user['amount'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $user['name'] ?>
+                                        </td>
+                                        <td class="tooltipped" data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
+                                            <?= daysUntilToday($user['time']) ?>
+                                        </td>
+                                        <td>
+                                            <form id="signatureApplyForm">
+                                                <img src="#" class="signature left hide" id="signImg" />
+                                                <input type="text" id="signatureField" name="signature" class="hide" />
+                                                <input type="text" name="pid" value="<?= $user['_pid'] ?>" class="hide" />
+                                                <input type="text" name="stud_id" value="<?= $user['_sid'] ?>" class="hide" />
+                                                <button type="submit" class="btn bg-primary waves-effect waves-light btn-small hide right mx-1">Apply</button>
+                                            </form>
+                                            <button class="btn btn-small bg-primary waves-effect waves-light modal-trigger" data-target="signatureModal">Draw
+                                                <span>Signature</span><i class="material-icons right">launch</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-red" onclick="deletePayment(<?= $user['_pid'] ?>, this)" data-tooltip="Roll Back"><i class="material-icons black-text lh-5">delete</i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            <?php
                         } ?>
-                    <?php
+                        <?php
                     } else {
                         ?>
-                    <tr>
-                        <td colspan="5" class="center-align">No pending payments found</td>
-                    </tr>
-                    <?php
+                            <tr>
+                                <td colspan="5" class="center-align">No pending payments found</td>
+                            </tr>
+                        <?php
                     } ?>
-                </table>
+                    </table>
+                </div>
             </div>
+        </section>
+
+        <!-- Modal Structure -->
+        <div id="signatureModal" class="modal full">
+            <div class="tools">
+                <div><button class="right ml-1 modal-close waves-effect waves-light btn-floating bg-primary tooltipped" data-tooltip="Close"><i class="material-icons">close</i></button><button id="clearCanvasSimple" class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped" data-tooltip="Clear Canvas"><i class="material-icons">clear_all</i></button><button id="redoCanvas" class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped" data-tooltip="Redo"><i class="material-icons">redo</i></button><button id="undoCanvas" data-tooltip="Undo" class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"><i class="material-icons">undo</i></button></div>
+                <div class="sizePanel">
+                    <div>
+                        <button class="btn-floating bg-primary waves-effect waves-light tooltipped" data-position="right" data-tooltip="Pen Size" onclick="toggleSizePanel()"><i class="material-icons">edit</i></button>
+                    </div>
+                    <div class="sizes z-depth-2 white shrink">
+                        <div class="sizeHolder">
+                            <div data-size="2" class="size"></div>
+                        </div>
+                        <div class="sizeHolder">
+                            <div data-size="5" class="size"></div>
+                        </div>
+                        <div class="sizeHolder active">
+                            <div data-size="10" class="size"></div>
+                        </div>
+                        <div class="sizeHolder">
+                            <div data-size="15" class="size"></div>
+                        </div>
+                        <div class="sizeHolder">
+                            <div data-size="20" class="size"></div>
+                        </div>
+                        <div class="sizeHolder">
+                            <div data-size="30" class="size"></div>
+                        </div>
+                        <div class="sizeHolder">
+                            <div data-size="40" class="size"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="colorPanel">
+                    <div>
+                        <button class="btn-floating bg-primary waves-effect waves-light ml-1 tooltipped" data-tooltip="Pen Color" data-position="right" onclick="toggleColorPanel()"><i class="material-icons">palette</i></button>
+                    </div>
+                    <div class="colors z-depth-2 white shrink">
+                        <div class="colorHolder tooltipped" data-tooltip="Black">
+                            <div data-color="#000000" class="color"></div>
+                        </div>
+                        <div class="colorHolder tooltipped" data-tooltip="Red">
+                            <div data-color="#d32f2f" class="color"></div>
+                        </div>
+                        <div class="colorHolder tooltipped" data-tooltip="Green">
+                            <div data-color="#388e3c" class="color"></div>
+                        </div>
+                        <div class="colorHolder active tooltipped" data-tooltip="Blue">
+                            <div data-color="#303f9f" class="color"></div>
+                        </div>
+                        <div class="colorHolder tooltipped" data-tooltip="Yellow">
+                            <div data-color="#fbc02d" class="color"></div>
+                        </div>
+                        <div class="colorHolder tooltipped" data-tooltip="Cyan">
+                            <div data-color="#0097a7" class="color"></div>
+                        </div>
+                        <div class="colorHolder tooltipped" data-tooltip="Light Grey">
+                            <div data-color="#aaaaaa" class="color"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="canvasSimpleDiv"></div>
+            <button id="doneBtn" class="btn-floating bg-primary waves-effect waves-light"><i class="material-icons">done</i></button>
         </div>
-    </section>
-
-    <!-- Modal Structure -->
-    <div id="signatureModal" class="modal full">
-        <div class="tools">
-            <div><button class="right ml-1 modal-close waves-effect waves-light btn-floating bg-primary tooltipped"
-                    data-tooltip="Close"><i class="material-icons">close</i></button><button id="clearCanvasSimple"
-                    class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"
-                    data-tooltip="Clear Canvas"><i class="material-icons">clear_all</i></button><button id="redoCanvas"
-                    class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"
-                    data-tooltip="Redo"><i class="material-icons">redo</i></button><button id="undoCanvas"
-                    data-tooltip="Undo"
-                    class="right ml-1 waves-effect waves-light btn-floating bg-primary tooltipped"><i
-                        class="material-icons">undo</i></button></div>
-            <div class="sizePanel">
-                <div>
-                    <button class="btn-floating bg-primary waves-effect waves-light tooltipped" data-position="right"
-                        data-tooltip="Pen Size" onclick="toggleSizePanel()"><i class="material-icons">edit</i></button>
-                </div>
-                <div class="sizes z-depth-2 white shrink">
-                    <div class="sizeHolder">
-                        <div data-size="2" class="size"></div>
-                    </div>
-                    <div class="sizeHolder">
-                        <div data-size="5" class="size"></div>
-                    </div>
-                    <div class="sizeHolder active">
-                        <div data-size="10" class="size"></div>
-                    </div>
-                    <div class="sizeHolder">
-                        <div data-size="15" class="size"></div>
-                    </div>
-                    <div class="sizeHolder">
-                        <div data-size="20" class="size"></div>
-                    </div>
-                    <div class="sizeHolder">
-                        <div data-size="30" class="size"></div>
-                    </div>
-                    <div class="sizeHolder">
-                        <div data-size="40" class="size"></div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="colorPanel">
-                <div>
-                    <button class="btn-floating bg-primary waves-effect waves-light ml-1 tooltipped"
-                        data-tooltip="Pen Color" data-position="right" onclick="toggleColorPanel()"><i
-                            class="material-icons">palette</i></button>
-                </div>
-                <div class="colors z-depth-2 white shrink">
-                    <div class="colorHolder tooltipped" data-tooltip="Black">
-                        <div data-color="#000000" class="color"></div>
-                    </div>
-                    <div class="colorHolder tooltipped" data-tooltip="Red">
-                        <div data-color="#d32f2f" class="color"></div>
-                    </div>
-                    <div class="colorHolder tooltipped" data-tooltip="Green">
-                        <div data-color="#388e3c" class="color"></div>
-                    </div>
-                    <div class="colorHolder active tooltipped" data-tooltip="Blue">
-                        <div data-color="#303f9f" class="color"></div>
-                    </div>
-                    <div class="colorHolder tooltipped" data-tooltip="Yellow">
-                        <div data-color="#fbc02d" class="color"></div>
-                    </div>
-                    <div class="colorHolder tooltipped" data-tooltip="Cyan">
-                        <div data-color="#0097a7" class="color"></div>
-                    </div>
-                    <div class="colorHolder tooltipped" data-tooltip="Light Grey">
-                        <div data-color="#aaaaaa" class="color"></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div id="canvasSimpleDiv"></div>
-        <button id="doneBtn" class="btn-floating bg-primary waves-effect waves-light"><i
-                class="material-icons">done</i></button>
-    </div>
 
 
-    <?php include "includes/scripts.inc.php"; ?>
-    <script src="admin/js/pendings.js"></script>
-</body>
+        <?php include "includes/scripts.inc.php"; ?>
+        <script src="admin/js/pendings.js"></script>
+    </body>
 
-</html>
+    </html>
 
 <?php
 } else {

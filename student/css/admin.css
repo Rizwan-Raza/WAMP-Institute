@@ -23,6 +23,10 @@
     margin: 0px;
 }
 
+#registerForm .select-wrapper input.select-dropdown {
+    height: 3.1rem;
+}
+
 #forgotPassword {
     line-height: 25px;
 }

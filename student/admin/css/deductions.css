@@ -6,3 +6,8 @@ tr .signature {
     margin: -20px;
     height: 40px;
 }
+
+h4.my-1 .select-wrapper input.select-dropdown {
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
