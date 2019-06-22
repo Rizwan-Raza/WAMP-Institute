@@ -5,3 +5,51 @@ table tr td i {
 table tr:hover td i {
     visibility: visible
 }
+
+table.border-0 td {
+    padding: 0px;
+}
+
+table.border-0 tr {
+    border-bottom: 0;
+}
+
+.p-1 {
+    padding: 0.5rem;
+}
+
+.datepicker-date-display,
+.datepicker-table td.is-selected {
+    background-color: #263a73;
+}
+
+.datepicker-table td.is-today {
+    color: #263a73;
+}
+
+.datepicker-cancel {
+    color: #343434;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    text-transform: initial;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    color: #263a73;
+    padding: 0 1rem;
+}
+
+button:focus {
+    outline: none;
+    background-color: #263a73;
+    color: #ffffff;
+}

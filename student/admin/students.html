@@ -71,7 +71,9 @@ if (
                                         </td>
                                         <td>
                                             <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deduct-fee?sid=<?= $user['_sid'] ?>'" data-tooltip="Deduct Fee"><i class="material-icons black-text lh-5">payment</i></button>
-                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="viewProfile('<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>,<?= $user['fee'] - $user['paid'] ?>, '<?= date_format(date_create($user['time']), 'M jS, Y \a\\t g:i:s A') ?>', '<?= daysUntilToday($user['time']) ?>')" data-tooltip="View Profile"><i class="material-icons black-text lh-5">visibility</i></button><button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deductions?sid=<?= $user['_sid'] ?>'" data-tooltip="Payment History"><i class="material-icons black-text lh-5">timeline</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="viewProfile('<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>,<?= $user['fee'] - $user['paid'] ?>, '<?= date_format(date_create($user['time']), 'M jS, Y \a\\t g:i:s A') ?>', '<?= daysUntilToday($user['time']) ?>')" data-tooltip="View Profile"><i class="material-icons black-text lh-5">visibility</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="editProfile(<?= $user['_sid'] ?>, '<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>, '<?= $user['time'] ?>')" data-tooltip="Edit Student"><i class="material-icons black-text lh-5">edit</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deductions?sid=<?= $user['_sid'] ?>'" data-tooltip="Payment History"><i class="material-icons black-text lh-5">timeline</i></button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -91,9 +93,9 @@ if (
         </section>
 
         <!-- Modal Structure -->
-        <div id="profileModal" class="modal">
+        <div id="profileModal" class="modal border-radius-8">
             <div class="modal-content">
-                <h4>Modal Header</h4>
+                <h4 class="text-primary">Modal Header</h4>
                 <table>
                     <tr>
                         <td>Name</td>
@@ -130,20 +132,66 @@ if (
             </div>
         </div>
 
+
+        <!-- Modal Structure -->
+        <div id="editModal" class="modal border-radius-0 full">
+            <div class="progress-holder hide">
+                <div class="progress">
+                    <div class="indeterminate bg-primary"></div>
+                </div>
+            </div>
+            <div class="prevent-overlay hide full"></div>
+            <div class="modal-content">
+                <h4>Edit Profile <button class="right btn-flat btn-floating waves-effect waves-dark waves-circle transparent modal-close"><i class="material-icons black-text">close</i></button></h4>
+                <form id="studentEditForm" name="studentEditForm" class="p-1">
+                    <input class="hide" name="sid" id="student_id" />
+                    <table class="border-0">
+                        <tr>
+                            <td>Name</td>
+                            <td class="input-field">
+                                <input id="set_s_name" type="text" class="validate" name="name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td class="input-field">
+                                <input id="set_s_username" type="text" class="validate" name="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Course</td>
+                            <td class="input-field" id="courseSelect">
+                                <select name="course">
+                                    <option value="" disabled selected>Choose his/her course</option>
+                                    <option value="1">Crash Course in Digital Marketing</option>
+                                    <option value="2">Executive Digital Marketing Course</option>
+                                    <option value="3">Advanced Digital Marketing Course</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Fee</td>
+                            <td class="input-field">
+                                <input id="set_s_fee" type="number" class="validate" name="fee">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Joined on</td>
+                            <td><input type="text" class="datepicker" name="time_oj"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer px-4">
+                <button type="reset" class="modal-close waves-effect waves-red btn btn-flat transparent mx-2">Not Now</button>
+                <button type="submit" class="waves-effect waves-light btn bg-primary" form="studentEditForm">Apply</button>
+            </div>
+        </div>
+
+
+
         <?php include "includes/scripts.inc.php"; ?>
-        <script>
-            function viewProfile(name, username, course, fee, remain, time, hr_time) {
-                $("#profileModal h4").text(`${name} (${username})`);
-                $("#profileModal #stu_name").text(name);
-                $("#profileModal #stu_username").text(username);
-                $("#profileModal #stu_course").text(`${course == 1 ? 'Crash Course in Digital Marketing' : course == 2 ? 'Executive Digital Marketing Course' : 'Advanced Digital Marketing Course'}`);
-                $("#profileModal #stu_fee").text(`${fee}`);
-                $("#profileModal #stu_remain").text(`${remain}`);
-                $("#profileModal #stu_joined").text(`${time}`);
-                $("#profileModal #stu_time").text(`${hr_time}`);
-                $("#profileModal").modal("open");
-            }
-        </script>
+        <script src="admin/js/students.js"></script>
     </body>
 
     </html>

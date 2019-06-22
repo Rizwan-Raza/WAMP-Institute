@@ -6,3 +6,7 @@
 .card h4 {
     height: 40px;
 }
+
+.card.bg-primary.border-radius-8 {
+    overflow: hidden;
+}

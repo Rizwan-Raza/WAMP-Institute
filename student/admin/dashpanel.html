@@ -9,7 +9,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
     <title>Admin Dashboard | WAMP Digital Marketing Institute</title>
     <base href="../">
     <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="css/dashpanel.css" />
+    <link rel="stylesheet" href="admin/css/dashpanel.css" />
 </head>
 
 <body>
@@ -60,7 +60,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                 <div class="row">
                     <div class="col s12 m6 l4 xl3">
                         <a href="admin/requests" class="waves-effect waves-light w-full">
-                            <div class="card bg-primary">
+                            <div class="card bg-primary border-radius-8">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
                                         <?=$num_r?>
@@ -74,7 +74,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                     </div>
                     <div class="col s12 m6 l4 xl3">
                         <a href="admin/students" class="waves-effect waves-light w-full">
-                            <div class="card bg-primary">
+                            <div class="card bg-primary border-radius-8">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
                                         <?=$num_u?>
@@ -88,7 +88,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                     </div>
                     <div class="col s12 m6 l4 xl3">
                         <a href="admin/deductions" class="waves-effect waves-light w-full">
-                            <div class="card bg-primary">
+                            <div class="card bg-primary border-radius-8">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
                                         <?=$num_p?>
@@ -102,7 +102,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                     </div>
                     <div class="col s12 m6 l4 xl3">
                         <a href="admin/pendings" class="waves-effect waves-light w-full">
-                            <div class="card bg-primary">
+                            <div class="card bg-primary border-radius-8">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
                                         <?=$num_a?>
@@ -116,7 +116,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                     </div>
                     <div class="col s12 m6 l4 xl3">
                         <a href="admin/deduct-fee" class="waves-effect waves-light w-full">
-                            <div class="card bg-primary">
+                            <div class="card bg-primary border-radius-8">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
                                         &#8377; <?=$num_tf - $num_f?><span>/<?=$num_tf?></span>
@@ -130,7 +130,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                     </div>
                     <div class="col s12 m6 l4 xl3">
                         <a href="admin/deductions" class="waves-effect waves-light w-full">
-                            <div class="card bg-primary">
+                            <div class="card bg-primary border-radius-8">
                                 <div class="card-content white-text">
                                     <h4 class="fw-500 center-align">
                                         &#8377; <?=$num_f ? $num_f : 0?><span>/<?=$num_tf?></span>

@@ -102,6 +102,12 @@ body {
     background-color: #dddddd;
 }
 
+
+.modal.full {
+    top: 0 !important;
+    max-height: 100%;
+}
+
 .input-field button {
     /* transform: translateY(-42px); */
     margin-top: -45px;

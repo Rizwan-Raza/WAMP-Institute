@@ -63,3 +63,35 @@ $(() => {
         });
     });
 });
+
+
+function cleanNow(path, type, elem) {
+    $.ajax({
+        url: "admin/services/delete-junk.php",
+        method: "POST",
+        data: { file: path, type: type },
+        beforeSend: () => {
+            $("#signatures_modal .progress-holder, #signatures_modal .prevent-overlay").removeClass("hide");
+        },
+        success: (data, status) => {
+            M.toast({
+                html: data.message
+            });
+
+            if (data.status == "success") {
+                if (type == 1) {
+                    $(elem).closest("tr").slideUp();
+                    return;
+                }
+                $("#signatures_modal").modal("close");
+                $("#junkBox").fadeOut();
+            }
+        },
+        error: (data, status) => {
+            console.log(data, status);
+        },
+        complete: () => {
+            $("#signatures_modal .progress-holder, #signatures_modal .prevent-overlay").addClass("hide");
+        }
+    });
+}
