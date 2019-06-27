@@ -4,7 +4,7 @@
             {
                 "title": "Digital Marketing Overview",
                 "src": "overview-digital-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Digital marketing is a term that we all listen to almost every day, as we all are occupied by this trend. So in simple words it is about the promotion of products and services using the electronic mediums. The advanced digital marketing course deals with all the aspects of digital marketing that in other words can be terms as online marketing, internet marketing or web marketing. It includes a huge number of modules in itself. It is not easy define the term but it has helped a great number of businesses in terms of marketing and branding. However, one can make a good amount of money with digital marketing skills as its scope is wide in the industry.",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#78909c"
@@ -12,7 +12,7 @@
             {
                 "title": "Website Introduction",
                 "src": "website-intro.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "One of the most important digital marketing modules is website introduction, as web pages are the best way to grab your visitor’s attention. However, the main game is to make the visitor stay on your page as the average viewers attention is fixed on a website for less than minute. Therefore, it is important to build a website that will help the audience learn something new and also return back to your website. Retention of the audience plays a major role, as what you can show the audience in the first minute once he/she lands on the website.",
                 "theme": "dark",
                 "hours": 0.5,
                 "bc": "#ffb74d"
@@ -20,7 +20,7 @@
             {
                 "title": "Website Creation (Wordpress)",
                 "src": "website-creation.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Advanced Digital Marketing Course also focuses on website creation as someone who wants to learn digital marketing surely wants to create a website as website plays an essential role in digital marketing. However, you will learn how to create a website on wordpress and by professionals, and it does not require you to learn any sort of coding. Therefore, once you build a website you are ready to start several things like SEO.",
                 "theme": "light",
                 "hours": 2.5,
                 "bc": "#e57373"
@@ -28,7 +28,7 @@
             {
                 "title": "Search Engine Optimization",
                 "src": "seo.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Search Engine Optimization, commonly named as SEO is one of the most crucial modules of the digital marketing course as it helps in ranking the website. Once you build a website it is important to be seen by the audience. However, the process includes increasing the quality and the quantity of the website traffic. It assists in increasing the visibility of the website. It may be a slow process but it surely makes a huge difference once you rank on the search engines.",
                 "theme": "light",
                 "hours": 6,
                 "bc": "#8bc34a"
@@ -36,7 +36,7 @@
             {
                 "title": "Google Ads",
                 "src": "adwords.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Almost all of you are aware of the Google Ads as they are highly prominent; however, it is a way of ranking on the search engines with the help of paid promotions. It is like advertising your product or services on the digital platforms, therefore it is a platform developed by Google. It is a paid service where advertisers pay a cost for the advertisement they want to show. There are several ways to showcase the ads like product listing, video content and several other ways. Learn the best ways to run Google Ads from WAMP Institute.",
                 "theme": "light",
                 "hours": 7,
                 "bc": "#388e3c"
@@ -44,7 +44,7 @@
             {
                 "title": "Social Media Optimization",
                 "src": "social-media-optimization.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#303f9f"
@@ -52,7 +52,7 @@
             {
                 "title": "Social Media Marketing",
                 "src": "social-media-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 3,
                 "bc": "#bbdefb"
@@ -60,7 +60,7 @@
             {
                 "title": "Content Marketing",
                 "src": "content-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#00BFC8"
@@ -68,7 +68,7 @@
             {
                 "title": "Email Marketing",
                 "src": "email-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#fbc02d"
@@ -76,7 +76,7 @@
             {
                 "title": "Google Analytics",
                 "src": "google-analytics.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#616161"
@@ -84,7 +84,7 @@
             {
                 "title": "Google Webmaster",
                 "src": "google-webmaster.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#1976d2"
@@ -92,7 +92,7 @@
             {
                 "title": "Google Trends",
                 "src": "google-trend.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ffffff"
@@ -100,7 +100,7 @@
             {
                 "title": "Mobile Marketing",
                 "src": "mobile-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#64b5f6"
@@ -108,7 +108,7 @@
             {
                 "title": "Lead Generation",
                 "src": "lead-generation.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#5c999c"
@@ -116,7 +116,7 @@
             {
                 "title": "Ecommerce SEO ",
                 "src": "e-comm-seo.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#b71c1c"
@@ -124,7 +124,7 @@
             {
                 "title": "Ecommerce Marketing ",
                 "src": "e-comm-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#ff5722"
@@ -132,7 +132,7 @@
             {
                 "title": "Online Reputation Management",
                 "src": "online-reputation.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#f6f6f6"
@@ -140,7 +140,7 @@
             {
                 "title": "Audio Engineering",
                 "src": "audio-engg.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#7986cb"
@@ -148,7 +148,7 @@
             {
                 "title": "Online Graphic Designing Tools",
                 "src": "graphics-design.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#fff176"
@@ -156,7 +156,7 @@
             {
                 "title": "Video Editing",
                 "src": "video-editing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#424242"
@@ -164,7 +164,7 @@
             {
                 "title": "Video Optimization",
                 "src": "video-optimization.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#7986cb"
@@ -172,7 +172,7 @@
             {
                 "title": "Earning From YouTube",
                 "src": "youtube-earning.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ff0000"
@@ -180,7 +180,7 @@
             {
                 "title": "Earning From Google AdSense",
                 "src": "adsense.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#616161"
@@ -188,7 +188,7 @@
             {
                 "title": "Earning As A Freelancer",
                 "src": "freelancer.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#f4f4f4"
@@ -196,7 +196,7 @@
             {
                 "title": "Earning from Affiliate Marketing ",
                 "src": "affiliate-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ffffee"
@@ -206,7 +206,7 @@
             {
                 "title": "Soft Skill Training",
                 "src": "soft-skill-training.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#FB5968"
@@ -214,7 +214,7 @@
             {
                 "title": "Product Marketing",
                 "src": "product-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#ffe0b2"
@@ -222,7 +222,7 @@
             {
                 "title": "Growth Hacking",
                 "src": "growth-hacking.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#b8eaf1"
@@ -230,7 +230,7 @@
             {
                 "title": "WhatsApp Marketing",
                 "src": "whatsapp-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#a5d6a7"
@@ -242,7 +242,7 @@
             {
                 "title": "Basics Of Marketing And Branding",
                 "src": "basic-digital-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#e64a19"
@@ -250,7 +250,7 @@
             {
                 "title": "Digital Marketing Overview",
                 "src": "overview-digital-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Digital marketing is a term that we all listen to almost every day, as we all are occupied by this trend. So in simple words it is about the promotion of products and services using the electronic mediums. The advanced digital marketing course deals with all the aspects of digital marketing that in other words can be terms as online marketing, internet marketing or web marketing. It includes a huge number of modules in itself. It is not easy define the term but it has helped a great number of businesses in terms of marketing and branding. However, one can make a good amount of money with digital marketing skills as its scope is wide in the industry.",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#78909c"
@@ -258,7 +258,7 @@
             {
                 "title": "Website Introduction",
                 "src": "website-intro.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "One of the most important digital marketing modules is website introduction, as web pages are the best way to grab your visitor’s attention. However, the main game is to make the visitor stay on your page as the average viewers attention is fixed on a website for less than minute. Therefore, it is important to build a website that will help the audience learn something new and also return back to your website. Retention of the audience plays a major role, as what you can show the audience in the first minute once he/she lands on the website.",
                 "theme": "dark",
                 "hours": 0.5,
                 "bc": "#ffb74d"
@@ -266,7 +266,7 @@
             {
                 "title": "Website Creation (Wordpress)",
                 "src": "website-creation.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Advanced Digital Marketing Course also focuses on website creation as someone who wants to learn digital marketing surely wants to create a website as website plays an essential role in digital marketing. However, you will learn how to create a website on wordpress and by professionals, and it does not require you to learn any sort of coding. Therefore, once you build a website you are ready to start several things like SEO.",
                 "theme": "light",
                 "hours": 2.5,
                 "bc": "#e57373"
@@ -274,7 +274,7 @@
             {
                 "title": "Hosting | Servers | Security",
                 "src": "hosting.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Once you want your website, it is not just about the domain and the design; but it completely depends on the hosting services. It is important to make your website run throughout without any hassle. However, hosting plays an essential role as security is also included in this with certifying the website with the SSL for better security of your website.",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#ffcc80"
@@ -282,7 +282,7 @@
             {
                 "title": "Adobe Spark & Canva",
                 "src": "adobe-spark.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Graphics play an essential role, however, digital marketing course details about the tools that work best for your creatives. The tools included are Adobe Spark & Canva, these tools help in creating visual content. The visual content includes logo, banners, social media graphics and animated videos.",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#3E3D42"
@@ -290,7 +290,7 @@
             {
                 "title": "Search Engine Optimization",
                 "src": "seo.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Search Engine Optimization, commonly named as SEO is one of the most crucial modules of the digital marketing course as it helps in ranking the website. Once you build a website it is important to be seen by the audience. However, the process includes increasing the quality and the quantity of the website traffic. It assists in increasing the visibility of the website. It may be a slow process but it surely makes a huge difference once you rank on the search engines.",
                 "theme": "light",
                 "hours": 6,
                 "bc": "#8bc34a"
@@ -298,7 +298,7 @@
             {
                 "title": "Google Ads",
                 "src": "adwords.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Almost all of you are aware of the Google Ads as they are highly prominent; however, it is a way of ranking on the search engines with the help of paid promotions. It is like advertising your product or services on the digital platforms, therefore it is a platform developed by Google. It is a paid service where advertisers pay a cost for the advertisement they want to show. There are several ways to showcase the ads like product listing, video content and several other ways. Learn the best ways to run Google Ads from WAMP Institute.",
                 "theme": "light",
                 "hours": 7,
                 "bc": "#388e3c"
@@ -306,7 +306,7 @@
             {
                 "title": "Bing Adwords",
                 "src": "bing-ads.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#008572"
@@ -314,7 +314,7 @@
             {
                 "title": "Social Media Optimization",
                 "src": "social-media-optimization.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#303f9f"
@@ -322,7 +322,7 @@
             {
                 "title": "Social Media Marketing",
                 "src": "social-media-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 3,
                 "bc": "#bbdefb"
@@ -330,7 +330,7 @@
             {
                 "title": "Content Writing and Marketing",
                 "src": "content-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#00BFC8"
@@ -338,7 +338,7 @@
             {
                 "title": "Email Marketing",
                 "src": "email-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#fbc02d"
@@ -346,7 +346,7 @@
             {
                 "title": "Google Analytics",
                 "src": "google-analytics.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#616161"
@@ -354,7 +354,7 @@
             {
                 "title": "Google Tag Manager",
                 "src": "google-tag-manager.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#e3f2fd"
@@ -362,7 +362,7 @@
             {
                 "title": "Google Webmaster",
                 "src": "google-webmaster.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#1976d2"
@@ -370,7 +370,7 @@
             {
                 "title": "Bing Webmaster",
                 "src": "bing-webmaster-tools.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#008572"
@@ -378,7 +378,7 @@
             {
                 "title": "Google Data Studio",
                 "src": "google-data-studio.svg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 2,
                 "bc": "#bdbdbd"
@@ -386,7 +386,7 @@
             {
                 "title": "Google Admin (G-Suite)",
                 "src": "google-admin.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#00796b"
@@ -394,7 +394,7 @@
             {
                 "title": "Importance of GST in Digital Marketing ",
                 "src": "gst-importance.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 2,
                 "bc": "#80deea"
@@ -402,7 +402,7 @@
             {
                 "title": "Google Products (Sheets, Docs, Forms, Google Trends & Survey)",
                 "src": "google.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#b0bec5"
@@ -410,7 +410,7 @@
             {
                 "title": "Mobile Marketing",
                 "src": "mobile-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#64b5f6"
@@ -418,7 +418,7 @@
             {
                 "title": "Lead Generation",
                 "src": "lead-generation.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#5c999c"
@@ -426,7 +426,7 @@
             {
                 "title": "E-Commerce Setup &amp; SEO",
                 "src": "e-comm-seo.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#b71c1c"
@@ -434,7 +434,7 @@
             {
                 "title": "E-Commerce Marketing &amp; SCM Tools",
                 "src": "e-comm-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#ff5722"
@@ -442,7 +442,7 @@
             {
                 "title": "Online Reputation Management",
                 "src": "online-reputation.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#f6f6f6"
@@ -450,7 +450,7 @@
             {
                 "title": "Growth Hacking",
                 "src": "growth-hacking.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#b8eaf1"
@@ -458,7 +458,7 @@
             {
                 "title": "Audio Engineering",
                 "src": "audio-engg.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#7986cb"
@@ -466,7 +466,7 @@
             {
                 "title": "Public Relation",
                 "src": "public-relation.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 2,
                 "bc": "#158bdc"
@@ -474,7 +474,7 @@
             {
                 "title": "Video Editing &amp; Video Optimization",
                 "src": "video-editing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 3,
                 "bc": "#424242"
@@ -482,7 +482,7 @@
             {
                 "title": "Conversion Rate Optimization",
                 "src": "conversion-rate-optimization.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#64798A"
@@ -490,7 +490,7 @@
             {
                 "title": "Automation Tool of Digital Marketing",
                 "src": "automation-tool.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ffffff"
@@ -498,7 +498,7 @@
             {
                 "title": "Quora Optimization",
                 "src": "quora.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ff9980"
@@ -506,7 +506,7 @@
             {
                 "title": "Product Marketing",
                 "src": "product-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 2,
                 "bc": "#ffe0b2"
@@ -514,7 +514,7 @@
             {
                 "title": "Business Law",
                 "src": "business-laws.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ce93d8"
@@ -522,7 +522,7 @@
             {
                 "title": "Earning From YouTube",
                 "src": "youtube-earning.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#ff0000"
@@ -530,7 +530,7 @@
             {
                 "title": "Earning From Affiliate Marketing",
                 "src": "affiliate-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ffffee"
@@ -538,7 +538,7 @@
             {
                 "title": "Earning From Google AdSense",
                 "src": "adsense.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#616161"
@@ -546,7 +546,7 @@
             {
                 "title": "Earning From Digital Networking",
                 "src": "digital-earning.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#4CAF50"
@@ -554,7 +554,7 @@
             {
                 "title": "Earning As A Freelancer",
                 "src": "freelancer.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#f4f4f4"
@@ -564,7 +564,7 @@
             {
                 "title": "Soft Skill Training",
                 "src": "soft-skill-training.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#FB5968"
@@ -572,7 +572,7 @@
             {
                 "title": "Pro Blogging",
                 "src": "blogging.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ffffff"
@@ -580,7 +580,7 @@
             {
                 "title": "Viral Marketing",
                 "src": "viral-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1,
                 "bc": "#ffe0b2"
@@ -588,7 +588,7 @@
             {
                 "title": "WhatsApp Marketing",
                 "src": "whatsapp-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#a5d6a7"
@@ -596,7 +596,7 @@
             {
                 "title": "Coupon Code Marketing",
                 "src": "coupon.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "hours": 1.5,
                 "bc": "#4daaf5"
@@ -604,7 +604,7 @@
             {
                 "title": "Personal Branding",
                 "src": "entrepreneur.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#201f2d"
@@ -612,7 +612,7 @@
             {
                 "title": "Payment Gateways",
                 "src": "payment.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1.5,
                 "bc": "#a80000"
@@ -620,7 +620,7 @@
             {
                 "title": "Startup Hacks",
                 "src": "startup.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "hours": 1,
                 "bc": "#cabeff"
@@ -632,112 +632,112 @@
             {
                 "title": "Digital Marketing Basics and Overview",
                 "src": "overview-digital-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Digital marketing is a term that we all listen to almost every day, as we all are occupied by this trend. So in simple words it is about the promotion of products and services using the electronic mediums. The advanced digital marketing course deals with all the aspects of digital marketing that in other words can be terms as online marketing, internet marketing or web marketing. It includes a huge number of modules in itself. It is not easy define the term but it has helped a great number of businesses in terms of marketing and branding. However, one can make a good amount of money with digital marketing skills as its scope is wide in the industry.",
                 "theme": "light",
                 "bc": "#78909c"
             },
             {
                 "title": "Website Introduction and Creation",
                 "src": "website-creation.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Advanced Digital Marketing Course also focuses on website creation as someone who wants to learn digital marketing surely wants to create a website as website plays an essential role in digital marketing. However, you will learn how to create a website on wordpress and by professionals, and it does not require you to learn any sort of coding. Therefore, once you build a website you are ready to start several things like SEO.",
                 "theme": "light",
                 "bc": "#e57373"
             },
             {
                 "title": "Content Writing &amp; Marketing (Canva &amp; Adobe Spark)",
                 "src": "content-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#00BFC8"
             },
             {
                 "title": "Search Engine Optimization",
                 "src": "seo.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Search Engine Optimization, commonly named as SEO is one of the most crucial modules of the digital marketing course as it helps in ranking the website. Once you build a website it is important to be seen by the audience. However, the process includes increasing the quality and the quantity of the website traffic. It assists in increasing the visibility of the website. It may be a slow process but it surely makes a huge difference once you rank on the search engines.",
                 "theme": "light",
                 "bc": "#8bc34a"
             },
             {
                 "title": "Google Analytics",
                 "src": "google-analytics.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#616161"
             },
             {
                 "title": "Google Webmaster",
                 "src": "google-webmaster.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#1976d2"
             },
             {
                 "title": "Google Ads",
                 "src": "adwords.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "Almost all of you are aware of the Google Ads as they are highly prominent; however, it is a way of ranking on the search engines with the help of paid promotions. It is like advertising your product or services on the digital platforms, therefore it is a platform developed by Google. It is a paid service where advertisers pay a cost for the advertisement they want to show. There are several ways to showcase the ads like product listing, video content and several other ways. Learn the best ways to run Google Ads from WAMP Institute.",
                 "theme": "light",
                 "bc": "#388e3c"
             },
             {
                 "title": "Social Media Optimization",
                 "src": "social-media-optimization.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#303f9f"
             },
             {
                 "title": "Social Media Marketing",
                 "src": "social-media-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "bc": "#bbdefb"
             },
             {
                 "title": "Mobile Marketing",
                 "src": "mobile-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#64b5f6"
             },
             {
                 "title": "Email Marketing",
                 "src": "email-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#fbc02d"
             },
             {
                 "title": "E-Commerce Marketing &amp; SCM Tools",
                 "src": "e-comm-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#ff5722"
             },
             {
                 "title": "Lead Generation",
                 "src": "lead-generation.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#5c999c"
             },
             {
                 "title": "Affiliate Marketing",
                 "src": "affiliate-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "bc": "#ffffee"
             },
             {
                 "title": "Earning As A Freelancer",
                 "src": "freelancer.jpg",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "dark",
                 "bc": "#f4f4f4"
             },
             {
                 "title": "Earning From Google AdSense",
                 "src": "adsense.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#616161"
             }
@@ -746,14 +746,14 @@
             {
                 "title": "Soft Skill Training",
                 "src": "soft-skill-training.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#FB5968"
             },
             {
                 "title": "Product Marketing",
                 "src": "product-marketing.png",
-                "desc": "Hello and welcome to the world of programmers ... ",
+                "desc": "NA",
                 "theme": "light",
                 "bc": "#ffe0b2"
             }
@@ -763,77 +763,77 @@
         {
             "title": "Advance Analytics",
             "src": "advance-analytics.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#d32f2f"
         },
         {
             "title": "Automation Tool",
             "src": "automation-tool.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "dark",
             "bc": "#ffffff"
         },
         {
             "title": "Bing Tag Manager",
             "src": "bing-tag-manager.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "dark",
             "bc": "#aaaaff"
         },
         {
             "title": "Black Hat",
             "src": "black-hat.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#ff8a80"
         },
         {
             "title": "Blogger",
             "src": "blogger.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#00bcd4"
         },
         {
             "title": "Blogging",
             "src": "blogging.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "dark",
             "bc": "#ffffff"
         },
         {
             "title": "Adobe Spark",
             "src": "adobe-spark.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#3E3D42"
         },
         {
             "title": "Google Forms With Google Survey",
             "src": "google-forms.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#d1c4e9"
         },
         {
             "title": "Google Sheets",
             "src": "google-sheet.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#a5d6a7"
         },
         {
             "title": "Google Docs",
             "src": "google-docs.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#bbdefb"
         },
         {
             "title": "Video Optimization",
             "src": "video-optimization.png",
-            "desc": "Hello and welcome to the world of programmers ... ",
+            "desc": "NA",
             "theme": "light",
             "bc": "#7986cb"
         }

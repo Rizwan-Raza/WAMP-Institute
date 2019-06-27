@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $(".sidenav").sidenav();
+    992 >= window.innerWidth&&$(".sidenav").removeClass("hide"),$(".sidenav").sidenav();
+
     $(".modal").modal();
 
     $("#signupModal form").submit(e => {

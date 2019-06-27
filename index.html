@@ -39,6 +39,41 @@
 	</script>
 
     <link rel="stylesheet" href="css/home.css" />
+    <style>
+        .play-youtube-video {
+            object-fit: cover;
+            max-height: 225px;
+        }
+
+        .youtube-video-place.yt-video:hover .play-icon .ytp-large-play-button-bg {
+            fill: #f00;
+            fill-opacity: 1;
+        }
+
+        .play-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 68px;
+            height: 48px;
+            margin-left: -34px;
+            margin-top: -24px;
+            -moz-transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+            -webkit-transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+            transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+            z-index: 63;
+            cursor: pointer;
+        }
+
+        .play-icon .ytp-large-play-button-bg {
+            -moz-transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+            -webkit-transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+            transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+            fill: #212121;
+            fill-opacity: .8;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -63,19 +98,62 @@
                 <div class="col s12 l6">
                     <div class="carousel">
                         <div class="carousel-item">
-                            <iframe src="https://www.youtube.com/embed/cu3559taciI" id="ytVideo-1" frameborder="0"
+                            <div class="youtube-video-place yt-video full"
+                                data-yt-url="https://www.youtube.com/embed/cu3559taciI?rel=0&showinfo=0&autoplay=1">
+                                <img src="images/thumbnail-min.jpg" async class="play-youtube-video full lazy"
+                                    data-src="images/thumbnail.jpg"
+                                    data-srcset="images/thumbnail.jpg 2x,images/thumbnail.jpg 1x" />
+                                <div class="play-icon">
+                                    <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                        <path class="ytp-large-play-button-bg"
+                                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                                            fill="#212121" fill-opacity="0.8"></path>
+                                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- <iframe src="https://www.youtube.com/embed/cu3559taciI" id="ytVideo-1" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                                allowfullscreen></iframe> -->
                         </div>
                         <div class="carousel-item">
-                            <iframe src="https://www.youtube.com/embed/RPbn2mjfG3o" id="ytVideo-2" frameborder="0"
+                            <div class="youtube-video-place yt-video full"
+                                data-yt-url="https://www.youtube.com/embed/RPbn2mjfG3o?rel=0&showinfo=0&autoplay=1">
+                                <img src="images/thumbnail3-min.jpg" async class="play-youtube-video full lazy"
+                                    data-src="images/thumbnail3.jpg"
+                                    data-srcset="images/thumbnail3.jpg 2x,images/thumbnail3.jpg 1x">
+                                <div class="play-icon">
+                                    <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                        <path class="ytp-large-play-button-bg"
+                                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                                            fill="#212121" fill-opacity="0.8"></path>
+                                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <!-- <iframe src="https://www.youtube.com/embed/RPbn2mjfG3o" id="ytVideo-2" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                                allowfullscreen></iframe> -->
                         </div>
                         <div class="carousel-item">
-                            <iframe src="https://www.youtube.com/embed/MVkP8M1gX54" id="ytVideo-3" frameborder="0"
+                            <div class="youtube-video-place yt-video full"
+                                data-yt-url="https://www.youtube.com/embed/MVkP8M1gX54?rel=0&showinfo=0&autoplay=1">
+                                <img src="images/thumbnail2-min.jpg" async class="play-youtube-video full lazy"
+                                    data-src="images/thumbnail2.jpg"
+                                    data-srcset="images/thumbnail2.jpg 2x,images/thumbnail2.jpg 1x">
+                                <div class="play-icon">
+                                    <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                        <path class="ytp-large-play-button-bg"
+                                            d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                                            fill="#212121" fill-opacity="0.8"></path>
+                                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <!-- <iframe src="https://www.youtube.com/embed/MVkP8M1gX54" id="ytVideo-3" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                                allowfullscreen></iframe> -->
                         </div>
                     </div>
                 </div>
@@ -121,7 +199,7 @@
                 </div>
             </div>
         </section>
-        <section id="careerGrowth">
+        <section id="careerGrowth" class="lazy-background">
             <div class="p-4">
                 <h3 class="center-align white-text text-z-depth-2">
                     Do you want a career growth?
@@ -281,7 +359,7 @@
             </div>
         </section>
 
-        <section id="rewards">
+        <section id="rewards" class="lazy-background">
             <div class="p-4">
                 <h3 class="white-text center-align text-z-depth-2">
                     What will you get?
@@ -342,7 +420,8 @@
             <br />
             <div class="flex row">
                 <div class="flex col m6 center">
-                    <img src="images/Ipad-pro.png" class="center center-align full mx-auto" />
+                    <img src="images/Ipad-pro-min.png" class="center center-align full mx-auto lazy"
+                        data-src="images/Ipad-pro.png" data-srcset="images/Ipad-pro.png 2x,images/Ipad-pro.png 1x" />
                 </div>
                 <div class="col m6 flex">
                     <div>
@@ -403,7 +482,9 @@
 
                 <div class="carousel-item card-panel flex">
                     <div class="avatar pos-abs w-full center">
-                        <img src="images/testimonials/<?=$review['image']?>" class="border-round z-depth-2" />
+                        <img src="images/wamp-round-logo.png" data-src="images/testimonials/<?=$review['image']?>"
+                            data-srcset="images/testimonials/<?=$review['image']?> 2x,images/testimonials/<?=$review['image']?> 1x"
+                            class="border-round z-depth-2 lazy" />
                         <h6 class="center fw-500">
                             <?=$review['owner']?>
                         </h6>
@@ -435,6 +516,22 @@
     </div>
     <?php require_once "includes/scripts.inc.php" ?>
     <script async src="js/home.js"></script>
+    <script>
+        var video_wrapper = $('.youtube-video-place');
+        //  Check to see if youtube wrapper exists
+        if (video_wrapper.length) {
+            // If user clicks on the video wrapper load the video.
+            $('.play-youtube-video, .play-icon').on('click', e => {
+                /* Dynamically inject the iframe on demand of the user.
+                 Pull the youtube url from the data attribute on the wrapper element. */
+                var video = $(e.target).closest(".youtube-video-place");
+                video.html('<iframe allowfullscreen frameborder="0" class="yt-video" src="' + video.data('yt-url') + '"></iframe>');
+                video.removeClass("yt-video");
+            });
+        }
+
+        var b = [].slice.call(document.querySelectorAll(".lazy-background")); if ("IntersectionObserver" in window) { let g = new IntersectionObserver(function (h) { h.forEach(function (j) { j.isIntersecting && (j.target.classList.add("visible"), g.unobserve(j.target)) }) }); b.forEach(function (h) { g.observe(h) }) } var c = [].slice.call(document.querySelectorAll("img.lazy")); if ("IntersectionObserver" in window) { let g = new IntersectionObserver(function (h) { h.forEach(function (j) { if (j.isIntersecting) { let k = j.target; k.src = k.dataset.src, k.srcset = k.dataset.srcset, k.classList.remove("lazy"), g.unobserve(k) } }) }); c.forEach(function (h) { g.observe(h) }) } else;
+    </script>
 
 </body>
 

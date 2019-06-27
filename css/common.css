@@ -653,9 +653,12 @@ nav .right.hide-on-large-only li {
 
 .sidenav .top-banner {
     background-color: #444;
-    background-image: url(../images/background2.jpg);
-    background-position: center;
+    background-position: top;
     height: 150px
+}
+
+.sidenav .top-banner.visible {
+    background-image: url(../images/Digital-Marketing-min.jpg);
 }
 
 .sidenav {

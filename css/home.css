@@ -46,7 +46,7 @@
     background-position: center;
 }
 
-#careerGrowth {
+#careerGrowth.visible {
     background-image: url('../images/background.jpg');
 }
 
@@ -60,7 +60,7 @@
     right: 24px;
 }
 
-#rewards {
+#rewards.visible {
     background-image: url('../images/background2.jpg');
 }
 
@@ -85,6 +85,7 @@
 
 #testimonial .carousel .carousel-item .avatar img {
     border: 4px solid white;
+    height: 60px;
 }
 
 .carousel .carousel-item {
@@ -123,11 +124,11 @@
 }
 
 @media (max-width: 600px) {
-    #careerGrowth {
+    #careerGrowth.visible {
         background-image: url('../images/background-min.jpg');
     }
 
-    #rewards {
+    #rewards.visible {
         background-image: url('../images/background2-min.jpg');
     }
 

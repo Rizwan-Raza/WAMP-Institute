@@ -32,3 +32,25 @@
 #courses #whatsApp a svg {
     margin: 16px 16px 16px 4px;
 }
+
+.modal.modal-fixed-footer#moduleDetailModal {
+    overflow-y: visible;
+    height: auto;
+    max-width: 640px;
+}
+
+.modal.modal-fixed-footer .modal-footer.module-img {
+    height: 72px;
+    width: 72px;
+    padding: 4px;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
+.modal.modal-fixed-footer .modal-content {
+    position: static;
+    height: 100%;
+}
