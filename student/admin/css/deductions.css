@@ -11,3 +11,62 @@ h4.my-1 .select-wrapper input.select-dropdown {
     margin-top: -1px;
     margin-bottom: -1px;
 }
+
+@media (max-width: 600px) {
+    h4.my-1 .right {
+        float: none !important;
+    }
+}
+
+table tr td i {
+    visibility: hidden
+}
+
+table tr:hover td i {
+    visibility: visible
+}
+
+/* 
+table.border-0 td {
+    padding: 0px;
+} */
+
+table.border-0 tr {
+    border-bottom: 0;
+}
+
+.datepicker-date-display,
+.datepicker-table td.is-selected {
+    background-color: #263a73;
+}
+
+.datepicker-table td.is-today {
+    color: #263a73;
+}
+
+.datepicker-cancel {
+    color: #343434;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    text-transform: initial;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    color: #263a73;
+    padding: 0 1rem;
+}
+
+button:focus {
+    outline: none;
+    background-color: #263a73;
+    color: #ffffff;
+}

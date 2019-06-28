@@ -49,6 +49,7 @@ if (
                     if (isset($_GET) and isset($_GET['sid'])) {
                         $sql .= " AND `students`.`_sid`=" . $_GET['sid'];
                     }
+                    $sql .= " ORDER BY `time` DESC";
                     include "../includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
                     $result = $conn->query($sql); ?>
@@ -63,6 +64,7 @@ if (
                                     <th>Signature</th>
                                     <th>Deduct for</th>
                                     <th>Time</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,6 +91,12 @@ if (
                                         <td class="tooltipped" data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
                                             <?= daysUntilToday($user['time']) ?>
                                         </td>
+                                        <td>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="editSign(<?= $user['_pid'] ?>, <?= $user['amount'] ?>,'<?= $user['time'] ?>')" data-tooltip="Edit Details">
+                                                <i class="material-icons black-text lh-5">edit</i>
+                                            </button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-red" onclick="deletePayment(<?= $user['_pid'] ?>, this)" data-tooltip="Roll Back"><i class="material-icons black-text lh-5">delete</i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             <?php
@@ -105,6 +113,44 @@ if (
                 </div>
             </div>
         </section>
+
+        <!-- Modal Structure -->
+        <div id="editSignModal" class="modal border-radius-0 full">
+            <div class="progress-holder border-radius-0 hide">
+                <div class="progress border-radius-0">
+                    <div class="indeterminate bg-primary"></div>
+                </div>
+            </div>
+            <div class="prevent-overlay hide full"></div>
+            <div class="modal-content">
+                <h4 class="text-primary">Edit Payment Details</h4>
+                <form id="editPaymentForm">
+                    <input id="payment_id" type="number" class="hide" name="_pid">
+                    <table class="border-0">
+                        <tr class="my-4">
+                            <td>Amount</td>
+                            <td class="input-field">
+                                <input id="set_p_amount" type="number" class="validate" name="amount">
+                            </td>
+                        </tr>
+                        <tr class="my-4">
+                            <td>Make Signature again</td>
+                            <td><label>
+                                    <input type="checkbox" name="signAgain" id="signAgain" />
+                                    <span>Yes?</span>
+                                </label></td>
+                        </tr>
+                        <tr class="my-4">
+                            <td>Deducted on</td>
+                            <td><input type="text" class="datepicker" name="time_od"></td>
+                        </tr>
+                    </table>
+                    <button type="submit" class="btn bg-primary right mt-4 waves-effect waves-light tooltipped" data-tooltip="Update Details">Update</button>
+                    <button type="reset" class="btn btn-flat transparent right mt-4 mr-4 waves-effect waves-light modal-close tooltipped" data-tooltip="Cancel Edit">Cancel</button>
+                    <br clear="all" />
+                </form>
+            </div>
+        </div>
 
         <?php include "includes/scripts.inc.php"; ?>
         <script>
@@ -124,12 +170,110 @@ if (
                 $("#studId input").val($("#studId option[value='" + getParam("sid") + "']").text());
             }
 
-            $("#studId").change(() => {
-                if ($("#studId").val() != "*") {
-                    window.location.href = '/admin/deductions?sid=' + $("#studId").val();
-                } else {
-                    window.location.href = '/admin/deductions';
+            function editSign(_pid, amount, time) {
+                $("#editSignModal #payment_id").val(_pid);
+                $("#editSignModal #set_p_amount").val(amount);
+                $("#editSignModal .datepicker").val(time);
+                $('#editSignModal .datepicker').datepicker({
+                    format: "yyyy-mm-dd",
+                    defaultDate: new Date(time),
+                    setDefaultDate: true
+                });
+                $("#editSignModal").modal("open");
+            }
+
+            function deletePayment(_pid, elem) {
+                let answer = confirm("Are you sure, you want to rollback this payment?");
+                if (answer) {
+                    elem = $(elem).closest("tr");
+                    $.ajax({
+                        url: "admin/services/delete-payment.php",
+                        method: "POST",
+                        data: {
+                            _pid: _pid
+                        },
+                        beforeSend: () => {
+                            elem.css("opacity", 0.5);
+                            // $("#progress, .prevent-overlay").removeClass("hide");
+                        },
+                        success: (data, status) => {
+                            // console.log(data, status);
+                            var object = JSON.parse(data);
+                            M.toast({
+                                html: object.message
+                            });
+                            if (object.status == "success") {
+                                elem.slideUp();
+                            }
+                        },
+                        error: (data, status) => {
+                            console.log(data, status);
+                        },
+                        complete: () => {
+                            elem.css("opacity", 1);
+                            // $("#progress, .prevent-overlay").addClass("hide");
+                        }
+                    });
                 }
+            }
+
+            $(() => {
+                $("#studId").change(() => {
+                    if ($("#studId").val() != "*") {
+                        window.location.href = '/admin/deductions?sid=' + $("#studId").val();
+                    } else {
+                        window.location.href = '/admin/deductions';
+                    }
+                });
+
+                $("#editPaymentForm").submit(e => {
+                    e.preventDefault();
+                    $.ajax({
+                        url: "admin/services/edit-payment.php",
+                        method: "POST",
+                        data: $(e.target).serialize(),
+                        beforeSend: () => {
+                            $("#editSignModal .progress-holder, #editSignModal .prevent-overlay").removeClass("hide");
+                        },
+                        success: (data, status) => {
+                            var object = JSON.parse(data);
+                            M.toast({
+                                html: object.message
+                            });
+
+                            if (object.status == "username_error") {
+                                e.target.username.focus();
+                                return;
+                            } else if (object.status == "success") {
+                                e.target.reset();
+                                $("#editSignModal").modal("close");
+                                M.toast({
+                                    html: "Refreshing Payment Datatable in 3s"
+                                });
+                                setTimeout(() => {
+                                    M.toast({
+                                        html: "Refreshing Payment Datatable in 2s"
+                                    });
+                                    setTimeout(() => {
+                                        M.toast({
+                                            html: "Refreshing Payment Datatable in 1s"
+                                        });
+                                        setTimeout(() => {
+                                            document.location.reload();
+                                        }, 1000);
+                                    }, 1000);
+                                }, 1000);
+                            }
+                        },
+                        error: (data, status) => {
+                            console.log(data, status);
+                        },
+                        complete: () => {
+                            $("#editSignModal .progress-holder, #editSignModal .prevent-overlay").addClass("hide");
+                        }
+                    });
+                });
+
             });
         </script>
     </body>

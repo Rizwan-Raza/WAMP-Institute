@@ -31,6 +31,12 @@
     line-height: 25px;
 }
 
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #263a73;
+}
+
 @media (max-width: 600px) {
     .back {
         /* border-radius: 0 !important;  */

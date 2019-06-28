@@ -69,11 +69,10 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                         $sql = "SELECT COUNT(`sign`) AS `signs` FROM `payments`";
                         require_once "../../services/db.inc.php";
                         $conn = DB::getConnection();
-                        $result = $conn->query($sql);
-                        if ($result and ($num = $result->num_rows) > 0) {
+                        $num = $conn->query($sql)->fetch_assoc()['signs'];
+                        if ($num > 0) {
                             if ($num < count($srcs)) {
                                 ?>
-
                                 <div class="card border-radius-8 p-4" id="junkBox">
                                     <?php
                                     $bytes = 0;
@@ -146,7 +145,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                         <tr>
                             <td>
                                 <object type="image/png" data="admin/<?= $src ?>" style="height: 45px;">
-                                    <i class="material-icons">broken_image</i>
+                                    <i class="material-icons">broken_image</i> Broken Image
                                 </object>
                             </td>
                             <td><?= $src ?></td>
