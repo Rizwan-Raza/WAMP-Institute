@@ -61,7 +61,7 @@ foreach ($courses as $course) {
                 $normals = $modules['normal'];
                 foreach ($normals as $module) { ?>
                     <div class="col s6 m4 l3">
-                        <div class="card waves-effect waves-<?= $module['theme'] ?> w-full" style="background-color: <?= $module['bc'] ?>" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>', '<?= $module['bc'] ?>','images/courses/<?= $module['src'] ?>')">
+                        <div class="card waves-effect waves-<?= $module['theme'] ?> w-full<?php if ($module['desc'] != "NA") { ?> tooltipped" data-tooltip="<?= substr($module['desc'], 0, 200) ?>... Click for more info" <?php } else { ?>" <?php } ?>style="background-color: <?= $module['bc'] ?>" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>', '<?= $module['bc'] ?>','images/courses/<?= $module['src'] ?>')">
                             <img src="images/courses/<?= $module['src'] ?>" class="pos-abs" />
                         </div>
                         <h6 class="center fw-500 m-0 mb-2"><?= $module['title'] ?></h6>
@@ -75,7 +75,7 @@ foreach ($courses as $course) {
                 <div class="row flex">
                     <?php foreach ($compliments as $module) { ?>
                         <div class="col s6 m4 l3 m-0">
-                            <div class="card waves-effect waves-<?= $module['theme'] ?> w-full" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>', '<?= $module['bc'] ?>', 'images/courses/<?= $module['src'] ?>')" style="background-color: <?= $module['bc'] ?>">
+                            <div class="card waves-effect waves-<?= $module['theme'] ?> w-full tooltipped" data-tooltip="<?= substr($module['desc'], 0, 50) ?>... Click for more info" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>', '<?= $module['bc'] ?>', 'images/courses/<?= $module['src'] ?>')" style="background-color: <?= $module['bc'] ?>">
                                 <img src="images/courses/<?= $module['src'] ?>" class="pos-abs" />
                             </div>
                             <h6 class="center fw-500"><?= $module['title'] ?></h6>
@@ -107,6 +107,10 @@ foreach ($courses as $course) {
         </div>
         <?php require_once "includes/scripts.inc.php" ?>
         <script>
+            $(() => {
+                $(".tooltipped").tooltip();
+            });
+
             function openModal(title, desc, color, img) {
                 if (desc != "NA") {
                     $("#moduleDetailModal img").attr("src", img);

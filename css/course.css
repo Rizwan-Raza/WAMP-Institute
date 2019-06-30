@@ -54,3 +54,8 @@
     position: static;
     height: 100%;
 }
+
+.material-tooltip {
+    min-width: 200px;
+    max-width: 500px;
+}
