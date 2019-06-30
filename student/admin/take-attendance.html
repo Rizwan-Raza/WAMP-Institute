@@ -20,15 +20,28 @@ if (
         <!-- Page Layout here -->
         <section class="row m-0 p-0">
             <?php include "includes/sidenav.inc.html" ?>
-
+            <?php
+            if (isset($_GET['days'])) {
+                $currentDay = $_GET['days'];
+            } else {
+                $currentDay = 0;
+            }
+            $next = $currentDay + 1;
+            $prev = $currentDay - 1;
+            ?>
             <div class="col s12 m9 white m-0 p-0" style="height:100vh;overflow:auto">
                 <a class="p-2 pb-0 left" href="javascript:toggleNav()"><i class="material-icons">menu</i></a>
                 <div class="px-4">
-                    <h4 class="my-1">Take Attendance</h4>
+                    <h4 class="my-1">Take Attendance </h4>
                 </div>
                 <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
                 <div class="grey lighten-3">
-                    <?php $sql = "SELECT `students`.`_sid`, `students`.`name`,`students`.`username`, `attendance`.`_at_id` FROM `students` LEFT JOIN `attendance` ON `students`.`_sid` = `attendance`.`_sid` AND `attendance`.`time` LIKE '" . date("Y-m-d") . "%'";
+                    <h5 class="m-0 p-2"><span class="fw-700" id="monthTitle"><?= date("M d, Y", strtotime("$currentDay days")) ?></span>
+                        <a class="btn-flat btn-floating white waves-effect waves-dark right align-right mr-2" href="admin/take-attendance?days=<?= $next ?>" <?= $next > 0 ? 'disabled="disabled"' : '' ?>><i class="material-icons <?= $next > 0 ? 'grey' : 'black' ?>-text">arrow_forward</i></a>
+                        <a class="align-right right mr-1 modal-close waves-effect btn-floating btn-flat white tooltipped" data-tooltip="Today" href="admin/take-attendance"><i class="material-icons black-text">today</i></a>
+                        <a class="btn-flat btn-floating white waves-effect waves-dark right align-right mr-2" href="admin/take-attendance?days=<?= $prev ?>"><i class="material-icons black-text">arrow_back</i></a>
+                    </h5>
+                    <?php $sql = "SELECT `students`.`_sid`, `students`.`name`,`students`.`username`, `attendance`.`_at_id` FROM `students` LEFT JOIN `attendance` ON `students`.`_sid` = `attendance`.`_sid` AND `attendance`.`time` LIKE '" . date("Y-m-d", strtotime("$currentDay days")) . "%'";
                     require "../../services/db.inc.php";
                     include "../includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
@@ -36,7 +49,7 @@ if (
                         DB::getConnection();
                     $result = $conn->query($sql); ?>
 
-                    <table>
+                    <table class="border-top-1 grey-border border-lighten-2">
                         <?php if ($result and ($num = $result->num_rows) > 0) {
                             ?>
                             <thead>
@@ -79,15 +92,16 @@ if (
                                             </td>
                                         </tr>
                                     <?php
-                                } ?>
+                                    } ?>
                                 <?php
-                            } else {
-                                ?>
+                                } else {
+                                    ?>
                                     <tr>
                                         <td colspan="6" class="center-align">No students found</td>
                                     </tr>
                                 <?php
-                            } ?>
+                                } ?>
+                                <input type="text" value="<?= date("Y-m-d h:i:s", strtotime("$currentDay days")) ?>" name="current_day" class="hide" />
                             </form>
                         </tbody>
                     </table>

@@ -23,7 +23,7 @@ table.border-0 tr {
     background-color: #263a73;
 }
 
-.datepicker-table td.is-today {
+.datepicker-table td.is-today:not(.is-selected) {
     color: #263a73;
 }
 

@@ -11,17 +11,21 @@ $(() => {
         url: "admin/services/get.php",
         data: {
             what: "students",
+            time: new Date()
         },
         method: "GET",
         success: (data, status) => {
+            data = JSON.parse(data);
             usersArr = data;
             $.ajax({
                 url: "admin/services/get.php",
                 method: "GET",
                 data: {
                     what: "attendance",
+                    time: new Date()
                 },
                 success: (data, status) => {
+                    data = JSON.parse(data);
                     entriesArr = data;
                     $("#monthTitle").text(month[navDate.getMonth()] + ", " + navDate.getFullYear());
                     $(".loader").hide();

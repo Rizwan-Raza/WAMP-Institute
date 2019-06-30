@@ -38,3 +38,7 @@ table tr td {
 .present:hover .absense-btn {
     visibility: visible;
 }
+
+h5 a {
+    margin-top: -8px;
+}

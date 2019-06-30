@@ -1,6 +1,5 @@
 <?php
 
-header('Content-Type: application/json');
 $data = array("message" => "Unknown method", "status" => "server_error");
 if ($_SERVER['REQUEST_METHOD'] === "GET" and isset($_GET['what'])) {
     error_reporting(0);

@@ -1,5 +1,6 @@
 <?php
 // print_r($_REQUEST);
+
 $data = array("message" => "Unknown method", "status" => "server_error");
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -10,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $sql = " ";
 
     foreach ($stud_id as $sid) {
-        $sql .= " INSERT INTO `attendance` (`_aid`, `_sid`, `time`) VALUES($_SESSION[_aid], $sid, CONVERT_TZ(CURRENT_TIMESTAMP, '-07:00', '+05:30'));";
+        $sql .= " INSERT INTO `attendance` (`_aid`, `_sid`, `time`) VALUES($_SESSION[_aid], $sid, '$current_day');";
     }
 
     // echo $sql;
