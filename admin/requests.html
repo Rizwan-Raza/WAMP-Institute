@@ -28,7 +28,7 @@ if (
                 </div>
                 <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
                 <div class="grey lighten-3">
-                    <?php $sql = "SELECT * FROM `queries` WHERE type=1";
+                    <?php $sql = "SELECT * FROM `queries` WHERE type=1 ORDER BY `time` DESC";
                     require "../services/db.inc.php";
                     include "includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");
@@ -66,7 +66,7 @@ if (
                                         <td>
                                             <?= $user['number'] ?>
                                         </td>
-                                        <td class="tooltipped" data-tooltip="<?=date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A")?>">
+                                        <td class="tooltipped" data-tooltip="<?= date_format(date_create($user['time']), "M jS, Y \a\\t g:i:s A") ?>">
                                             <?= daysUntilToday($user['time']) ?>
                                         </td>
                                         <td>
@@ -75,15 +75,15 @@ if (
                                     </tr>
                                 </tbody>
                             <?php
-                        } ?>
+                            } ?>
                         <?php
-                    } else {
-                        ?>
+                        } else {
+                            ?>
                             <tr>
                                 <td colspan="5" class="center-align">No requests found</td>
                             </tr>
                         <?php
-                    } ?>
+                        } ?>
                     </table>
                 </div>
             </div>

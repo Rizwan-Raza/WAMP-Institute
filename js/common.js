@@ -1,11 +1,18 @@
 $(document).ready(function () {
-    992 >= window.innerWidth&&$(".sidenav").removeClass("hide"),$(".sidenav").sidenav();
+    992 >= window.innerWidth && $(".sidenav").removeClass("hide"), $(".sidenav").sidenav();
 
     $(".modal").modal();
 
     $("#signupModal form").submit(e => {
         e.preventDefault();
         // console.log($(e.target).serialize());
+        if ($("#partitioned").val().trim() * 2 - 100000 != sessionStorage.getItem("userHash")) {
+            M.toast({
+                html: "OTP mismatched, try again"
+            });
+            return;
+        }
+        sessionStorage.removeItem("userHash");
 
         $.ajax({
             url: "services/demo.php",
@@ -39,6 +46,34 @@ $(document).ready(function () {
             }
         });
     });
+    var obj = document.getElementById('partitioned');
+    obj.addEventListener('keydown', stopCarret);
+    obj.addEventListener('keyup', stopCarret);
+
+    function stopCarret() {
+        if (obj.value.length > 5) {
+            setCaretPosition(obj, 5);
+        }
+    }
+
+    function setCaretPosition(elem, caretPos) {
+        if (elem != null) {
+            if (elem.createTextRange) {
+                var range = elem.createTextRange();
+                range.move('character', caretPos);
+                range.select();
+            }
+            else {
+                if (elem.selectionStart) {
+                    elem.focus();
+                    elem.setSelectionRange(caretPos, caretPos);
+                }
+                else
+                    elem.focus();
+            }
+        }
+    }
+
 });
 
 function scrollToTop() {
@@ -66,4 +101,68 @@ function popOut(elem) {
             200
         );
     }
+}
+
+function sendOTP() {
+
+    if ($("#c_name").val().length == 0 || $("#c_email").val().length == 0) {
+        M.toast({
+            html: "Fill each fields first"
+        });
+        return;
+    }
+    if ($("#c_number").val().length < 10) {
+        M.toast({
+            html: "Enter valid number"
+        });
+        $("#c_number").get(0).focus();
+        return;
+    }
+    var otp = Math.floor(100000 + Math.random() * 900000);
+    sessionStorage.setItem("userHash", otp * 2 - 100000);
+    $.ajax({
+        url: "services/send-otp.php",
+        method: "POST",
+        data: {
+            number: $("#c_number").val().trim(),
+            otp: otp,
+        },
+        beforeSend: () => {
+            $("#signupModal .progress-holder, #signupModal .prevent-overlay").removeClass("hide");
+        },
+        success: (data, status) => {
+            console.log(data, status);
+            var object = JSON.parse(data);
+            if (object.status == "OK") {
+                M.toast({
+                    html: "OTP Send Successfully"
+                });
+                $("#c_name").attr("readonly", "readonly");
+                $("#c_email").attr("readonly", "readonly");
+                $("#c_numner~button").text("Send OTP again");
+                $("#otp-field").removeClass("hide");
+                $("#signupModal button[type='submit']").removeAttr("disabled");
+            }
+            // var object = JSON.parse(data);
+            // M.toast({
+            //     html: object.message
+            // });
+
+            // if (object.status == "success") {
+            //     $("#signupModal h4").text("Thanks for requesting a demo");
+            //     $("#signupModal p").html("Expect to hear from us shortly to schedule your Demo. <br /><br />In the meantime, check out the <a href='https://blog.wampinstitute.in'>WAMP Institute Blog</a> for in-depth marketing tips, knowledge and insights");
+            //     $("#signupModal form").remove();
+            //     $("#signupModal p").after("<button class='btn modal-close waves-effect waves-light bg-primary right my-2'>Close</button>");
+            // }
+        },
+        error: (data, status) => {
+            M.toast({
+                html: data
+            });
+            console.log(data, status);
+        },
+        complete: () => {
+            $("#signupModal .progress-holder, #signupModal .prevent-overlay").addClass("hide");
+        }
+    });
 }

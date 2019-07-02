@@ -495,7 +495,7 @@ nav ul li a {
 .input-field .prefix.active,
 .input-field input:focus+label,
 .input-field textarea:focus+label {
-    color: #3d85c6 !important
+    color: #263a73 !important
 }
 
 .brand-logo h1 {
@@ -747,8 +747,8 @@ section.card-panel {
 
 .input-field input:focus,
 .input-field textarea:focus {
-    border-bottom: 1px solid #3d85c6 !important;
-    box-shadow: 0 1px 0 0 #3d85c6 !important
+    border-bottom: 1px solid #263a73 !important;
+    box-shadow: 0 1px 0 0 #263a73 !important
 }
 
 .serviceDropDownContainer .dropdown-content {
@@ -860,6 +860,41 @@ footer .left.shift-left {
 #footer ul li a.text-light span {
     width: calc(100% - 40px);
     display: inline-block
+}
+
+#otp-field .left {
+    line-height: 50px;
+    height: 50px;
+    vertical-align: bottom;
+}
+
+#partitioned {
+    padding-left: 14px;
+    letter-spacing: 41px;
+    border: 0;
+    background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 50px 1px;
+    background-repeat: repeat-x;
+    background-position-x: 35px;
+    width: 320px;
+    min-width: 320px;
+    box-shadow: none;
+}
+
+#partitioned:focus {
+    background-image: linear-gradient(to left, #263a73 70%, rgba(255, 255, 255, 0) 0%);
+    background-size: 50px 2px;
+}
+
+#divInner {
+    left: 0;
+    position: sticky;
+}
+
+#divOuter {
+    width: 286px;
+    overflow: hidden;
 }
 
 @media (min-width:600px) {

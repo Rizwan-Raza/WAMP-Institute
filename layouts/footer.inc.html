@@ -133,8 +133,21 @@
                 <label for="c_number">
                     Number
                 </label>
+                <span class="helper-text">You will recieve an OTP on this number</span>
+                <button type="button" class="btn right waves-effect waves-light bg-primary rounded-0"
+                    style="margin-top: -62px;" onclick="sendOTP()">
+                    Send OTP</button>
             </div>
-            <button type="submit" class="btn bg-primary waves-effect waves-light white-text right">
+            <div class="w-full hide my-2" id="otp-field">
+                <span class="left">Enter OTP</span>
+                <div id="divOuter" class="right">
+                    <div id="divInner">
+                        <input id="partitioned" type="text" maxlength="6" />
+                    </div>
+                </div>
+                <br clear="all" />
+            </div>
+            <button type="submit" class="btn bg-primary waves-effect waves-light white-text right" disabled>
                 Submit
             </button>
             <button type="reset" class="btn btn-flat text-primary waves-effect waves-dark right modal-close mr-2">

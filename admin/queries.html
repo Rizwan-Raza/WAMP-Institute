@@ -28,7 +28,7 @@ if (
             </div>
             <div class="border-top-1 grey-border border-lighten-2 mt-2"></div>
             <div class="grey lighten-3">
-                <?php $sql = "SELECT * FROM `queries` WHERE type=0";
+                <?php $sql = "SELECT * FROM `queries` WHERE type=0 ORDER BY `time` DESC";
                     require "../services/db.inc.php";
                     $conn =
                         DB::getConnection();
