@@ -819,8 +819,7 @@ footer.bg-primary {
     padding-bottom: 8px !important
 }
 
-#signupModal,
-#instructorInfo {
+#signupModal {
     max-width: 500px
 }
 
@@ -922,6 +921,27 @@ footer .left.shift-left {
 
     nav .brand-img {
         display: none
+    }
+
+    #signupModal.modal {
+        top: 0 !important;
+        min-height: 100%;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0px !important;
+        z-index: 2000000001 !important;
+    }
+
+    .toast,
+    #toast-container {
+        z-index: 2000000002 !important;
+    }
+
+    #signupModal .border-radius-8,
+    #signupModal .progress {
+        border-radius: 0px !important;
     }
 
 }
