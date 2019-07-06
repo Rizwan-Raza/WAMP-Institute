@@ -53,3 +53,12 @@ button:focus {
     background-color: #263a73;
     color: #ffffff;
 }
+
+#feeArea input#set_s_fee {
+    width: 75%;
+}
+
+#feeArea .select-wrapper {
+    width: 25%;
+    float: right;
+}

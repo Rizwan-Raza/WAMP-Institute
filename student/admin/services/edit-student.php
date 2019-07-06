@@ -1,5 +1,6 @@
 <?php
 // print_r($_REQUEST);
+// return;
 $data = array("message" => "Unknown method", "status" => "server_error");
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -8,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     // print_r($_POST);
 
     session_start();
-    $sql = "UPDATE `students` SET `name` = '$name', `username` = '$username', `fee` = $fee, `course`=$course, `time` = TIMESTAMP('$time_oj') WHERE `_sid`=$sid";
+    $sql = "UPDATE `students` SET `name` = '$name', `username` = '$username', `fee` = $fee, `gst`=$gst, `pay_amount`=$pay_amount, `course`=$course, `time` = TIMESTAMP('$time_oj') WHERE `_sid`=$sid";
 
     require '../../../services/db.inc.php';
     $conn = DB::getConnection();

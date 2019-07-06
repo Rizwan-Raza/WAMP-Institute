@@ -1,14 +1,14 @@
 {
   "trainers": [
     {
-      "image": "images/trainers/Puneet-Saxena.jpg",
-      "name": "Puneet Saxena",
-      "id": "puneet-saxena",
+      "image": "images/trainers/Rohit-Ashok.jpg",
+      "name": "Rohit Ashok",
+      "id": "rohit-ashok",
       "role": "Senior Digital Marketing Trainer",
       "order": 1,
-      "desc": "Being an International scholar in BCA, Gold Medalist of MCA, he has worked as an Ethical Hacker. Currently he is handling the Digital Marketing Team for Zero Gravity India Gurugram. With more than 7 years of working experience alongside 4 years of training experience, he believes in worshipping his work by educating as many people as he can. Since his career began as a trainer in Digital Marketing he has trained more than 570 working professionals and students.",
-      "linkedin": "#",
-      "email": "#"
+      "desc": "A mentor, a friend, a guiding light; his engagement factor makes him different from the rest, he possesses the ability to motivate his trainees in a way that they wish to become an entrepreneur and leverage the knowledge to change the way marketing is perceived. Mr. Rohit Ashok is a <strong>Digital Marketing expert</strong> with more than 11 years of experience in the marketing field. His charming personality and immense knowledge are the best attributes one can ask for in a trainer.",
+      "linkedin": "https://www.linkedin.com/in/rohitashok/",
+      "email": "rohit@wampinstitute.in"
     },
     {
       "image": "images/trainers/Faris-Shah.jpg",

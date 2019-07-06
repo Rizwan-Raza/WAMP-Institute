@@ -3,8 +3,9 @@
 $data = array("message" => "Unknown method", "status" => "server_error");
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     error_reporting(0);
+    extract($_REQUEST, EXTR_SKIP);
 
-    $sql = "UPDATE `students` SET `fee`=$_POST[fee], `active`=1 WHERE `_sid`=$_POST[sid]";
+    $sql = "UPDATE `students` SET `fee`=$fee, `gst`=$gst, `pay_amount`=$pay_amount, `active`=1 WHERE `_sid`=$sid";
 
     // echo $sql;
 

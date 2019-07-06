@@ -41,7 +41,7 @@ if (
                         <a class="align-right right mr-1 modal-close waves-effect btn-floating btn-flat white tooltipped" data-tooltip="Today" href="admin/take-attendance"><i class="material-icons black-text">today</i></a>
                         <a class="btn-flat btn-floating white waves-effect waves-dark right align-right mr-2" href="admin/take-attendance?days=<?= $prev ?>"><i class="material-icons black-text">arrow_back</i></a>
                     </h5>
-                    <?php $sql = "SELECT `students`.`_sid`, `students`.`name`,`students`.`username`, `attendance`.`_at_id` FROM `students` LEFT JOIN `attendance` ON `students`.`_sid` = `attendance`.`_sid` AND `attendance`.`time` LIKE '" . date("Y-m-d", strtotime("$currentDay days")) . "%'";
+                    <?php $sql = "SELECT `students`.`_sid`, `students`.`name`,`students`.`username`, `attendance`.`_at_id` FROM `students` LEFT JOIN `attendance` ON `students`.`_sid` = `attendance`.`_sid` AND `attendance`.`time` LIKE '" . date("Y-m-d", strtotime("$currentDay days")) . "%' WHERE `students`.`active`=1";
                     require "../../services/db.inc.php";
                     include "../includes/functions.inc.php";
                     date_default_timezone_set("Asia/Kolkata");

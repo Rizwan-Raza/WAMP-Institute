@@ -8,4 +8,15 @@ table tr:hover td i {
 
 #approveModal {
     max-width: 500px;
+    overflow-y: visible
+}
+
+
+#feeArea input#feetopay {
+    width: 75%;
+}
+
+#feeArea .select-wrapper {
+    width: 25%;
+    float: right;
 }

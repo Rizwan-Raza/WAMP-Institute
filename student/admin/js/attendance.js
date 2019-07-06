@@ -11,6 +11,8 @@ $(() => {
         url: "admin/services/get.php",
         data: {
             what: "students",
+            filter: "active",
+            with: "1",
             time: new Date()
         },
         method: "GET",

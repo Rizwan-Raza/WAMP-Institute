@@ -38,7 +38,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
         $result = $conn->query($sql);
         $num_a = $result->fetch_assoc()['COUNT(`_pid`)'];
 
-        $sql = "SELECT (SELECT SUM(`students`.`fee`) FROM `students`) AS 'total', (SELECT SUM(`payments`.`amount`) FROM `payments`) as 'fee'"; 
+        $sql = "SELECT (SELECT SUM(`students`.`pay_amount`) FROM `students` WHERE `active`=1) AS 'total', (SELECT SUM(`payments`.`amount`) FROM `payments`) as 'fee'"; 
         $conn = DB::getConnection(); 
         $result = $conn->query($sql);
         $data = $result->fetch_assoc();

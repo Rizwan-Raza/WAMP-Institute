@@ -72,15 +72,15 @@ if (
                                     </tr>
                                 </tbody>
                             <?php
-                        } ?>
+                            } ?>
                         <?php
-                    } else {
-                        ?>
+                        } else {
+                            ?>
                             <tr>
                                 <td colspan="5" class="center-align">No requests found</td>
                             </tr>
                         <?php
-                    } ?>
+                        } ?>
                     </table>
                 </div>
             </div>
@@ -93,11 +93,19 @@ if (
                 <br />
                 <form name="userApprove">
                     <input type="text" value="0" id="stu_id" name="sid" class="hide" />
-                    <div class="input-field"><input type="number" class="validate" id="feetopay" name="fee" required>
+                    <div class="input-field" id="feeArea">
                         <label for="feetopay">
                             Fee
                         </label>
+                        <input type="number" class="validate" id="feetopay" name="fee" required>
+                        <select name="gst">
+                            <option value="" disabled selected> &nbsp; GST</option>
+                            <option value="18">+ 18%</option>
+                            <option value="9">+ 9%</option>
+                            <option value="0">+ 0%</option>
+                        </select>
                         <span class="helper-text">Enter fee to be paid by him/her</span>
+                        <input class="hide" name="pay_amount" type="text" />
                     </div>
                     <button class="waves-effect waves-light btn bg-primary right" type="submit">Approve</button>
                     <button type="reset" class="modal-close waves-effect waves-primary btn btn-flat transparent right">Not now</button>

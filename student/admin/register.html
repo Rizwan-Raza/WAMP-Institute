@@ -9,7 +9,7 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
     <title>Add New Student | WAMP Digital Marketing Institute</title>
     <base href="../">
     <?php include "includes/head.inc.php"; ?>
-    <link rel="stylesheet" href="admin/css/settings.css" />
+    <link rel="stylesheet" href="admin/css/register.css" />
 </head>
 
 <body>
@@ -78,9 +78,17 @@ if (isset($_SESSION['admin']) and $_SESSION['admin'] == true) {
                                 </tr>
                                 <tr>
                                     <td>Fee to Pay: </td>
-                                    <td class="input-field">
+                                    <td class="input-field" id="feeArea">
                                         <input id="add_s_fee" type="number" class="validate" name="fee"
                                             placeholder="Enter Amount">
+                                        <select name="gst">
+                                            <option value="" disabled selected> &nbsp; GST</option>
+                                            <option value="18">+ 18%</option>
+                                            <option value="9">+ 9%</option>
+                                            <option value="0">+ 0%</option>
+                                        </select>
+                                        <span class="helper-text"></span>
+                                        <input class="hide" name="pay_amount" type="text" />
                                     </td>
                                 </tr>
                             </table>

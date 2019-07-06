@@ -29,4 +29,16 @@ $(() => {
             }
         });
     });
+
+    $("#feeArea select").change(updateAmount);
+    $("#feeArea #add_s_fee").keyup(updateAmount);
+
 });
+
+function updateAmount(e) {
+    let fee = +$("#add_s_fee").val();
+    let gstAdded = ((fee * $("#feeArea select").val()) / 100) + fee;
+    $("#feeArea .helper-text").html("Payable Amount: <b> &#8377; " + gstAdded + "</b>");
+    $("#feeArea input[name='pay_amount']").val(gstAdded);
+
+}

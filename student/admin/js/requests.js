@@ -43,7 +43,18 @@ $(() => {
         });
 
     });
+    $("#feeArea select").change(updateAmount);
+    $("#feeArea #feetopay").keyup(updateAmount);
+
 });
+
+function updateAmount(e) {
+    let fee = +$("#feetopay").val();
+    let gstAdded = ((fee * $("#feeArea select").val()) / 100) + fee;
+    $("#feeArea .helper-text").html("Payable Amount: <b> &#8377; " + gstAdded + "</b>");
+    $("#feeArea input[name='pay_amount']").val(gstAdded);
+
+}
 
 function deleteUser(_sid, elem) {
     let answer = confirm("Are you sure, you want to delete this request?");

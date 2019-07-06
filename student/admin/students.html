@@ -64,29 +64,29 @@ if (
                                             <?= $user['username'] ?>
                                         </td>
                                         <td>
-                                            &#8377; <?= $user['fee'] ?>
+                                            &#8377; <?= $user['pay_amount'] ?>
                                         </td>
                                         <td>
-                                            &#8377; <?= $user['fee'] - $user['paid'] ?>
+                                            &#8377; <?= $user['pay_amount'] - $user['paid'] ?>
                                         </td>
                                         <td>
                                             <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deduct-fee?sid=<?= $user['_sid'] ?>'" data-tooltip="Deduct Fee"><i class="material-icons black-text lh-5">payment</i></button>
-                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="viewProfile('<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>,<?= $user['fee'] - $user['paid'] ?>, '<?= date_format(date_create($user['time']), 'M jS, Y \a\\t g:i:s A') ?>', '<?= daysUntilToday($user['time']) ?>')" data-tooltip="View Profile"><i class="material-icons black-text lh-5">visibility</i></button>
-                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="editProfile(<?= $user['_sid'] ?>, '<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>, '<?= $user['time'] ?>')" data-tooltip="Edit Student"><i class="material-icons black-text lh-5">edit</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="viewProfile('<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>, <?= $user['gst'] ?>,<?= $user['pay_amount'] ?>,<?= $user['pay_amount'] - $user['paid'] ?>, '<?= date_format(date_create($user['time']), 'M jS, Y \a\\t g:i:s A') ?>', '<?= daysUntilToday($user['time']) ?>')" data-tooltip="View Profile"><i class="material-icons black-text lh-5">visibility</i></button>
+                                            <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="editProfile(<?= $user['_sid'] ?>, '<?= $user['name'] ?>','<?= $user['username'] ?>',<?= $user['course'] ?>,<?= $user['fee'] ?>,<?= $user['gst'] ?>,<?= $user['pay_amount'] ?>, '<?= $user['time'] ?>')" data-tooltip="Edit Student"><i class="material-icons black-text lh-5">edit</i></button>
                                             <button class="transparent btn-flat circle btn-floating btn-medium tooltipped waves-effect waves-circle waves-dark" onclick="window.location.href='admin/deductions?sid=<?= $user['_sid'] ?>'" data-tooltip="Payment History"><i class="material-icons black-text lh-5">timeline</i></button>
                                         </td>
                                     </tr>
                                 </tbody>
                             <?php
-                        } ?>
+                            } ?>
                         <?php
-                    } else {
-                        ?>
+                        } else {
+                            ?>
                             <tr>
                                 <td colspan="6" class="center-align">No students found</td>
                             </tr>
                         <?php
-                    } ?>
+                        } ?>
                     </table>
                 </div>
             </div>
@@ -111,7 +111,7 @@ if (
                     </tr>
                     <tr>
                         <td>Total Fee</td>
-                        <td><b>&#8377; <span id="stu_fee">NA</span></b></td>
+                        <td><b>&#8377; <span id="stu_pm"></span></b> (&#8377; <span id="stu_fee">NA</span> + <span id="stu_gst"></span>% GST)</td>
                     </tr>
                     <tr>
                         <td>Fee Remain</td>
@@ -171,8 +171,16 @@ if (
                         </tr>
                         <tr>
                             <td>Total Fee</td>
-                            <td class="input-field">
+                            <td class="input-field" id="feeArea">
                                 <input id="set_s_fee" type="number" class="validate" name="fee">
+                                <select name="gst">
+                                    <option value="" disabled selected> &nbsp; GST</option>
+                                    <option value="18"> &nbsp; + 18%</option>
+                                    <option value="9"> &nbsp; + 9%</option>
+                                    <option value="0"> &nbsp; + 0%</option>
+                                </select>
+                                <span class="helper-text">Payable Amount: <b> &#8377; <span>0</span></b></span>
+                                <input class="hide" name="pay_amount" type="text" />
                             </td>
                         </tr>
                         <tr>

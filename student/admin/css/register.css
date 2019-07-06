@@ -1,0 +1,16 @@
+table td {
+    padding: 0px;
+}
+
+table tr {
+    border-bottom: 0;
+}
+
+#feeArea input#add_s_fee {
+    width: 75%;
+}
+
+#feeArea .select-wrapper {
+    width: 25%;
+    float: right;
+}

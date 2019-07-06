@@ -3,7 +3,11 @@
 $data = array("message" => "Unknown method", "status" => "server_error");
 if ($_SERVER['REQUEST_METHOD'] === "GET" and isset($_GET['what'])) {
     error_reporting(0);
-    $sql = "SELECT * FROM `$_GET[what]`;";
+    extract($_REQUEST, EXTR_SKIP);
+    $sql = "SELECT * FROM `$what`";
+    if (isset($filter) and isset($with)) {
+        $sql .= " WHERE `$filter`=" . $with;
+    }
     require '../../../services/db.inc.php';
     if ($result = DB::getConnection()->query($sql)) {
         $data = array();
