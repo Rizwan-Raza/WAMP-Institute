@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             // $to = "rizwan.raza987@gmail.com";
             $to = "wampinstitute@gmail.com";
             $from = "$name <$email>";
-            $subject = "Demo Request from WAMP D.M. Institute Web Platform.";
+            $subject = "Enroll Request from WAMP D.M. Institute Web Platform.";
             $body = '<!DOCTYPE html>
         <html>
         
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             <table style="background-color: #eeeeee;padding: 8px 16px;width: 100%;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);">
                 <tr>
                     <td><img src="https://www.wampinstitute.in/images/wamp-round-logo.png" height="50px" alt="WAMP InfoTech" /></td>
-                    <td style="line-height: 50px;vertical-align: top; margin:0px; font-size: 32px; font-weight: 500;">Demo Request from WAMP D.M. Institute</td>
+                    <td style="line-height: 50px;vertical-align: top; margin:0px; font-size: 32px; font-weight: 500;">Enroll Request from WAMP D.M. Institute</td>
                 </tr>
             </table>
             <table style="padding: 8px 16px;width: 100%;font-weight: 500;" cellspacing="10">
