@@ -10,6 +10,13 @@
     top: 0;
 }
 
+nav.white.px-m-4.z-depth-0>.nav-wrapper>.left.mx-2.px-m-4 {
+    position: fixed;
+    top: 0px;
+    z-index: 1003;
+    width: 300px;
+}
+
 nav button.btn-flat:hover img {
     filter: invert(1);
     transform: rotate(360deg);
@@ -342,7 +349,8 @@ nav button.instagram:hover {
     }
 }
 
-#choose-us {
+#choose-us,
+#reviews {
     position: relative;
 }
 
@@ -354,6 +362,27 @@ nav button.instagram:hover {
     height: 50%;
     background-color: #263a73;
     z-index: -1;
+}
+
+#reviews::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/footer.png');
+    opacity: 0.2;
+    z-index: -1;
+}
+#reviews>div {
+    background-color: rgba(0,0,0,0.2);
+}
+#reviews .card-image img {
+    max-height: 240px;
+    object-fit: cover;
 }
 
 #courses .container .row {
@@ -409,6 +438,10 @@ nav button.instagram:hover {
 #testimonial .carousel .carousel-item .avatar img {
     border: 4px solid white;
     height: 60px;
+}
+
+.right.hide-on-large-only {
+    display: block !important;
 }
 
 @media (max-width: 600px) {

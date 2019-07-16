@@ -675,6 +675,10 @@ nav .right.hide-on-large-only li {
     box-shadow: none !important
 }
 
+nav .right.hide-on-large-only a svg {
+    margin: 8px;
+}
+
 hr.short-border {
     border: 2px solid #263a73;
     width: 100px;
@@ -1174,11 +1178,6 @@ footer .left.shift-left {
 }
 
 @media (max-width:992px) {
-
-    nav .right.hide-on-large-only a svg {
-        margin: 8px;
-    }
-
     .dropdown-content {
         position: static
     }
