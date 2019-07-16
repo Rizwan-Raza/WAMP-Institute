@@ -3,6 +3,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <!-- <script src="layouts/services.js"></script> -->
+<script src="js/css3-animate-it.js"></script>
 <script src="js/common.js"></script>
 
 <!--Start of Tawk.to Script-->

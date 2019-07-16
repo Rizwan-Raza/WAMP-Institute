@@ -2,6 +2,7 @@ $(document).ready(function () {
     992 >= window.innerWidth && $(".sidenav").removeClass("hide"), $(".sidenav").sidenav();
 
     $(".modal").modal();
+    $(".tooltipped").tooltip();
 
     $("#signupModal form").submit(e => {
         e.preventDefault();

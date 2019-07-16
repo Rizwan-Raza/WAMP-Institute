@@ -32,7 +32,8 @@
 }
 
 #careerGrowth,
-#rewards {
+#rewards,
+#certificates {
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
@@ -44,6 +45,7 @@
     background-attachment: fixed;
 
     background-position: center;
+    overflow: hidden;
 }
 
 #careerGrowth.visible {
@@ -51,7 +53,8 @@
 }
 
 #careerGrowth>.p-4,
-#rewards>.p-4 {
+#rewards>.p-4,
+#certificates>.p-4 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -62,6 +65,40 @@
 
 #rewards.visible {
     background-image: url('../images/background2.jpg');
+}
+
+#certificates.visible {
+    background-image: url('../images/certificates.jpg');
+}
+
+#certificates ul.collection.pos-rel {
+    overflow: visible;
+}
+
+#certificates .collection {
+    max-width: 1200px;
+}
+
+#certificates .collection .row .col {
+    padding: 0;
+}
+
+#certificates .ribbon {
+    width: 100px;
+    bottom: 25px;
+    right: -50px;
+}
+
+@media (max-width: 600px) {
+    #certificates .ribbon {
+        width: 50px;
+        bottom: 25px;
+        right: -25px;
+    }
+}
+
+.collection .collection-item.avatar {
+    min-height: 64px;
 }
 
 #enroll .flex img.mx-auto {
