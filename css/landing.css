@@ -1,4 +1,38 @@
+.play-youtube-video {
+    object-fit: cover;
+    max-height: 225px;
+}
+
+.youtube-video-place.yt-video:hover .play-icon .ytp-large-play-button-bg {
+    fill: #f00;
+    fill-opacity: 1;
+}
+
+.play-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 68px;
+    height: 48px;
+    margin-left: -34px;
+    margin-top: -24px;
+    -moz-transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+    -webkit-transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+    transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+    z-index: 63;
+    cursor: pointer;
+}
+
+.play-icon .ytp-large-play-button-bg {
+    -moz-transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+    -webkit-transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+    transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+    fill: #212121;
+    fill-opacity: .8;
+}
+
 .navbar-fixed nav {
+
     position: static;
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
@@ -10,16 +44,47 @@
     top: 0;
 }
 
-nav.white.px-m-4.z-depth-0>.nav-wrapper>.left.mx-2.px-m-4 {
-    position: fixed;
-    top: 0px;
-    z-index: 1003;
-    width: 300px;
+nav.white.px-m-4.z-depth-0>.nav-wrapper>.left#phoneDisplay {
+    height: 56px;
+}
+
+@media (min-width: 720px) {
+    nav.white.px-m-4.z-depth-0>.nav-wrapper>.left#phoneDisplay {
+        position: fixed;
+        top: 0px;
+        z-index: 1002;
+    }
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: #263a73;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right-color: #263a73;
+    border-bottom-color: #263a73;
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:after {
+    background-color: #263a73;
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:before,
+[type="radio"].with-gap:checked+span:after {
+    border-color: #263a73;
+
 }
 
 nav button.btn-flat:hover img {
     filter: invert(1);
     transform: rotate(360deg);
+}
+
+#mobile_more_social a img {
+    height: 24px;
 }
 
 nav button.facebook:hover {
@@ -321,8 +386,8 @@ nav button.instagram:hover {
 }
 
 .home-banner {
-    max-height: 540px;
-    height: 540px;
+    max-height: 640px;
+    height: 640px;
     background-position: center;
     background-size: cover
 }
@@ -334,14 +399,46 @@ nav button.instagram:hover {
     bottom: 0;
 }
 
+.home-banner form .input-field {
+    margin-bottom: 0;
+}
+
+.home-banner form .input-field p {
+    margin-top: 0;
+}
+
 @media (max-width: 992px) {
     .home-banner>.pos-abs {
         left: 0;
         right: 0;
     }
+
+    #choose-us .p-4 .d-flex {
+        display: block;
+    }
+
+    #choose-us .d-flex .card-panel {
+        min-height: 270px;
+    }
+
+}
+
+@media (max-width: 1112px) {
+    #phoneDisplay span.num {
+        display: block;
+        height: 24px;
+        clear: left;
+        margin-top: -8px;
+    }
+
 }
 
 @media (max-width: 600px) {
+    .home-banner {
+        height: 780px;
+        max-height: 780px;
+    }
+
     .home-banner>.pos-abs .card-panel {
         width: 100%;
         margin: 0 auto;
@@ -377,12 +474,19 @@ nav button.instagram:hover {
     opacity: 0.2;
     z-index: -1;
 }
+
 #reviews>div {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
-#reviews .card-image img {
-    max-height: 240px;
+
+#reviews .card-image iframe {
+    height: 220px;
     object-fit: cover;
+}
+
+#reviews .carousel .carousel-item {
+    opacity: 1 !important;
+    height: 300px;
 }
 
 #courses .container .row {
@@ -423,7 +527,10 @@ nav button.instagram:hover {
 }
 
 #trainers .linkedin img {
-    margin-top: 4px;
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
 }
 
 #testimonial .carousel .carousel-item {

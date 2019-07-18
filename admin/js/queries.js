@@ -2,7 +2,7 @@ $(() => {
     M.AutoInit();
 });
 
-function deleteQuery(_qid, elem) {
+function deleteQuery(_qid, elem, type) {
     let answer = confirm("Are you sure, you want to delete this query?");
     if (answer) {
         elem = $(elem).closest("tr");
@@ -10,7 +10,8 @@ function deleteQuery(_qid, elem) {
             url: "admin/services/delete-query.php",
             method: "POST",
             data: {
-                _qid: _qid
+                _qid: _qid,
+                type: type
             },
             beforeSend: () => {
                 elem.css("opacity", 0.5);

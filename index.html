@@ -39,41 +39,6 @@
 	</script>
 
     <link rel="stylesheet" href="css/home.css" />
-    <style>
-        .play-youtube-video {
-            object-fit: cover;
-            max-height: 225px;
-        }
-
-        .youtube-video-place.yt-video:hover .play-icon .ytp-large-play-button-bg {
-            fill: #f00;
-            fill-opacity: 1;
-        }
-
-        .play-icon {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 68px;
-            height: 48px;
-            margin-left: -34px;
-            margin-top: -24px;
-            -moz-transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
-            -webkit-transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
-            transition: opacity .25s cubic-bezier(0.0, 0.0, 0.2, 1);
-            z-index: 63;
-            cursor: pointer;
-        }
-
-        .play-icon .ytp-large-play-button-bg {
-            -moz-transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
-            -webkit-transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
-            transition: fill .1s cubic-bezier(0.4, 0.0, 1, 1), fill-opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
-            fill: #212121;
-            fill-opacity: .8;
-        }
-    </style>
-
 </head>
 
 <body class="grey lighten-3">
@@ -520,23 +485,6 @@
     </div>
     <?php require_once "includes/scripts.inc.php" ?>
     <script async src="js/home.js"></script>
-    <script>
-        var video_wrapper = $('.youtube-video-place');
-        //  Check to see if youtube wrapper exists
-        if (video_wrapper.length) {
-            // If user clicks on the video wrapper load the video.
-            $('.play-youtube-video, .play-icon').on('click', e => {
-                /* Dynamically inject the iframe on demand of the user.
-                 Pull the youtube url from the data attribute on the wrapper element. */
-                var video = $(e.target).closest(".youtube-video-place");
-                video.html('<iframe allowfullscreen frameborder="0" class="yt-video" src="' + video.data('yt-url') + '"></iframe>');
-                video.removeClass("yt-video");
-            });
-        }
-
-        var b = [].slice.call(document.querySelectorAll(".lazy-background")); if ("IntersectionObserver" in window) { let g = new IntersectionObserver(function (h) { h.forEach(function (j) { j.isIntersecting && (j.target.classList.add("visible"), g.unobserve(j.target)) }) }); b.forEach(function (h) { g.observe(h) }) } var c = [].slice.call(document.querySelectorAll("img.lazy")); if ("IntersectionObserver" in window) { let g = new IntersectionObserver(function (h) { h.forEach(function (j) { if (j.isIntersecting) { let k = j.target; k.src = k.dataset.src, k.srcset = k.dataset.srcset, k.classList.remove("lazy"), g.unobserve(k) } }) }); c.forEach(function (h) { g.observe(h) }) } else;
-    </script>
-
 </body>
 
 </html>

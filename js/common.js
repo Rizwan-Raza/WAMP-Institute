@@ -7,13 +7,13 @@ $(document).ready(function () {
     $("#signupModal form").submit(e => {
         e.preventDefault();
         // console.log($(e.target).serialize());
-        if ($("#partitioned").val().trim() * 2 - 100000 != sessionStorage.getItem("userHash")) {
-            M.toast({
-                html: "OTP mismatched, try again"
-            });
-            return;
-        }
-        sessionStorage.removeItem("userHash");
+        // if ($("#partitioned").val().trim() * 2 - 100000 != sessionStorage.getItem("userHash")) {
+        //     M.toast({
+        //         html: "OTP mismatched, try again"
+        //     });
+        //     return;
+        // }
+        // sessionStorage.removeItem("userHash");
 
         $.ajax({
             url: "services/demo.php",
@@ -143,6 +143,10 @@ function sendOTP() {
                 $("#c_numner~button").text("Send OTP again");
                 $("#otp-field").removeClass("hide");
                 $("#signupModal button[type='submit']").removeAttr("disabled");
+            } else {
+                M.toast({
+                    html: data.message
+                });
             }
             // var object = JSON.parse(data);
             // M.toast({

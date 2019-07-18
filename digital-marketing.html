@@ -15,15 +15,29 @@
 <body class="grey lighten-3">
     <nav class="white px-m-4 z-depth-0">
         <div class="nav-wrapper">
-            <div class="left mx-2 px-m-4 white">
-                <span class="black-text fw-500"><a class="btn-floating pulse waves-light bg-primary mr-2" href="tel:+91-11-47020038"><i class="material-icons left">phone</i></a> +91 11-47020038</span>
+            <div class="left mx-2 px-m-4 white" id="phoneDisplay">
+                <a class="btn-floating pulse waves-light bg-primary mr-2 left my-1" href="tel:+91-11-47020038"><i class="material-icons left">phone</i></a>
+                <div class="left fw-500"><span class="num left">+91 11-47020038, </span><span class="num left">+91 9990067806</span></div>
             </div>
-            <div class="right hide-on-small px-2">
+            <div class="right hide-on-small-only px-2">
                 <button class="btn-floating mx-1 waves-effect waves-circle facebook btn-flat tooltipped" data-tooltip="Facebook" data-position="left"><img src="images/socials/f.svg"></button>
                 <button class="btn-floating mx-1 waves-effect waves-circle twitter btn-flat tooltipped" data-tooltip="Twitter" data-position="left"><img src="images/socials/t.svg"></button>
                 <button class="btn-floating mx-1 waves-effect waves-circle instagram btn-flat tooltipped" data-position="left" data-tooltip="Instagram"><img src="images/socials/i.svg"></button>
                 <button class="btn-floating mx-1 waves-effect waves-circle linkedin btn-flat tooltipped" data-position="left" data-tooltip="LinkedIn"><img src="images/socials/l.svg"></button>
                 <button class="btn-floating mx-1 waves-effect waves-circle youtube btn-flat tooltipped" data-position="left" data-tooltip="Youtube"><img src="images/socials/y.svg"></button>
+            </div>
+            <div class="right hide-on-med-and-up">
+                <ul>
+                    <li><a href="javascript:;" class="dropdown-trigger btn-floating btn-flat waves-effect waves-dark waves-circle transparent" data-target="mobile_more_social"><i class="material-icons black-text">more_vert</i></a>
+                        <ul id="mobile_more_social" class="dropdown-content">
+                            <li><a href="https://www.facebook.com/wampinfotech"><img class="left mr-2" src="images/socials/f.svg" alt="Facebook"> Facebook</a></li>
+                            <li><a href="https://twitter.com/WampInfotech"><img class="left mr-2" src="images/socials/t.svg" alt="Twitter"> Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/company/wampinfotech-pvt-ltd/"><img class="left mr-2" src="images/socials/l.svg" alt="LinkedIn"> LinkedIn</a></li>
+                            <li><a href="https://www.instagram.com/wampinfotech"><img class="left mr-2" src="images/socials/i.svg" alt="Instagram"> Instagram</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCTIo8V7X6TSxF6733jsb4xQ"><img class="left mr-2" src="images/socials/y.svg" alt="Youtube"> Youtube</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -34,67 +48,120 @@
 
     <header class="home-banner pos-rel">
         <div class="pos-abs row p-4">
-            <div class="col s12 m6 animatedParent hide-on-small-only" data-sequence='180'>
+            <div class="col s12 m5 l6 animatedParent hide-on-small-only" data-sequence='180'>
                 <h2 class="fw-700 h1 white-text fancy-font text-z-depth-2 bounceInLeft animated" data-id='0'>
                     Digital Marketing-<br />
                     the skills you NEED!
                 </h2>
                 <br />
-                <a class="btn btn-large red darken-4 waves-effect white-text waves-light bounceInLeft animated" href="tel:+919990067806" data-id='1'>For a
-                    FREE class, give us a
-                    call!</a>
-                <br /><br />
-                <a class="btn btn-large white waves-effect black-text waves-light bounceInLeft animated" href="tel:+919990067806" data-id='2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Download Curriculum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <div class="bounceInLeft animated" data-id='1'><a class="btn btn-large red darken-4 waves-effect white-text waves-light" href="tel:+919990067806">For a
+                        FREE class, give us a
+                        call!</a>
+                </div>
+                <br />
+                <div class="bounceInLeft animated" data-id='2'><a class="btn btn-large white waves-effect black-text waves-light" href="tel:+919990067806">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Download Curriculum
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
             </div>
-            <div class="col s12 m6">
-                <div class="card-panel right" style="max-width: 500px;">
+            <div class="col s12 m7 l6">
+                <div class="card right border-radius-8">
                     <div class="progress-holder hide">
                         <div class="progress">
                             <div class="indeterminate bg-primary"></div>
                         </div>
                     </div>
                     <div class="prevent-overlay hide full border-radius-8"></div>
-                    <div>
-                        <h4 class="card-title black-text m-0">Get in touch</h4>
+                    <div class="p-4">
+                        <h4 class="black-text m-0">Get in touch</h4>
                         <p class="grey-text text-darken-2">Take your first step towards <strong>Digital Marketing
                                 absolutely
                                 free!</strong></p>
-                        <form class="validate">
-                            <div class="input-field">
-                                <input type="text" name="name" id="c_name" required />
-                                <label for="c_name">
-                                    Name
-                                </label>
-                            </div>
-                            <div class="input-field">
-                                <input type="email" name="email" id="c_email" required />
-                                <label for="c_email">
-                                    Email
-                                </label>
-                            </div>
-                            <div class="input-field">
-                                <input type="tel" name="number" id="c_number" required minlength="10" maxlength="12" />
-                                <label for="c_number">
-                                    Number
-                                </label>
-                                <span class="helper-text">You will recieve an OTP on this number</span>
-                                <button type="button" class="btn right waves-effect waves-light bg-primary rounded-0" style="margin-top: -62px;" onclick="sendOTP()">
-                                    Send OTP</button>
-                            </div>
-                            <div class="w-full hide my-2" id="otp-field">
-                                <span class="left">Enter OTP</span>
-                                <div id="divOuter" class="right">
-                                    <div id="divInner">
-                                        <input id="partitioned" type="text" maxlength="6" />
+                        <div class="row mb-0">
+                            <form class="validate">
+                                <div class="input-field col s12 m2">
+                                    <select name="gender" required>
+                                        <option value="0" selected>Mr. </option>
+                                        <option value="1">Ms. </option>
+                                        <option value="2">Mrs. </option>
+                                    </select>
+                                </div>
+                                <div class="col s12 m5 input-field">
+                                    <input type="text" name="fname" id="xq_f_name" required />
+                                    <label for="c_f_name">
+                                        First name
+                                    </label>
+                                </div>
+                                <div class="col s12 m5 input-field">
+                                    <input type="text" name="lname" id="xq_l_name" required />
+                                    <label for="c_l_name">
+                                        Last name
+                                    </label>
+
+                                </div>
+                                <div class="col s12 input-field">
+                                    <input type="email" name="email" id="xq_email" required />
+                                    <label for="c_email">
+                                        Email
+                                    </label>
+
+                                </div>
+
+                                <div class="col s12 input-field m-0">
+                                    <label class="grey-text text-darken-2">Where did you hear about us?</label>
+                                    <br />
+                                    <br />
+                                    <p><label>
+                                            <input type="checkbox" name="reference[]" value="1" />
+                                            <span>Facebook </span>
+                                        </label> &nbsp; &nbsp; <label>
+                                            <input type="checkbox" name="reference[]" value="2" />
+                                            <span>Google </span>
+                                        </label> &nbsp; &nbsp; <label>
+                                            <input type="checkbox" name="reference[]" value="3" />
+                                            <span>Friend </span>
+                                        </label> &nbsp; &nbsp; <label>
+                                            <input type="checkbox" name="reference[]" value="4" />
+                                            <span>Ex-Student </span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col s12 input-field m-0">
+                                    <label class="grey-text text-darken-2">Do you want</label>
+                                    <br />
+                                    <br />
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="shift" value="0" />
+                                            <span>Morning Class </span>
+                                        </label> &nbsp; &nbsp; <label>
+                                            <input type="radio" name="shift" value="1" />
+                                            <span>Evening Class</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col s12 input-field">
+                                    <input type="tel" name="number" id="xq_number" required minlength="10" maxlength="12" />
+                                    <label for="xq_number">
+                                        Mobile Number
+                                    </label>
+                                    <span class="helper-text">You will recieve an OTP on this number</span>
+                                    <button type="button" class="btn right waves-effect waves-light bg-primary rounded-0" style="margin-top: -62px;" onclick="sendOTP_top()">
+                                        Send OTP</button>
+
+                                </div>
+                                <div class="w-full hide mx-2 my-2" id="xq-otp-field">
+                                    <span class="left fw-500">Enter OTP</span>
+                                    <div id="divOuter" class="left mx-4">
+                                        <div id="divInner">
+                                            <input id="partitioned" type="text" maxlength="6" />
+                                        </div>
                                     </div>
                                 </div>
-                                <br clear="all" />
-                            </div>
-                            <button type="submit" class="btn bg-primary waves-effect waves-light white-text right" disabled>
-                                Send
-                            </button>
-                            <br clear="both" />
-                        </form>
+                                <button type="submit" class="btn bg-primary waves-effect waves-light white-text right mx-2" disabled>
+                                    Send
+                                </button>
+                                <br clear="both" />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,48 +173,36 @@
             <h3 class="center">Why Choose Us?</h3>
             <hr class="short-border my-2" />
             <br />
-            <div class="row">
-                <div class="col s12 m3 p-m-3">
+            <div class="row d-flex">
+                <div class="col s12 m6 l3 p-m-3 d-flex">
                     <div class="card-panel w-100">
-                        <div class="center"><i class="material-icons medium">group</i></div>
-                        <h5 class="center m-0 mb-4">Batch Flexibilities</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat porro quis cumque praesentium
-                            debitis, reiciendis nesciunt dicta. Rerum doloremque, a neque, vero dolores labore ut natus
-                            ipsa
-                            cum nulla asperiores!</p>
+                        <div class="center"><i class="material-icons medium">build</i></div>
+                        <h5 class="center m-0 mb-4">Free Tools</h5>
+                        <p>WAMP Institute provides Digital Marketing tools to the students worth Rs. 41,000 absolutely free of cost. These tools will help the students to perform their tasks or job with ease and help them a lot in their digital marketing career. </p>
 
                     </div>
                 </div>
-                <div class="col s12 m3 p-m-3">
+                <div class="col s12 m6 l3 p-m-3 d-flex">
                     <div class="card-panel w-100">
                         <div class="center"><i class="material-icons medium">update</i></div>
                         <h5 class="center m-0 mb-4">Back-up Classes</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat porro quis cumque praesentium
-                            debitis, reiciendis nesciunt dicta. Rerum doloremque, a neque, vero dolores labore ut natus
-                            ipsa
-                            cum nulla asperiores!</p>
+                        <p>We do provide backup classes to our students if they miss because of any reason. Also, when it comes to doubt about any topic and the students want extra classes on that specific topic, we ensure to provide them also.</p>
 
                     </div>
                 </div>
-                <div class="col s12 m3 p-m-3">
+                <div class="col s12 m6 l3 p-m-3 d-flex">
                     <div class="card-panel w-100">
                         <div class="center"><i class="material-icons medium">important_devices</i></div>
                         <h5 class="center m-0 mb-4">Live Projects</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat porro quis cumque praesentium
-                            debitis, reiciendis nesciunt dicta. Rerum doloremque, a neque, vero dolores labore ut natus
-                            ipsa
-                            cum nulla asperiores!</p>
+                        <p>A chance to work on the Live Projects and earn as much as the fees of the course, yes we do provide live-projects and internships to the students making them skilled. The students tend to grasp better knowledge in this manner. </p>
 
                     </div>
                 </div>
-                <div class="col s12 m3 p-m-3">
+                <div class="col s12 m6 l3 p-m-3 d-flex">
                     <div class="card-panel w-100">
                         <div class="center"><i class="material-icons medium">mood</i></div>
                         <h5 class="center m-0 mb-4">Career Support</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat porro quis cumque praesentium
-                            debitis, reiciendis nesciunt dicta. Rerum doloremque, a neque, vero dolores labore ut natus
-                            ipsa
-                            cum nulla asperiores!</p>
+                        <p>Students of WAMP Institute are like family for us as our motto itself says ‘We Are Making People’, therefore, we always ensure to assist our students whenever they need us in their career for better opportunities. </p>
 
                     </div>
                 </div>
@@ -157,40 +212,88 @@
 
     <section id="reviews">
         <div class="p-4">
-            <div class="row m-0">
-                <div class="col s12 m4">
+            <div class="carousel">
+                <div class="carousel-item">
                     <div class="card">
-                        <div class="card-image">
-                            <img src="images/thumbnail.jpg">
+                        <div class="card-image grey darken-2 lh-0 youtube-video-place yt-video full" data-yt-url="https://www.youtube.com/embed/RPbn2mjfG3o?rel=0&showinfo=0&autoplay=1">
+                            <img src="images/thumbnail3-min.jpg" async class="play-youtube-video full lazy" data-src="images/thumbnail3.jpg" data-srcset="images/thumbnail3.jpg 2x,images/thumbnail3.jpg 1x">
+                            <div class="play-icon">
+                                <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                    <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                                    <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                </svg>
+                            </div>
                         </div>
                         <div class="card-content">
-                            <span class="card-title">Card Title</span>
-                            <p>Lorem ipsum dolor sit amet</p>
+                            <span class="fw-500">Best Digital Marketing Institute in Delhi</span>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m4">
+                <div class="carousel-item">
                     <div class="card">
-                        <div class="card-image">
-                            <img src="images/thumbnail2.jpg">
+                        <div class="card-image grey darken-2 lh-0 youtube-video-place yt-video full" data-yt-url="https://www.youtube.com/embed/DL1N5w6ykuA?rel=0&showinfo=0&autoplay=1">
+                            <img src="images/thumbnail4-min.jpg" async class="play-youtube-video full lazy" data-src="images/thumbnail4.jpg" data-srcset="images/thumbnail4.jpg 2x,images/thumbnail4.jpg 1x" />
+                            <div class="play-icon">
+                                <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                    <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                                    <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                </svg>
+                            </div>
                         </div>
                         <div class="card-content">
-                            <span class="card-title">Card Title</span>
-                            <p>Lorem ipsum dolor sit amet</p>
+                            <span class="fw-500">Successful Digital Stories by WAMP Institute</span>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m4">
+                <div class="carousel-item">
                     <div class="card">
-                        <div class="card-image">
-                            <img src="images/thumbnail3.jpg">
+                        <div class="card-image grey darken-2 lh-0 youtube-video-place yt-video full" data-yt-url="https://www.youtube.com/embed/MVkP8M1gX54?rel=0&showinfo=0&autoplay=1">
+                            <img src="images/thumbnail2-min.jpg" async class="play-youtube-video full lazy" data-src="images/thumbnail2.jpg" data-srcset="images/thumbnail2.jpg 2x,images/thumbnail2.jpg 1x">
+                            <div class="play-icon">
+                                <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                    <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                                    <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                </svg>
+                            </div>
                         </div>
                         <div class="card-content">
-                            <span class="card-title">Card Title</span>
-                            <p>Lorem ipsum dolor sit amet</p>
+                            <span class="fw-500">Best Digital Marketing Institute in Delhi Demo</span>
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-image grey darken-2 lh-0 youtube-video-place yt-video full" data-yt-url="https://www.youtube.com/embed/4eM83o061w8?rel=0&showinfo=0&autoplay=1">
+                            <img src="images/thumbnail5-min.jpg" async class="play-youtube-video full lazy" data-src="images/thumbnail5.jpg" data-srcset="images/thumbnail5.jpg 2x,images/thumbnail5.jpg 1x" />
+                            <div class="play-icon">
+                                <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                    <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                                    <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="fw-500">Murtaza Khan - An inspirational YouTuber</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-image grey darken-2 lh-0 youtube-video-place yt-video full" data-yt-url="https://www.youtube.com/embed/cu3559taciI?rel=0&showinfo=0&autoplay=1">
+                            <img src="images/thumbnail-min.jpg" async class="play-youtube-video full lazy" data-src="images/thumbnail.jpg" data-srcset="images/thumbnail.jpg 2x,images/thumbnail.jpg 1x" />
+                            <div class="play-icon">
+                                <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                                    <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+                                    <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="fw-500">Best Explainer video Animation</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -237,6 +340,7 @@
                         return $a['order'] <=> $b['order'];
                     }
                 );
+                $trainers = array_slice($trainers, 0, 2);
                 foreach ($trainers
                     as $trainer) { ?>
 
@@ -257,13 +361,9 @@
                                     </a>
                                 <?php } ?> <?php if (isset($trainer['linkedin'])) { ?>
                                     <a href="<?= $trainer['linkedin'] ?>" class="waves-effect waves-light btn btn-flat bg-primary my-1 linkedin" target="_blank">
-                                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIxLDIxSDE3VjE0LjI1QzE3LDEzLjE5IDE1LjgxLDEyLjMxIDE0Ljc1LDEyLjMxQzEzLjY5LDEyLjMxIDEzLDEzLjE5IDEzLDE0LjI1VjIxSDlWOUgxM1YxMUMxMy42Niw5LjkzIDE1LjM2LDkuMjQgMTYuNSw5LjI0QzE5LDkuMjQgMjEsMTEuMjggMjEsMTMuNzVWMjFNNywyMUgzVjlIN1YyMU01LDNBMiwyIDAgMCwxIDcsNUEyLDIgMCAwLDEgNSw3QTIsMiAwIDAsMSAzLDVBMiwyIDAgMCwxIDUsM1oiIC8+PC9zdmc+" alt="linkedin" />
+                                        <img src="images/socials/l.svg" alt="LinkedIn" />
                                     </a>
                                 <?php } ?>
-                                <!--
-                                                                                                                                                                                                                                          <button class="btn btn-flat waves-light waves-effect bg-primary my-1"><i class="material-icons">email</i></button>
-                                                                                                                                                                                                                                          <button class="btn btn-flat waves-light waves-effect bg-primary my-1"><i class="material-icons">call</i></button>
-                                                                                                                                                                                                                                        -->
                             </div>
                         </div>
                     </div>
@@ -288,7 +388,7 @@
                 <br /> -->
                 <ul class="collection pos-rel border-radius-8 mx-auto white">
                     <li class="collection-item avatar transparent">
-                        <img src="images/courses/adwords.png" alt="AdWords" class="circle">
+                        <img src="images/courses/aw.png" alt="AdWords" class="circle">
                         <span class="title fw-500">6 Google Ads Certifications</span>
                         <p>To become AdWords Certified, you'll need to pass the AdWords Fundamental
                             exam and one more AdWords exam. WAMP will prepare and help you to clear all
@@ -407,48 +507,19 @@
 
     <?php require_once "layouts/footer.inc.html"; ?>
 
+    <div id="reviewModal" class="modal border-radius-8">
+        <div class="modal-content">
+            <h4 class="center text-primary fw-500">Reviewer Name</h4>
+            <hr class="short-border" />
+            <br />
+            <p>review goes here</p>
+            <button class="btn modal-close white right bg-primary my-2">Close</button>
+        </div>
+    </div>
+
     <?php require_once "includes/scripts.inc.php" ?>
-    <script>
-        $(() => {
-            $(".carousel").carousel({
-                numVisible: 3
-            });
 
-            autoplayTest();
-
-            var b = [].slice.call(document.querySelectorAll(".lazy-background"));
-            if ("IntersectionObserver" in window) {
-                let g = new IntersectionObserver(function(h) {
-                    h.forEach(function(j) {
-                        j.isIntersecting && (j.target.classList.add("visible"), g.unobserve(j.target))
-                    })
-                });
-                b.forEach(function(h) {
-                    g.observe(h)
-                })
-            }
-            var c = [].slice.call(document.querySelectorAll("img.lazy"));
-            if ("IntersectionObserver" in window) {
-                let g = new IntersectionObserver(function(h) {
-                    h.forEach(function(j) {
-                        if (j.isIntersecting) {
-                            let k = j.target;
-                            k.src = k.dataset.src, k.srcset = k.dataset.srcset, k.classList.remove("lazy"), g.unobserve(k)
-                        }
-                    })
-                });
-                c.forEach(function(h) {
-                    g.observe(h)
-                })
-            } else;
-
-        });
-
-        function autoplayTest() {
-            $('#testimonial .carousel').carousel('next');
-            setTimeout(autoplayTest, 4500);
-        }
-    </script>
+    <script async src="js/landing.js"></script>
 </body>
 
 </html>

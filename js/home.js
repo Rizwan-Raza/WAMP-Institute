@@ -49,6 +49,21 @@ $(document).ready(function () {
 
 function openReview(title, desc) {
     $("#reviewModal h4").text(title);
-    $("#reviewModal p").text(desc);
+    $("#reviewModal p").html(desc);
     $("#reviewModal").modal("open");
 }
+
+var video_wrapper = $('.youtube-video-place');
+//  Check to see if youtube wrapper exists
+if (video_wrapper.length) {
+    // If user clicks on the video wrapper load the video.
+    $('.play-youtube-video, .play-icon').on('click', e => {
+        /* Dynamically inject the iframe on demand of the user.
+         Pull the youtube url from the data attribute on the wrapper element. */
+        var video = $(e.target).closest(".youtube-video-place");
+        video.html('<iframe allowfullscreen frameborder="0" class="yt-video" src="' + video.data('yt-url') + '"></iframe>');
+        video.removeClass("yt-video");
+    });
+}
+
+var b = [].slice.call(document.querySelectorAll(".lazy-background")); if ("IntersectionObserver" in window) { let g = new IntersectionObserver(function (h) { h.forEach(function (j) { j.isIntersecting && (j.target.classList.add("visible"), g.unobserve(j.target)) }) }); b.forEach(function (h) { g.observe(h) }) } var c = [].slice.call(document.querySelectorAll("img.lazy")); if ("IntersectionObserver" in window) { let g = new IntersectionObserver(function (h) { h.forEach(function (j) { if (j.isIntersecting) { let k = j.target; k.src = k.dataset.src, k.srcset = k.dataset.srcset, k.classList.remove("lazy"), g.unobserve(k) } }) }); c.forEach(function (h) { g.observe(h) }) } else;

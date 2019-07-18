@@ -475,10 +475,10 @@ i,
 p,
 span,
 strong {
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -webkit-user-select: text;
+    user-select: text
 }
 
 nav {
@@ -1082,7 +1082,8 @@ footer .left.shift-left {
 
 
 
-#otp-field .left {
+#otp-field .left,
+#xq-otp-field .left {
     line-height: 50px;
     height: 50px;
     vertical-align: bottom;
@@ -1178,7 +1179,7 @@ footer .left.shift-left {
 }
 
 @media (max-width:992px) {
-    .dropdown-content {
+    #mobile-sidenav .dropdown-content {
         position: static
     }
 
