@@ -74,7 +74,9 @@ $(document).ready(function () {
             }
         }
     }
-
+    setTimeout(() => {
+        $("#congratsModal").modal("open");
+    }, 2 * 60 * 1000);
 });
 
 function scrollToTop() {
@@ -170,4 +172,9 @@ function sendOTP() {
             $("#signupModal .progress-holder, #signupModal .prevent-overlay").addClass("hide");
         }
     });
+}
+
+function rewardsRedirect() {
+    $("#congratsModal").modal("close");
+    $("#signupModal").modal("open");
 }

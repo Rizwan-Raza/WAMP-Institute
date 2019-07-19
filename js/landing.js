@@ -72,7 +72,7 @@ $(() => {
         });
     } else {
         M.toast({
-            html: '<span><i class="material-icons left">phone</i>Call Us: <a href="tel:+918376075908" class="fw-500">+91-8376075908</a></span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();"><i class="material-icons">close</i></button>',
+            html: '<span><i class="material-icons left">phone</i>Call Us: <a href="tel:+91-11-47020038" class="fw-500">+91-11-47020038, <br />+91 9990067806</a></span><button class="btn-flat toast-action" onclick="M.Toast.dismissAll();"><i class="material-icons">close</i></button>',
             displayLength: Infinity,
             classes: 'border-radius-0'
         });
@@ -149,6 +149,7 @@ $(() => {
             }
         });
     });
+    
 });
 
 function autoplayTest() {
