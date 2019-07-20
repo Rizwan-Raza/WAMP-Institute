@@ -49,7 +49,7 @@ $(document).ready(function () {
     });
     setTimeout(() => {
         $("#congratsModal").modal("open");
-    }, 2 * 60 * 1000);
+    }, 10 * 1000);
 });
 
 function scrollToTop() {
