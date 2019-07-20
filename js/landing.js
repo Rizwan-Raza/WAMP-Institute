@@ -21,13 +21,24 @@ $(() => {
     $("#reviews .carousel").on("mouseenter", stopping);
     $("#reviews .carousel").on("mouseleave", starting);
 
+    $("#testimonial .carousel").on("mouseenter", stoppingT);
+    $("#testimonial .carousel").on("mouseleave", startingT);
+
     function stopping(e) {
-        console.log("Scolling Stopped");
+        // console.log("Scolling Stopped");
         clearTimeout(nextVideo);
     }
     function starting(e) {
-        console.log("Scrolling Started");
+        // console.log("Scrolling Started");
         autoplay();
+    }
+    function stoppingT(e) {
+        // console.log("Scolling Stopped");
+        clearTimeout(testimonialTimeout);
+    }
+    function startingT(e) {
+        // console.log("Scrolling Started");
+        autoplayTest();
     }
 
     autoplay();
@@ -41,9 +52,16 @@ $(() => {
             clearTimeout(nextVideo);
         }
     }
+
+
+    function autoplayTest() {
+        $('#testimonial .carousel').carousel('next');
+        testimonialTimeout = setTimeout(autoplayTest, 8000);
+    }
+
     function videoPlayed() {
         playing = true;
-        console.log("Played Video");
+        // console.log("Played Video");
         clearTimeout(nextVideo);
     }
 
@@ -178,11 +196,6 @@ $(() => {
     }
 
 });
-
-function autoplayTest() {
-    $('#testimonial .carousel').carousel('next');
-    setTimeout(autoplayTest, 4500);
-}
 
 function sendOTP_top() {
     if ($("#xq_f_name").val().length == 0 || $("#xq_email").val().length == 0) {
