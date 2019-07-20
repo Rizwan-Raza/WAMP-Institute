@@ -60,7 +60,7 @@ foreach ($courses as $course) {
                 $modules = getJson("../data/modules.json", $module);
                 foreach ($modules as $module) { ?>
                     <div class="col s6 m4">
-                        <div class="card waves-effect waves-<?= $module['theme'] ?> w-full<?php if ($module['desc'] != "NA") { ?> tooltipped" data-tooltip="<?= substr($module['desc'], 0, 100) ?>... Click for more info" <?php } else { ?>" <?php } ?>style="background-color: <?= $module['bc'] ?>" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>', '<?= $module['bc'] ?>','images/courses/<?= $module['src'] ?>')">
+                        <div class="card waves-effect waves-<?= $module['theme'] ?> w-full<?php if ($module['desc'] != "NA") { ?> tooltipped" data-tooltip="Click here for more info" <?php } else { ?>" <?php } ?>style="background-color: <?= $module['bc'] ?>" onclick="openModal('<?= $module['title'] ?>', '<?= $module['desc'] ?>', '<?= $module['bc'] ?>','images/courses/<?= $module['src'] ?>')">
                             <img src="images/courses/<?= $module['src'] ?>" class="pos-abs" />
                         </div>
                         <h6 class="center fw-500 m-0 mb-2"><?= $module['title'] ?></h6>
@@ -79,14 +79,14 @@ foreach ($courses as $course) {
             <div class="modal-footer module-img mx-auto">
                 <img src="images/wamp-round-logo.png" class="circle responsive-img full" />
             </div>
-            <div class="modal-content">
+            <div class="modal-content white border-radius-8">
                 <br />
                 <h4 class="center">Module Title</h4>
                 <hr class="short-border" />
                 <br clear="all" />
-                <p></p>
+                <div class="desc mb-4">
+                </div>
             </div>
-        </div>
         </div>
         <?php require_once "includes/scripts.inc.php" ?>
         <script>
@@ -98,7 +98,7 @@ foreach ($courses as $course) {
                 if (desc != "NA") {
                     $("#moduleDetailModal img").attr("src", img);
                     $("#moduleDetailModal h4").text(title);
-                    $("#moduleDetailModal p").text(desc);
+                    $("#moduleDetailModal .desc").html(desc);
                     $("#moduleDetailModal hr").css("border-color", color);
                     $("#moduleDetailModal .module-img").css("background-color", color);
                     $("#moduleDetailModal").modal("open");
