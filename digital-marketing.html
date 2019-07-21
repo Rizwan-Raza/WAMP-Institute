@@ -340,7 +340,7 @@
                 <?php require_once "includes/fetcher.php";
                 $modules = getJson("./data/modules.json", "advanced");
                 foreach ($modules as $module) { ?>
-                    <div class="col s4 m3 l2">
+                    <div class="col s6 m4 l3 xl2">
                         <div class="card waves-effect waves-<?= $module['theme'] ?> w-full" style="background-color: <?= $module['bc'] ?>;">
                             <img src="images/courses/<?= $module['src'] ?>" class="pos-abs" />
                         </div>
@@ -348,7 +348,7 @@
                     </div>
                 <?php } ?>
 
-                <div class="col s4 m3 l2">
+                <div class="col s6 m4 l3 xl2">
                     <div class="card waves-effect waves-light w-full bg-primary">
                         <!-- <img src="images/wamp-round-logo.png" class="pos-abs" /> -->
                         <i class="material-icons medium pos-abs">more_horiz</i>
