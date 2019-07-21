@@ -47,9 +47,12 @@ $(document).ready(function () {
             }
         });
     });
-    setTimeout(() => {
-        $("#congratsModal").modal("open");
-    }, 10 * 1000);
+    if (!sessionStorage.getItem("rewardShown")) {
+        setTimeout(() => {
+            $("#congratsModal").modal("open");
+            sessionStorage.setItem("rewardShown", true);
+        }, 10 * 1000);
+    }
 });
 
 function scrollToTop() {
