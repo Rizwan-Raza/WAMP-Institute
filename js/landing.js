@@ -129,14 +129,14 @@ $(() => {
 
     $(".home-banner form").submit(e => {
         e.preventDefault();
-        console.log($(e.target).serialize());
-        if ($(".home-banner #partitioned").val().trim() * 2 - 100000 != sessionStorage.getItem("userHash")) {
-            M.toast({
-                html: "OTP mismatched, try again"
-            });
-            return;
-        }
-        sessionStorage.removeItem("userHash");
+        // console.log($(e.target).serialize());
+        // if ($(".home-banner #partitioned").val().trim() * 2 - 100000 != sessionStorage.getItem("userHash")) {
+        //     M.toast({
+        //         html: "OTP mismatched, try again"
+        //     });
+        //     return;
+        // }
+        // sessionStorage.removeItem("userHash");
 
         $.ajax({
             url: "services/xquery.php",
@@ -167,104 +167,104 @@ $(() => {
             }
         });
     });
-    var obj = document.getElementById('partitioned');
-    obj.addEventListener('keydown', stopCarret);
-    obj.addEventListener('keyup', stopCarret);
+    // var obj = document.getElementById('partitioned');
+    // obj.addEventListener('keydown', stopCarret);
+    // obj.addEventListener('keyup', stopCarret);
 
-    function stopCarret() {
-        if (obj.value.length > 5) {
-            setCaretPosition(obj, 5);
-        }
-    }
+    // function stopCarret() {
+    //     if (obj.value.length > 5) {
+    //         setCaretPosition(obj, 5);
+    //     }
+    // }
 
-    function setCaretPosition(elem, caretPos) {
-        if (elem != null) {
-            if (elem.createTextRange) {
-                var range = elem.createTextRange();
-                range.move('character', caretPos);
-                range.select();
-            }
-            else {
-                if (elem.selectionStart) {
-                    elem.focus();
-                    elem.setSelectionRange(caretPos, caretPos);
-                }
-                else
-                    elem.focus();
-            }
-        }
-    }
+    // function setCaretPosition(elem, caretPos) {
+    //     if (elem != null) {
+    //         if (elem.createTextRange) {
+    //             var range = elem.createTextRange();
+    //             range.move('character', caretPos);
+    //             range.select();
+    //         }
+    //         else {
+    //             if (elem.selectionStart) {
+    //                 elem.focus();
+    //                 elem.setSelectionRange(caretPos, caretPos);
+    //             }
+    //             else
+    //                 elem.focus();
+    //         }
+    //     }
+    // }
 
 });
 
-function sendOTP_top() {
-    if ($("#xq_f_name").val().length == 0 || $("#xq_email").val().length == 0) {
-        M.toast({
-            html: "Fill each fields first"
-        });
-        return;
-    }
-    if ($("#xq_number").val().length < 10) {
-        M.toast({
-            html: "Enter valid number"
-        });
-        $("#xq_number").get(0).focus();
-        return;
-    }
-    var otp = Math.floor(100000 + Math.random() * 900000);
-    sessionStorage.setItem("userHash", otp * 2 - 100000);
-    $.ajax({
-        url: "services/send-otp.php",
-        method: "POST",
-        data: {
-            number: $("#xq_number").val().trim(),
-            otp: otp,
-        },
-        beforeSend: () => {
-            $(".home-banner .progress-holder, .home-banner .prevent-overlay").removeClass("hide");
-        },
-        success: (data, status) => {
-            console.log(data, status);
-            var object = JSON.parse(data);
-            if (object.status == "OK") {
-                M.toast({
-                    html: "OTP Send Successfully"
-                });
-                $("#xq_f_name").attr("readonly", "readonly");
-                $("#xq_l_name").attr("readonly", "readonly");
-                $("#xq_email").attr("readonly", "readonly");
-                $("#xq-otp-field").removeClass("hide");
-                $("#xq_numner~button").attr("disabled", "disabled");
+// function sendOTP_top() {
+//     if ($("#xq_f_name").val().length == 0 || $("#xq_email").val().length == 0) {
+//         M.toast({
+//             html: "Fill each fields first"
+//         });
+//         return;
+//     }
+//     if ($("#xq_number").val().length < 10) {
+//         M.toast({
+//             html: "Enter valid number"
+//         });
+//         $("#xq_number").get(0).focus();
+//         return;
+//     }
+//     var otp = Math.floor(100000 + Math.random() * 900000);
+//     sessionStorage.setItem("userHash", otp * 2 - 100000);
+//     $.ajax({
+//         url: "services/send-otp.php",
+//         method: "POST",
+//         data: {
+//             number: $("#xq_number").val().trim(),
+//             otp: otp,
+//         },
+//         beforeSend: () => {
+//             $(".home-banner .progress-holder, .home-banner .prevent-overlay").removeClass("hide");
+//         },
+//         success: (data, status) => {
+//             console.log(data, status);
+//             var object = JSON.parse(data);
+//             if (object.status == "OK") {
+//                 M.toast({
+//                     html: "OTP Send Successfully"
+//                 });
+//                 $("#xq_f_name").attr("readonly", "readonly");
+//                 $("#xq_l_name").attr("readonly", "readonly");
+//                 $("#xq_email").attr("readonly", "readonly");
+//                 $("#xq-otp-field").removeClass("hide");
+//                 $("#xq_numner~button").attr("disabled", "disabled");
 
-                $(".home-banner button[type='submit']").removeAttr("disabled");
+//                 $(".home-banner button[type='submit']").removeAttr("disabled");
 
-                let seconds = 59;
-                var timer = setInterval(() => {
-                    $("#xq_numner~button").text("00:" + ("0" + seconds--).slice(-2) + "s");
-                    if (seconds < 0) {
-                        clearInterval(timer);
-                        $("#xq_numner~button").removeAttr("disabled");
-                        $("#xq_numner~button").text("Send OTP again");
-                    }
-                }, 1000);
-            } else {
-                M.toast({
-                    html: data.message
-                });
-            }
+//                 let seconds = 59;
+//                 var timer = setInterval(() => {
+//                     $("#xq_numner~button").text("00:" + ("0" + seconds--).slice(-2) + "s");
+//                     if (seconds < 0) {
+//                         clearInterval(timer);
+//                         $("#xq_numner~button").removeAttr("disabled");
+//                         $("#xq_numner~button").text("Send OTP again");
+//                     }
+//                 }, 1000);
+//             } else {
+//                 M.toast({
+//                     html: data.message
+//                 });
+//             }
 
-        },
-        error: (data, status) => {
-            M.toast({
-                html: data
-            });
-            console.log(data, status);
-        },
-        complete: () => {
-            $(".home-banner .progress-holder, .home-banner .prevent-overlay").addClass("hide");
-        }
-    });
-}
+//         },
+//         error: (data, status) => {
+//             M.toast({
+//                 html: data
+//             });
+//             console.log(data, status);
+//         },
+//         complete: () => {
+//             $(".home-banner .progress-holder, .home-banner .prevent-overlay").addClass("hide");
+//         }
+//     });
+// }
 function openReview(title, desc) {
     $("#reviewModal h4").text(title);
     $("#reviewModal p").html(desc);
