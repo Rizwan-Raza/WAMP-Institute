@@ -235,19 +235,21 @@
 }
 
 
-#choose-us::before {
+#choose-us::before,
+#tools::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 50%;
     background-color: #263a73;
     z-index: -1;
-}
-
-#choose-us::before {
     top: 0px;
 }
 
+#tools .card-panel p {
+    text-align: center;
+    margin: 0;
+}
 
 #highlights .card-panel h6,
 #takeaways .card-panel h6 {
