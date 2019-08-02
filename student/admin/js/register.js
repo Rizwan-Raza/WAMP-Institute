@@ -38,7 +38,7 @@ $(() => {
 function updateAmount(e) {
     let fee = +$("#add_s_fee").val();
     let gstAdded = ((fee * $("#feeArea select").val()) / 100) + fee;
-    $("#feeArea .helper-text").html("Payable Amount: <b> &#8377; " + gstAdded + "</b>");
+    $("#feeArea .helper-text").html("Payable Amount: <b> &#8377; " + gstAdded + "</b>, <b>*Amount once paid is non-refundable </b>");
     $("#feeArea input[name='pay_amount']").val(gstAdded);
 
 }

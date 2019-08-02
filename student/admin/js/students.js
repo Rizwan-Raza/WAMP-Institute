@@ -44,6 +44,41 @@ function updateAmount(e) {
     $("#feeArea input[name='pay_amount']").val(gstAdded);
 
 }
+
+function deleteUser(_sid, elem) {
+    let answer = confirm("Are you sure, you want to delete this student?");
+    if (answer) {
+        elem = $(elem).closest("tr");
+        $.ajax({
+            url: "admin/services/delete-user.php",
+            method: "POST",
+            data: {
+                _sid: _sid
+            },
+            beforeSend: () => {
+                elem.css("opacity", 0.5);
+                // $("#progress, .prevent-overlay").removeClass("hide");
+            },
+            success: (data, status) => {
+                // console.log(data, status);
+                var object = JSON.parse(data);
+                M.toast({
+                    html: object.message
+                });
+                if (object.status == "success") {
+                    elem.slideUp();
+                }
+            },
+            error: (data, status) => {
+                console.log(data, status);
+            },
+            complete: () => {
+                elem.css("opacity", 1);
+                // $("#progress, .prevent-overlay").addClass("hide");
+            }
+        });
+    }
+}
 $(() => {
     $("#feeArea select").change(updateAmount);
     $("#feeArea #set_s_fee").keyup(updateAmount);
