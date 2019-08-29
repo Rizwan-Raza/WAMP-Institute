@@ -109,6 +109,7 @@ body {
         position: fixed;
         width: 300px;
         transform: translateX(-100%);
+        height: calc(100% - 56px);
     }
 
     .hide-on-small {

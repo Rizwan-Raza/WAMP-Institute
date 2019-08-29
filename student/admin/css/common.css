@@ -117,6 +117,7 @@ body {
     .sidenav.bg-primary {
         /* background-color: red; */
         top: 56px;
+        height: calc(100% - 56px);
         position: fixed;
         width: 300px;
         transform: translateX(-100%);

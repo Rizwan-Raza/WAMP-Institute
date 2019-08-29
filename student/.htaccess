@@ -2,6 +2,12 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+RewriteRule ^/?profile/(.*?)/?$ /profile.html?username=$1 [L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /profile\.html\?username=([^\&\ ]+)
+RewriteRule ^/?profile\.html$ /profile/%1? [L,R=301]
+
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
