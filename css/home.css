@@ -15,7 +15,8 @@
     height: 400px;
     background-image: url('../images/Digital-Marketing.jpg');
     background-position: 75% 25%;
-    background-size: cover
+    background-size: cover;
+    overflow: hidden;
 }
 
 .home-banner>.pos-abs {
@@ -277,8 +278,9 @@
     }
 
     #takeaways .d-flex,
-    #choose-us .d-flex {
-        display: block !important;
+    #choose-us .d-flex,
+    #tools .d-flex {
+        flex-flow: wrap;
     }
 }
 

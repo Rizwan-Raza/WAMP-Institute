@@ -455,6 +455,10 @@ a {
     background-blend-mode: soft-light
 }
 
+body {
+    overflow-x: hidden;
+}
+
 article,
 div,
 figure,
